@@ -75,33 +75,10 @@ template: |
             "After" - Used for insertion amendments where the new content is inserted AFTER the affected provision (including phrases like "at the end of")
             "Before" - Used for insertion amendments where the new content is inserted BEFORE the affected provision (including vague phrases like "at the appropriate places" when referring to indexes or lists)
             "Replace" - Used for deletion or substitution amendments where "After" and "Before" are not applicable
-            "Each_Place" - Used when the amendment indicates the change should be applied to every occurrence within the affected provision, including phrases like:
-              - "in each place it occurs"
-              - "(in each place)"
-              - "in each place"
-              - "wherever those words occur"
-              - "wherever it occurs"
-              - "wherever they occur"
-              - Similar variations of the above examples
-              
-              IMPORTANT: Do NOT use "Each_Place" for position-specific amendments such as:
-              - "(in the first place)" - this targets only the first occurrence
-              - "(in the second place)" - this targets only the second occurrence  
-              - "(in the third place)" - this targets only the third occurrence
-              - Any other ordinal position like "(in the fourth place)", etc.
-              
-              Position-specific amendments should use the appropriate location based on the amendment action:
-              - "after [text] (in the first place)" -> use "After"
-              - "before [text] (in the second place)" -> use "Before"
-              - "for [text] (in the first place) substitute" -> use "Replace"
-              - "omit [text] (in the third place)" -> use "Replace"
-              
-              "Each_Place" is ONLY for amendments that explicitly state the change applies to ALL occurrences (using "each" or "wherever"), not specific positions.
             
             Note: For vague location descriptions, make your best interpretation:
             - "at the appropriate places" in an index -> default to "Before" for insertions
             - "at the end of" -> use "After" for insertions
-            - "in each place it occurs" -> use "Each_Place"
             - When truly uncertain -> default to "Before" for insertions)
         - `affected_document`: string (The name of the target legislation being modified by the amendment. e.g. "{$act_name}"
             Amending documents often use phrases like the following to announce the affected document:
@@ -188,42 +165,8 @@ template: |
               Examples:
               - "Section 3A" becomes "sec_3A" (not "sec_3a")
               - "definition of 'Land Court'" becomes "def_landcourt" (not "def_Land_Court")
-            
-            5. Multiple provisions in the affected_provision field:
-              - When an amendment affects multiple provisions, record them in the affected_provision field using semicolons to separate FULL eIds
-              - For ranges where intermediate provisions are unknown, use dash notation in the affected_provision field
-              
-              CRITICAL RULES for choosing format in affected_provision:
-              
-              USE SEMICOLONS when:
-              - The amendment text explicitly lists each affected provision (e.g., "in paragraphs (a) and (b), omit...", "delete paragraphs (a) and (b)")
-              - You can identify exactly which provisions are affected
-              - The provisions are enumerated individually, even if consecutive (e.g., "in paragraphs (a), (b) and (c), substitute...")
-              - IMPORTANT: Two consecutive provisions explicitly mentioned (e.g., "subsections (1) and (2)") should use semicolons, NOT dash notation
-              
-              USE DASH NOTATION when:
-              - The amendment text uses "to" or range language (e.g., "omit sections 34 to 37", "in subsections (1) to (6), substitute...")
-              - You cannot determine all intermediate provisions without seeing the target document
-              - The text indicates a continuous range rather than listing individual items
-              - NOTE: Only use dash notation when there could be unknown provisions between the start and end
-              
-              Examples for the affected_provision field:
-              - 'in sections 12, 15 and 20, for "tenant" substitute "occupier"' becomes sec_12;sec_15;sec_20 (individually listed, use semicolons)
-              - 'omit paragraphs (a), (b) and (c)' becomes para_a;para_b;para_c (individually listed, use semicolons)
-              - 'for subsections (1) and (2) substitute...' becomes sec_X__subsec_1;sec_X__subsec_2 (two provisions with "and", use semicolons)
-              - 'omit sections 34 to 37' becomes sec_34-sec_37 (range with "to", use dash)
-              - 'for subsections (1) to (6) substitute...' becomes sec_5__subsec_1-sec_5__subsec_6 (range with "to", use dash)
-              - 'in paragraphs (a) and (b), delete "landlord"' becomes para_a;para_b (individually listed, use semicolons)
-              
-              IMPORTANT: Each eId must follow all the construction rules from sections 1-4 above. Always use the complete eId for each provision in a list or range.
-              
-              Note: The key distinction is "and" vs "to":
-              - "subsections (1) and (2)" = semicolon (sec_X__subsec_1;sec_X__subsec_2)
-              - "subsections (1) to (2)" = dash (sec_X__subsec_1-sec_X__subsec_2)
-              - "sections 28 and 29" = semicolon (sec_28;sec_29)
-              - "sections 28 to 29" = dash (sec_28-sec_29)
                         
-            6. Nested provisions:
+            5. Nested provisions:
               - Parse the full hierarchy carefully
               - Don't compress or skip levels (e.g., use full "sched_7__para_10__subpara_4__para_a__subpara_ii")
               
@@ -231,7 +174,7 @@ template: |
               - "paragraph (a)(ii) of subsection (9) of section 40" becomes "sec_40__subsec_9__para_a__subpara_ii"
               - "sub-sub-paragraph (A) of sub-paragraph (i) of paragraph (a)" becomes "para_a__subpara_i__subsubpara_A"
             
-            7. Important clarifications:
+            6. Important clarifications:
               - For new provisions being inserted (e.g., "After section 17 insert section 17A"), the affected_provision is where it's being inserted (sec_17), not the new provision (sec_17A)
               - IMPORTANT: Only identify actual amendments to acts. Do not include provisions that:
                 * Use definitions FROM {$act_name} in other legislation
