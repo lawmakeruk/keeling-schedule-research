@@ -10,7 +10,6 @@ import copy
 import concurrent.futures
 from typing import List, Dict, Tuple, Optional, Any
 from lxml import etree
-import json
 import csv
 from io import StringIO
 
@@ -146,8 +145,9 @@ class KeelingService:
             # Store target act as instance variable for use in amendment expansion
             self._target_act = target_act
 
-            self._eid_patterns = self.xml_handler.extract_eid_patterns(target_act)
-            logger.info(f"Extracted eId patterns from target Act for schedule {schedule_id}")
+            # ABLATION: eId pattern extraction disabled
+            # self._eid_patterns = self.xml_handler.extract_eid_patterns(target_act)
+            # logger.info(f"Extracted eId patterns from target Act for schedule {schedule_id}")
 
             # Create a simplified copy for identification only
             simplified_bill = copy.deepcopy(self._amending_bill)
@@ -536,7 +536,9 @@ class KeelingService:
                 provision_eid,
                 act_name=act_name,
                 xml_provision=xml_provision,
-                eid_patterns=json.dumps(self._eid_patterns) if self._eid_patterns else "{}",
+                # ABLATION: eId pattern injection disabled
+                # eid_patterns=json.dumps(self._eid_patterns) if self._eid_patterns else "{}",
+                eid_patterns="{}",
             )
 
             # Parse CSV response with target act for range expansion
