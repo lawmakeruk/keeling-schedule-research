@@ -58,16 +58,23 @@ def csv_to_amendment_dict(
     # Process all rows
     amendments = _parse_amendment_rows(reader, required_cols)
 
-    # Expand any amendments with semicolon-separated or range-based affected provisions
-    expanded_amendments = []
-    for amendment in amendments:
-        expanded = _expand_amendment_if_needed(amendment, target_act, xml_handler)
-        expanded_amendments.extend(expanded)
+    # ABLATION: Compact CSV expansion disabled
+    # # Expand any amendments with semicolon-separated or range-based affected provisions
+    # expanded_amendments = []
+    # for amendment in amendments:
+    #     expanded = _expand_amendment_if_needed(amendment, target_act, xml_handler)
+    #     expanded_amendments.extend(expanded)
+    # 
+    # if not expanded_amendments:
+    #     raise ValueError("No valid amendments found in CSV")
+    # 
+    # return expanded_amendments
 
-    if not expanded_amendments:
+    # Return unexpanded amendments directly
+    if not amendments:
         raise ValueError("No valid amendments found in CSV")
-
-    return expanded_amendments
+        
+    return amendments
 
 
 def sort_amendments_by_affected_provision(amendments: List[Amendment]) -> List[Amendment]:
