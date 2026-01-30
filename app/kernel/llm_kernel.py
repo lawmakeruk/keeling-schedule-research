@@ -6,7 +6,6 @@ Uses the config object to configure the kernel.
 Handles all calls to LLM providers and uses yaml prompts as plugins to Kernel.
 Logs the input prompt and separately logs the output information.
 """
-
 import asyncio
 import json
 import re

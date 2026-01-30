@@ -2,7 +2,6 @@
 """
 Unit tests for the LLMRetryHandler class.
 """
-
 from unittest.mock import Mock, patch, AsyncMock
 import pytest
 import uuid

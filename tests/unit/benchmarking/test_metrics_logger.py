@@ -104,7 +104,7 @@ def test_initialise_database(test_db_path):
         "act_xml_size",
         "total_amendments_found",
         "total_amendments_applied",
-        "amendment_success_rate",
+        "application_rate",
         "total_prompts_executed",
         "total_token_usage",
         "total_cost_usd",
@@ -170,6 +170,7 @@ def test_log_schedule_start_and_end(metrics_logger, test_db_path):
         act_name="Test Act",
         model_id="test-model",
         service_id="test-service",
+        max_worker_threads=256,
         bill_xml_size=1000,
         act_xml_size=2000,
     )
@@ -189,7 +190,7 @@ def test_log_schedule_start_and_end(metrics_logger, test_db_path):
 
     # Verify the schedule was updated
     cursor.execute(
-        "SELECT total_amendments_found, total_amendments_applied, amendment_success_rate "
+        "SELECT total_amendments_found, total_amendments_applied, application_rate "
         "FROM schedules WHERE schedule_id = ?",
         (schedule_id,),
     )
@@ -209,7 +210,11 @@ def test_log_amendment(metrics_logger, test_db_path):
 
     # First, create a schedule
     metrics_logger.log_schedule_start(
-        schedule_id=schedule_id, act_name="Test Act", model_id="test-model", service_id="test-service"
+        schedule_id=schedule_id,
+        act_name="Test Act",
+        model_id="test-model",
+        service_id="test-service",
+        max_worker_threads=256,
     )
 
     # Log an amendment
@@ -251,7 +256,11 @@ def test_update_amendment_application(metrics_logger, test_db_path):
 
     # Create a schedule and an amendment
     metrics_logger.log_schedule_start(
-        schedule_id=schedule_id, act_name="Test Act", model_id="test-model", service_id="test-service"
+        schedule_id=schedule_id,
+        act_name="Test Act",
+        model_id="test-model",
+        service_id="test-service",
+        max_worker_threads=256,
     )
 
     metrics_logger.log_amendment(
@@ -268,14 +277,14 @@ def test_update_amendment_application(metrics_logger, test_db_path):
 
     # Update the amendment's application status
     metrics_logger.update_amendment_application(
-        amendment_id=amendment_id, application_time_seconds=2.0, success_status=True
+        amendment_id=amendment_id, application_time_seconds=2.0, application_status=True
     )
 
     # Verify the amendment was updated
     conn = sqlite3.connect(test_db_path)
     cursor = conn.cursor()
     cursor.execute(
-        "SELECT application_time_seconds, total_processing_time_seconds, success_status "
+        "SELECT application_time_seconds, total_processing_time_seconds, application_status "
         "FROM amendments WHERE amendment_id = ?",
         (amendment_id,),
     )
@@ -297,7 +306,11 @@ def test_log_prompt(mock_open, metrics_logger, test_db_path):
 
     # Create a schedule and an amendment
     metrics_logger.log_schedule_start(
-        schedule_id=schedule_id, act_name="Test Act", model_id="test-model", service_id="test-service"
+        schedule_id=schedule_id,
+        act_name="Test Act",
+        model_id="test-model",
+        service_id="test-service",
+        max_worker_threads=256,
     )
 
     metrics_logger.log_amendment(
@@ -445,7 +458,11 @@ def test_log_schedule_start_exception(metrics_logger):
 
         # Call the method, which should catch the exception
         metrics_logger.log_schedule_start(
-            schedule_id=schedule_id, act_name="Test Act", model_id="test-model", service_id="test-service"
+            schedule_id=schedule_id,
+            act_name="Test Act",
+            model_id="test-model",
+            service_id="test-service",
+            max_worker_threads=256,
         )
         # Verify the connection was attempted
         assert mock_get_conn.called
@@ -497,7 +514,7 @@ def test_update_amendment_application_not_found(metrics_logger, test_db_path):
     # Patch logging.error to check it's called
     with patch("app.benchmarking.metrics_logger.logger.error") as mock_logger:
         metrics_logger.update_amendment_application(
-            amendment_id=amendment_id, application_time_seconds=1.0, success_status=True
+            amendment_id=amendment_id, application_time_seconds=1.0, application_status=True
         )
 
         # Verify logging.error was called with expected message
@@ -515,7 +532,7 @@ def test_update_amendment_application_exception(metrics_logger):
 
         # Call the method, which should catch the exception
         metrics_logger.update_amendment_application(
-            amendment_id=amendment_id, application_time_seconds=1.0, success_status=True
+            amendment_id=amendment_id, application_time_seconds=1.0, application_status=True
         )
         # Verify the connection was attempted
         assert mock_get_conn.called
@@ -649,13 +666,13 @@ def test_calculate_duration_type_error(metrics_logger):
     assert result is None
 
 
-def test_calculate_success_rate_zero_found(metrics_logger):
-    """Test _calculate_success_rate when total_found is zero."""
-    result = metrics_logger._calculate_success_rate(0, 0)
+def test_calculate_application_rate_zero_found(metrics_logger):
+    """Test _calculate_application_rate when total_found is zero."""
+    result = metrics_logger._calculate_application_rate(0, 0)
     assert result is None
 
     # Also test with non-zero applied but zero found (edge case)
-    result = metrics_logger._calculate_success_rate(0, 5)
+    result = metrics_logger._calculate_application_rate(0, 5)
     assert result is None
 
 
@@ -699,22 +716,22 @@ def test_calculate_duration_missing_schedule(metrics_logger):
     assert result is None
 
 
-def test_calculate_success_rate_edge_cases(metrics_logger):
-    """Test _calculate_success_rate with various edge cases."""
+def test_calculate_application_rate_edge_cases(metrics_logger):
+    """Test _calculate_application_rate with various edge cases."""
     # Normal case - 80% success rate
-    result = metrics_logger._calculate_success_rate(10, 8)
+    result = metrics_logger._calculate_application_rate(10, 8)
     assert result == 80.0
 
     # 100% success rate
-    result = metrics_logger._calculate_success_rate(5, 5)
+    result = metrics_logger._calculate_application_rate(5, 5)
     assert result == 100.0
 
     # 0% success rate (but with non-zero found)
-    result = metrics_logger._calculate_success_rate(5, 0)
+    result = metrics_logger._calculate_application_rate(5, 0)
     assert result == 0.0
 
     # Fractional success rate
-    result = metrics_logger._calculate_success_rate(3, 2)
+    result = metrics_logger._calculate_application_rate(3, 2)
     assert abs(result - 66.66666666666667) < 0.0001
 
 
@@ -770,6 +787,7 @@ def test_update_schedule_act_size(metrics_logger, test_db_path):
         act_name="Test Act",
         model_id="test-model",
         service_id="test-service",
+        max_worker_threads=256,
         bill_xml_size=1000,
         act_xml_size=None,  # Initially None
     )
@@ -800,3 +818,339 @@ def test_update_schedule_act_size_exception(metrics_logger):
 
         # Verify connection was attempted
         mock_get_conn.assert_called_once()
+
+
+def test_create_ground_truth_table(test_db_path):
+    """Test that ground_truth table is created with correct schema."""
+    # Create a logger which will initialise the database
+    MetricsLogger(db_path=test_db_path)
+
+    # Connect and verify table exists
+    conn = sqlite3.connect(test_db_path)
+    cursor = conn.cursor()
+
+    # Check table exists
+    cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='ground_truth';")
+    result = cursor.fetchone()
+    assert result is not None
+    assert result[0] == "ground_truth"
+
+    conn.close()
+
+
+def test_load_ground_truth_if_needed(metrics_logger, test_db_path, tmp_path):
+    """Test loading ground truth CSV into database."""
+    # Create a test CSV file
+    csv_content = """source,source_eid,type_of_amendment,affected_provision,location,whole_provision
+                    s. 28(2)(a),sec_28__subsec_2__para_a,substitution,sec_212__subsec_1,Replace,FALSE
+                    s. 28(5),sec_28__subsec_5,substitution,sec_215,Replace,TRUE"""
+
+    csv_file = tmp_path / "test_ground_truth.csv"
+    csv_file.write_text(csv_content)
+
+    # Load the ground truth
+    metrics_logger.load_ground_truth_if_needed("test_dataset", str(csv_file))
+
+    # Verify data was loaded
+    conn = sqlite3.connect(test_db_path)
+    cursor = conn.cursor()
+    cursor.execute("SELECT COUNT(*) FROM ground_truth WHERE dataset_name = ?", ("test_dataset",))
+    count = cursor.fetchone()[0]
+    assert count == 2
+
+    conn.close()
+
+
+def test_load_ground_truth_already_loaded(metrics_logger, test_db_path, tmp_path):
+    """Test that ground truth is not reloaded if already present."""
+    # Create a test CSV file
+    csv_content = """source,source_eid,type_of_amendment,affected_provision,location,whole_provision
+                    s. 101(2),sec_101__subsec_2,insertion,sec_1__subsec_3,After,FALSE"""
+
+    csv_file = tmp_path / "test_ground_truth.csv"
+    csv_file.write_text(csv_content)
+
+    # Load once
+    metrics_logger.load_ground_truth_if_needed("test_dataset2", str(csv_file))
+
+    # Try to load again - should skip
+    metrics_logger.load_ground_truth_if_needed("test_dataset2", str(csv_file))
+
+    # Verify only loaded once (1 row, not 2)
+    conn = sqlite3.connect(test_db_path)
+    cursor = conn.cursor()
+    cursor.execute("SELECT COUNT(*) FROM ground_truth WHERE dataset_name = ?", ("test_dataset2",))
+    count = cursor.fetchone()[0]
+    assert count == 1
+
+    conn.close()
+
+
+def test_auto_load_ground_truth_with_error(test_db_path, tmp_path):
+    """Test auto-load handles CSV loading errors gracefully."""
+    # Create ground truth directory with invalid CSV
+    ground_truth_dir = tmp_path / "ground_truth"
+    ground_truth_dir.mkdir()
+
+    # Create invalid CSV file (missing required columns)
+    bad_csv = ground_truth_dir / "bad_dataset.csv"
+    bad_csv.write_text(
+        """invalid,columns
+                        1,2
+                        3,4"""
+    )
+
+    # Create logger - should log error for bad file
+    db_path = tmp_path / "keeling_metrics.db"
+
+    with patch("app.benchmarking.metrics_logger.logger.error") as mock_logger:
+        MetricsLogger(db_path=str(db_path))
+
+        # Check error was logged for bad file
+        assert mock_logger.called
+        error_call = mock_logger.call_args[0][0]
+        assert "Failed to load ground truth bad_dataset.csv" in error_call
+
+
+def test_get_dataset_name_from_act(metrics_logger):
+    """Test matching act names to dataset names."""
+    # Mock some ground truth datasets in the database
+    conn = sqlite3.connect(metrics_logger.db_path)
+    cursor = conn.cursor()
+
+    # Insert mock dataset names
+    cursor.execute(
+        """
+        INSERT INTO ground_truth (ground_truth_id, dataset_name, source, source_eid,
+                                  type_of_amendment, affected_provision, location, whole_provision)
+        VALUES (?, ?, 'test', 'test', 'INSERTION', 'test', 'BEFORE', 0)
+    """,
+        (str(uuid.uuid4()), "renters_rights_housing_2004"),
+    )
+
+    cursor.execute(
+        """
+        INSERT INTO ground_truth (ground_truth_id, dataset_name, source, source_eid,
+                                  type_of_amendment, affected_provision, location, whole_provision)
+        VALUES (?, ?, 'test', 'test', 'INSERTION', 'test', 'BEFORE', 0)
+    """,
+        (str(uuid.uuid4()), "land_reform_scotland_agricultural_holdings_scotland_2003"),
+    )
+
+    conn.commit()
+    conn.close()
+
+    # Test successful matches
+    assert metrics_logger._get_dataset_name_from_act("Housing Act 2004") == "renters_rights_housing_2004"
+    assert (
+        metrics_logger._get_dataset_name_from_act("Agricultural Holdings (Scotland) Act 2003")
+        == "land_reform_scotland_agricultural_holdings_scotland_2003"
+    )
+
+    # Test no match
+    assert metrics_logger._get_dataset_name_from_act("Some Other Act 2005") is None
+
+
+def test_evaluate_schedule_accuracy_no_ground_truth(metrics_logger):
+    """Test evaluation when no ground truth is available."""
+    schedule_id = str(uuid.uuid4())
+
+    # Log a schedule
+    metrics_logger.log_schedule_start(
+        schedule_id=schedule_id,
+        act_name="Unknown Act 2005",
+        model_id="test-model",
+        service_id="test-service",
+        max_worker_threads=256,
+    )
+
+    # Evaluate - should return empty dict as no ground truth matches
+    metrics = metrics_logger.evaluate_schedule_accuracy(schedule_id, "Unknown Act 2005")
+    assert metrics == {}
+
+
+def test_evaluate_schedule_accuracy_with_ground_truth(metrics_logger):
+    """Test evaluation with matching ground truth."""
+    schedule_id = str(uuid.uuid4())
+
+    # Insert ground truth data
+    conn = sqlite3.connect(metrics_logger.db_path)
+    cursor = conn.cursor()
+
+    cursor.execute(
+        """
+        INSERT INTO ground_truth (ground_truth_id, dataset_name, source, source_eid,
+                                  type_of_amendment, affected_provision, location, whole_provision)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    """,
+        (str(uuid.uuid4()), "renters_rights_housing_2004", "Section 1", "s1", "INSERTION", "section 12", "BEFORE", 1),
+    )
+
+    cursor.execute(
+        """
+        INSERT INTO ground_truth (ground_truth_id, dataset_name, source, source_eid,
+                                  type_of_amendment, affected_provision, location, whole_provision)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    """,
+        (str(uuid.uuid4()), "renters_rights_housing_2004", "Section 2", "s2", "DELETION", "section 13", "REPLACE", 0),
+    )
+
+    conn.commit()
+    conn.close()
+
+    # Log a schedule
+    metrics_logger.log_schedule_start(
+        schedule_id=schedule_id,
+        act_name="Housing Act 2004",
+        model_id="test-model",
+        service_id="test-service",
+        max_worker_threads=256,
+    )
+
+    # Log amendments - one correct, one incorrect
+    metrics_logger.log_amendment(
+        schedule_id=schedule_id,
+        amendment_id=str(uuid.uuid4()),
+        source="Section 1",
+        source_eid="s1",
+        affected_provision="section 12",
+        location="BEFORE",
+        amendment_type="INSERTION",
+        whole_provision=True,
+    )
+
+    metrics_logger.log_amendment(
+        schedule_id=schedule_id,
+        amendment_id=str(uuid.uuid4()),
+        source="Section 3",
+        source_eid="s3",
+        affected_provision="section 14",
+        location="AFTER",
+        amendment_type="SUBSTITUTION",
+        whole_provision=False,
+    )
+
+    # Update first amendment as successfully applied
+    conn = sqlite3.connect(metrics_logger.db_path)
+    cursor = conn.cursor()
+    cursor.execute(
+        """
+        UPDATE amendments SET application_status = 1
+        WHERE schedule_id = ? AND source_eid = 's1'
+    """,
+        (schedule_id,),
+    )
+    conn.commit()
+    conn.close()
+
+    # Evaluate
+    metrics = metrics_logger.evaluate_schedule_accuracy(schedule_id, "Housing Act 2004")
+
+    # Check metrics exist and are reasonable
+    assert "precision" in metrics
+    assert "recall" in metrics
+    assert "f1" in metrics
+    assert "location_accuracy" in metrics
+    assert "whole_provision_accuracy" in metrics
+    assert "geometric_mean_application" in metrics
+
+    # Check specific values
+    assert metrics["true_positives"] == 1  # One correct match
+    assert metrics["false_positives"] == 1  # One incorrect
+    assert metrics["false_negatives"] == 1  # One missed from ground truth
+    assert metrics["precision"] == 0.5  # 1/(1+1)
+    assert metrics["recall"] == 0.5  # 1/(1+1)
+
+    # Check database was updated
+    conn = sqlite3.connect(metrics_logger.db_path)
+    cursor = conn.cursor()
+    cursor.execute("SELECT dataset_name, identification_precision FROM schedules WHERE schedule_id = ?", (schedule_id,))
+    result = cursor.fetchone()
+    assert result[0] == "renters_rights_housing_2004"
+    assert result[1] == 0.5
+    conn.close()
+
+
+def test_calculate_identification_metrics(metrics_logger):
+    """Test calculation of identification metrics."""
+    schedule_id = str(uuid.uuid4())
+    dataset_name = "test_dataset"
+
+    # Setup test data
+    conn = sqlite3.connect(metrics_logger.db_path)
+    cursor = conn.cursor()
+
+    # Add schedule
+    cursor.execute(
+        """
+        INSERT INTO schedules (schedule_id, act_name, model_id, service_id, start_timestamp)
+        VALUES (?, 'Test Act', 'test-model', 'test-service', ?)
+    """,
+        (schedule_id, datetime.utcnow().isoformat()),
+    )
+
+    # Add ground truth
+    cursor.execute(
+        """
+        INSERT INTO ground_truth (ground_truth_id, dataset_name, source, source_eid,
+                                  type_of_amendment, affected_provision, location, whole_provision)
+        VALUES (?, ?, 's1', 'eid1', 'INSERTION', 'section 1', 'BEFORE', 1)
+    """,
+        (str(uuid.uuid4()), dataset_name),
+    )
+
+    # Add matching amendment (true positive)
+    cursor.execute(
+        """
+        INSERT INTO amendments (amendment_id, schedule_id, source, source_eid,
+                                affected_provision, location, amendment_type, whole_provision)
+        VALUES (?, ?, 's1', 'eid1', 'section 1', 'BEFORE', 'INSERTION', 1)
+    """,
+        (str(uuid.uuid4()), schedule_id),
+    )
+
+    # Add non-matching amendment (false positive)
+    cursor.execute(
+        """
+        INSERT INTO amendments (amendment_id, schedule_id, source, source_eid,
+                                affected_provision, location, amendment_type, whole_provision)
+        VALUES (?, ?, 's2', 'eid2', 'section 2', 'AFTER', 'DELETION', 0)
+    """,
+        (str(uuid.uuid4()), schedule_id),
+    )
+
+    conn.commit()
+
+    # Calculate metrics
+    metrics = metrics_logger._calculate_identification_metrics(cursor, schedule_id, dataset_name)
+
+    conn.close()
+
+    # Verify
+    assert metrics["true_positives"] == 1
+    assert metrics["false_positives"] == 1
+    assert metrics["false_negatives"] == 0
+    assert metrics["precision"] == 0.5
+    assert metrics["recall"] == 1.0
+    assert metrics["f1"] > 0.6  # Should be 2/3
+
+
+def test_evaluate_schedule_accuracy_dataset_name_not_in_table(metrics_logger):
+    """Test evaluation when dataset name is matched but not in ground_truth table."""
+    schedule_id = str(uuid.uuid4())
+
+    # Log a schedule
+    metrics_logger.log_schedule_start(
+        schedule_id=schedule_id,
+        act_name="Housing Act 2004",
+        model_id="test-model",
+        service_id="test-service",
+        max_worker_threads=256,
+    )
+
+    # Override _get_dataset_name_from_act to return a dataset that doesn't exist
+    metrics_logger._get_dataset_name_from_act = lambda x: "non_existent_dataset"
+
+    # Evaluate - should return empty dict as dataset doesn't exist in ground_truth
+    metrics = metrics_logger.evaluate_schedule_accuracy(schedule_id, "Housing Act 2004")
+    assert metrics == {}

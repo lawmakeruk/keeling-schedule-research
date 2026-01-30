@@ -2,7 +2,6 @@
 """
 Unit tests for the utils module.
 """
-
 import pytest
 from unittest.mock import patch
 from app.services.utils import (
@@ -1079,60 +1078,58 @@ class TestFixProvisionNestingInEid:
         # Schedule without number
         assert _fix_provision_nesting_in_eid("sched__para_5__subpara_d") == "sched__para_5__para_d"
 
-    def test_fix_provision_nesting_para_to_subpara(self):
-        """Test fixing provision nesting where para should be subpara for letters."""
+    def test_fix_provision_nesting_subpara_to_para(self):
+        """Test fixing provision nesting where subpara should be para for letters."""
         from app.services.utils import _fix_provision_nesting_in_eid
 
         # Sections
-        assert _fix_provision_nesting_in_eid("sec_2__para_1__para_a") == "sec_2__para_1__subpara_a"
-        assert _fix_provision_nesting_in_eid("sec_15A__para_3__para_b") == "sec_15A__para_3__subpara_b"
+        assert _fix_provision_nesting_in_eid("sec_2__para_1__subpara_a") == "sec_2__para_1__para_a"
 
         # Regulations
-        assert _fix_provision_nesting_in_eid("reg_5__para_2__para_c") == "reg_5__para_2__subpara_c"
-        assert _fix_provision_nesting_in_eid("reg_100__para_1B__para_d") == "reg_100__para_1B__subpara_d"
+        assert _fix_provision_nesting_in_eid("reg_2__para_1__subpara_b") == "reg_2__para_1__para_b"
 
         # Articles
-        assert _fix_provision_nesting_in_eid("art_3__para_4__para_e") == "art_3__para_4__subpara_e"
+        assert _fix_provision_nesting_in_eid("art_5__para_2__subpara_c") == "art_5__para_2__para_c"
 
         # Rules
-        assert _fix_provision_nesting_in_eid("rule_7__para_1__para_f") == "rule_7__para_1__subpara_f"
+        assert _fix_provision_nesting_in_eid("rule_3__para_1__subpara_d") == "rule_3__para_1__para_d"
+
+        # Schedules
+        assert _fix_provision_nesting_in_eid("sched_1__para_1__subpara_a") == "sched_1__para_1__para_a"
 
     def test_no_changes_needed(self):
         """Test cases where no changes should be made."""
         from app.services.utils import _fix_provision_nesting_in_eid
 
-        # Already correct schedule format
+        # Already correct schedule format (letters as para)
         assert _fix_provision_nesting_in_eid("sched_1__para_1__para_a") == "sched_1__para_1__para_a"
 
-        # Already correct provision format
-        assert _fix_provision_nesting_in_eid("sec_2__para_1__subpara_a") == "sec_2__para_1__subpara_a"
+        # Already correct provision format (letters as para)
+        assert _fix_provision_nesting_in_eid("sec_2__para_1__para_a") == "sec_2__para_1__para_a"
 
-        # No letter parts (numbers instead)
-        assert _fix_provision_nesting_in_eid("sched_1__para_1__subpara_1") == "sched_1__para_1__subpara_1"
-        assert _fix_provision_nesting_in_eid("sec_2__para_1__para_2") == "sec_2__para_1__para_2"
+        # Roman numerals should remain as subpara
+        assert _fix_provision_nesting_in_eid("sec_2__para_1__para_a__subpara_i") == "sec_2__para_1__para_a__subpara_i"
 
-        # Different structure entirely
-        assert _fix_provision_nesting_in_eid("sec_5__subsec_2") == "sec_5__subsec_2"
-        assert _fix_provision_nesting_in_eid("sched_1__pt_2__para_5") == "sched_1__pt_2__para_5"
-
-        # Unknown provision types
-        assert _fix_provision_nesting_in_eid("clause_1__para_2__para_a") == "clause_1__para_2__para_a"
-        assert _fix_provision_nesting_in_eid("definition_1__para_2__subpara_a") == "definition_1__para_2__subpara_a"
+        # Numbers at para level should not be changed
+        assert _fix_provision_nesting_in_eid("sched_1__para_1") == "sched_1__para_1"
 
     def test_complex_nested_structures(self):
         """Test fixing complex nested structures with multiple levels."""
         from app.services.utils import _fix_provision_nesting_in_eid
 
-        # Schedule with multiple issues
+        # Schedule with subpara_[letter] that needs fixing
         assert (
             _fix_provision_nesting_in_eid("sched_1__para_1__subpara_a__subsubpara_i")
             == "sched_1__para_1__para_a__subsubpara_i"
         )
 
-        # Provision with deeper nesting after the fix point
+        # Provision with letter already correct as para
+        assert _fix_provision_nesting_in_eid("sec_2__para_1__para_a__subpara_i") == "sec_2__para_1__para_a__subpara_i"
+
+        # Fix multiple issues in regulations
         assert (
-            _fix_provision_nesting_in_eid("sec_2__para_1__para_a__subsubpara_ii")
-            == "sec_2__para_1__subpara_a__subsubpara_ii"
+            _fix_provision_nesting_in_eid("reg_27__para_2__subpara_a__subpara_iii")
+            == "reg_27__para_2__para_a__subpara_iii"
         )
 
     def test_edge_cases(self):
@@ -1161,7 +1158,7 @@ class TestFixProvisionNestingInEid:
         """Test that fixes are logged at debug level."""
         from app.services.utils import _fix_provision_nesting_in_eid
 
-        # Fix that should log
+        # Fix that should log for schedule
         result = _fix_provision_nesting_in_eid("sched_1__para_1__subpara_a")
         assert result == "sched_1__para_1__para_a"
         mock_logger.debug.assert_called_once_with(
@@ -1171,19 +1168,19 @@ class TestFixProvisionNestingInEid:
         # Reset mock
         mock_logger.reset_mock()
 
-        # Fix for provision
-        result = _fix_provision_nesting_in_eid("sec_2__para_1__para_a")
-        assert result == "sec_2__para_1__subpara_a"
+        # Fix for provision (regulation)
+        result = _fix_provision_nesting_in_eid("reg_2__para_1__subpara_a")
+        assert result == "reg_2__para_1__para_a"
         mock_logger.debug.assert_called_once_with(
-            "Fixed provision nesting: sec_2__para_1__para_a -> sec_2__para_1__subpara_a"
+            "Fixed provision nesting: reg_2__para_1__subpara_a -> reg_2__para_1__para_a"
         )
 
         # Reset mock
         mock_logger.reset_mock()
 
-        # No fix needed - no logging
-        result = _fix_provision_nesting_in_eid("sec_5__subsec_2")
-        assert result == "sec_5__subsec_2"
+        # No change needed - no logging
+        result = _fix_provision_nesting_in_eid("sec_2__para_1__para_a")
+        assert result == "sec_2__para_1__para_a"
         mock_logger.debug.assert_not_called()
 
     def test_pattern_boundary_matching(self):

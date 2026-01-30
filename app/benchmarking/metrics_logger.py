@@ -3,9 +3,10 @@
 Enhanced metrics logging system for Keeling Schedule generation that uses a SQLite database
 to store structured benchmarking data about schedules, amendments, and prompts.
 """
-
 import os
 import sqlite3
+import re
+import math
 from datetime import datetime
 from typing import Dict, Any, Optional, Union
 from semantic_kernel.functions import FunctionResult, KernelFunctionFromPrompt
@@ -57,6 +58,9 @@ class MetricsLogger:
         # Initialise database with schema
         self._initialise_database()
 
+        # Auto-load ground truth data if available
+        self._auto_load_ground_truth()
+
         # For tracking ongoing operations
         self._current_operations = {}
 
@@ -68,6 +72,7 @@ class MetricsLogger:
         act_name: str,
         model_id: str,
         service_id: str,
+        max_worker_threads: int,
         bill_xml_size: Optional[int] = None,
         act_xml_size: Optional[int] = None,
     ) -> None:
@@ -79,6 +84,7 @@ class MetricsLogger:
             act_name: Name of the act being amended
             model_id: Identifier for the LLM model used
             service_id: The service providing the LLM capability
+            max_worker_threads: Maximum number of worker threads for parallel processing
             bill_xml_size: Size of input bill XML in bytes
             act_xml_size: Size of input act XML in bytes
         """
@@ -94,11 +100,20 @@ class MetricsLogger:
             cursor.execute(
                 """
                 INSERT INTO schedules (
-                    schedule_id, act_name, model_id, service_id, start_timestamp,
-                    bill_xml_size, act_xml_size
-                ) VALUES (?, ?, ?, ?, ?, ?, ?)
+                    schedule_id, act_name, model_id, service_id, max_worker_threads,
+                    start_timestamp, bill_xml_size, act_xml_size
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
                 """,
-                (schedule_id, act_name, model_id, service_id, start_ts, bill_xml_size, act_xml_size),
+                (
+                    schedule_id,
+                    act_name,
+                    model_id,
+                    service_id,
+                    max_worker_threads,
+                    start_ts,
+                    bill_xml_size,
+                    act_xml_size,
+                ),
             )
 
             conn.commit()
@@ -114,13 +129,13 @@ class MetricsLogger:
         Args:
             schedule_id: Unique identifier for this schedule
             total_amendments_found: Total number of amendments identified
-            total_amendments_applied: Total number of amendments successfully applied
+            total_amendments_applied: Total number of amendments applied
         """
         end_ts = datetime.utcnow().isoformat()
 
         # Calculate metrics
         duration_seconds = self._calculate_duration(schedule_id, end_ts)
-        amendment_success_rate = self._calculate_success_rate(total_amendments_found, total_amendments_applied)
+        application_rate = self._calculate_application_rate(total_amendments_found, total_amendments_applied)
 
         try:
             conn = self._get_db_connection()
@@ -134,7 +149,7 @@ class MetricsLogger:
                     total_duration_seconds = ?,
                     total_amendments_found = ?,
                     total_amendments_applied = ?,
-                    amendment_success_rate = ?
+                    application_rate = ?
                 WHERE schedule_id = ?
                 """,
                 (
@@ -142,7 +157,7 @@ class MetricsLogger:
                     duration_seconds,
                     total_amendments_found,
                     total_amendments_applied,
-                    amendment_success_rate,
+                    application_rate,
                     schedule_id,
                 ),
             )
@@ -222,7 +237,7 @@ class MetricsLogger:
             logger.error(f"Failed to log amendment: {e}")
 
     def update_amendment_application(
-        self, amendment_id: str, application_time_seconds: Optional[float] = None, success_status: bool = False
+        self, amendment_id: str, application_time_seconds: Optional[float] = None, application_status: bool = False
     ) -> None:
         """
         Update amendment information after application attempt.
@@ -230,7 +245,7 @@ class MetricsLogger:
         Args:
             amendment_id: Unique identifier for this amendment
             application_time_seconds: Time taken to apply the amendment
-            success_status: Whether the amendment was successfully applied
+            application_status: Whether the amendment was applied
         """
         try:
             conn = self._get_db_connection()
@@ -261,10 +276,10 @@ class MetricsLogger:
                 UPDATE amendments SET
                     application_time_seconds = ?,
                     total_processing_time_seconds = ?,
-                    success_status = ?
+                    application_status = ?
                 WHERE amendment_id = ?
                 """,
-                (application_time_seconds, total_time, 1 if success_status else 0, amendment_id),
+                (application_time_seconds, total_time, 1 if application_status else 0, amendment_id),
             )
 
             conn.commit()
@@ -380,6 +395,7 @@ class MetricsLogger:
             self._create_schedules_table(cursor)
             self._create_amendments_table(cursor)
             self._create_prompts_table(cursor)
+            self._create_ground_truth_table(cursor)
 
             conn.commit()
             conn.close()
@@ -389,12 +405,14 @@ class MetricsLogger:
 
     def _create_schedules_table(self, cursor: sqlite3.Cursor) -> None:
         """Create the schedules table."""
-        cursor.execute("""
+        cursor.execute(
+            """
             CREATE TABLE IF NOT EXISTS schedules (
                 schedule_id TEXT PRIMARY KEY,
                 act_name TEXT,
                 model_id TEXT,
                 service_id TEXT,
+                max_worker_threads INTEGER,
                 start_timestamp TEXT,
                 end_timestamp TEXT,
                 total_duration_seconds REAL,
@@ -402,16 +420,28 @@ class MetricsLogger:
                 act_xml_size INTEGER,
                 total_amendments_found INTEGER,
                 total_amendments_applied INTEGER,
-                amendment_success_rate REAL,
+                application_rate REAL,
                 total_prompts_executed INTEGER,
                 total_token_usage INTEGER,
-                total_cost_usd REAL
+                total_cost_usd REAL,
+                dataset_name TEXT,
+                identification_precision REAL,
+                identification_recall REAL,
+                identification_f1 REAL,
+                location_accuracy REAL,
+                whole_provision_accuracy REAL,
+                insertion_application_rate REAL,
+                deletion_application_rate REAL,
+                substitution_application_rate REAL,
+                geometric_mean_application REAL
             )
-        """)
+        """
+        )
 
     def _create_amendments_table(self, cursor: sqlite3.Cursor) -> None:
         """Create the amendments table."""
-        cursor.execute("""
+        cursor.execute(
+            """
             CREATE TABLE IF NOT EXISTS amendments (
                 amendment_id TEXT PRIMARY KEY,
                 schedule_id TEXT,
@@ -424,14 +454,16 @@ class MetricsLogger:
                 identification_time_seconds REAL,
                 application_time_seconds REAL,
                 total_processing_time_seconds REAL,
-                success_status INTEGER,
+                application_status INTEGER,
                 FOREIGN KEY (schedule_id) REFERENCES schedules (schedule_id)
             )
-        """)
+        """
+        )
 
     def _create_prompts_table(self, cursor: sqlite3.Cursor) -> None:
         """Create the prompts table."""
-        cursor.execute("""
+        cursor.execute(
+            """
             CREATE TABLE IF NOT EXISTS prompts (
                 prompt_id TEXT PRIMARY KEY,
                 schedule_id TEXT,
@@ -450,7 +482,25 @@ class MetricsLogger:
                 FOREIGN KEY (schedule_id) REFERENCES schedules (schedule_id),
                 FOREIGN KEY (amendment_id) REFERENCES amendments (amendment_id)
             )
-        """)
+        """
+        )
+
+    def _create_ground_truth_table(self, cursor: sqlite3.Cursor) -> None:
+        """Create the ground_truth table."""
+        cursor.execute(
+            """
+            CREATE TABLE IF NOT EXISTS ground_truth (
+                ground_truth_id TEXT PRIMARY KEY,
+                dataset_name TEXT NOT NULL,
+                source TEXT NOT NULL,
+                source_eid TEXT NOT NULL,
+                type_of_amendment TEXT NOT NULL,
+                affected_provision TEXT NOT NULL,
+                location TEXT NOT NULL,
+                whole_provision INTEGER NOT NULL
+            )
+        """
+        )
 
     def _get_db_connection(self) -> sqlite3.Connection:
         """Get a connection to the SQLite database."""
@@ -474,8 +524,17 @@ class MetricsLogger:
         except (ValueError, TypeError):
             return None
 
-    def _calculate_success_rate(self, total_found: int, total_applied: int) -> Optional[float]:
-        """Calculate amendment success rate as a percentage."""
+    def _calculate_application_rate(self, total_found: int, total_applied: int) -> Optional[float]:
+        """
+        Calculate application rate as a percentage.
+
+        Args:
+            total_found: Total amendments identified
+            total_applied: Total amendments applied
+
+        Returns:
+            Application rate as percentage, or None if no amendments found
+        """
         if total_found > 0:
             return (total_applied / total_found) * 100
         return None
@@ -642,3 +701,470 @@ class MetricsLogger:
             and amendment_id in self._current_operations[schedule_id]["amendments"]
         ):
             del self._current_operations[schedule_id]["amendments"][amendment_id]
+
+    def load_ground_truth_if_needed(self, dataset_name: str, csv_path: str) -> None:
+        """Load pre-cleaned ground truth CSV into database if not already loaded."""
+        conn = self._get_db_connection()
+        cursor = conn.cursor()
+
+        # Check if already loaded
+        cursor.execute("SELECT COUNT(*) FROM ground_truth WHERE dataset_name = ?", (dataset_name,))
+        if cursor.fetchone()[0] > 0:
+            logger.debug(f"Ground truth '{dataset_name}' already loaded")
+            conn.close()
+            return
+
+        # Load CSV
+        import csv
+
+        # Generate unique IDs
+        import uuid
+
+        with open(csv_path, "r", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            loaded_count = 0
+
+            for row in reader:
+                cursor.execute(
+                    """
+                    INSERT OR IGNORE INTO ground_truth
+                    (ground_truth_id, dataset_name, source, source_eid, type_of_amendment,
+                    affected_provision, location, whole_provision)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                    """,
+                    (
+                        str(uuid.uuid4()),
+                        dataset_name,
+                        row["source"],
+                        row["source_eid"],
+                        row["type_of_amendment"],
+                        row["affected_provision"],
+                        row["location"],
+                        1 if row["whole_provision"].strip().upper() == "TRUE" else 0,
+                    ),
+                )
+                loaded_count += 1
+
+        conn.commit()
+        logger.info(f"Loaded {loaded_count} ground truth amendments for '{dataset_name}'")
+        conn.close()
+
+    def _auto_load_ground_truth(self) -> None:
+        """Auto-load any CSV files in the ground truth directory."""
+        ground_truth_dir = os.path.join(os.path.dirname(self.db_path), "ground_truth")
+
+        if not os.path.exists(ground_truth_dir):
+            logger.debug(f"Ground truth directory does not exist: {ground_truth_dir}")
+            return
+
+        for filename in os.listdir(ground_truth_dir):
+            if filename.endswith(".csv"):
+                # Remove .csv extension
+                dataset_name = filename[:-4]
+
+                csv_path = os.path.join(ground_truth_dir, filename)
+
+                try:
+                    self.load_ground_truth_if_needed(dataset_name, csv_path)
+                except Exception as e:
+                    logger.error(f"Failed to load ground truth {filename}: {e}")
+
+    def evaluate_schedule_accuracy(self, schedule_id: str, act_name: str) -> Dict[str, Any]:
+        """
+        Evaluate schedule accuracy against ground truth if available.
+
+        Args:
+            schedule_id: Schedule to evaluate
+            act_name: Name of the act being amended
+
+        Returns:
+            Dictionary of evaluation metrics (empty if no ground truth available)
+        """
+        # Try to match dataset based on act name
+        dataset_name = self._get_dataset_name_from_act(act_name)
+
+        if not dataset_name:
+            logger.debug(f"No ground truth dataset matched for act '{act_name}'")
+            return {}
+
+        conn = self._get_db_connection()
+        cursor = conn.cursor()
+
+        # Check if ground truth exists
+        cursor.execute("SELECT COUNT(*) FROM ground_truth WHERE dataset_name = ?", (dataset_name,))
+        if cursor.fetchone()[0] == 0:
+            logger.debug(f"No ground truth available for dataset '{dataset_name}'")
+            conn.close()
+            return {}
+
+        # Calculate identification metrics
+        ident_metrics = self._calculate_identification_metrics(cursor, schedule_id, dataset_name)
+
+        # Calculate metadata accuracy metrics (location, whole_provision)
+        metadata_metrics = self._calculate_metadata_accuracy(cursor, schedule_id, dataset_name)
+
+        # Calculate application rates (only for correctly identified amendments)
+        application_metrics = self._calculate_application_rates_by_type(cursor, schedule_id, dataset_name)
+
+        # Combine all metrics
+        all_metrics = {**ident_metrics, **metadata_metrics, **application_metrics}
+
+        # Update schedule record with metrics
+        self._update_schedule_evaluation_metrics(cursor, schedule_id, dataset_name, all_metrics)
+
+        conn.commit()
+
+        # Log results
+        self._log_evaluation_results(schedule_id, all_metrics)
+
+        conn.close()
+
+        return all_metrics
+
+    def _calculate_identification_metrics(
+        self, cursor: sqlite3.Cursor, schedule_id: str, dataset_name: str
+    ) -> Dict[str, Any]:
+        """
+        Calculate precision, recall, and F1 for amendment identification.
+
+        Also includes lists of false positives and false negatives for debugging.
+
+        Args:
+            cursor: Database cursor
+            schedule_id: Schedule to evaluate
+            dataset_name: Name of the ground truth dataset
+
+        Returns:
+            Dictionary containing precision, recall, F1, raw counts, and FP/FN details
+        """
+        # True positives: correctly identified amendments
+        cursor.execute(
+            """
+            SELECT COUNT(DISTINCT a.amendment_id)
+            FROM amendments a
+            JOIN ground_truth gt ON
+                a.source_eid = gt.source_eid
+                AND a.affected_provision = gt.affected_provision
+                AND LOWER(a.amendment_type) = LOWER(gt.type_of_amendment)
+            WHERE a.schedule_id = ? AND gt.dataset_name = ?
+        """,
+            (schedule_id, dataset_name),
+        )
+        true_positives = cursor.fetchone()[0]
+
+        # False positives: system amendments that don't match any ground truth in this dataset
+        cursor.execute(
+            """
+            SELECT COUNT(*)
+            FROM amendments a
+            WHERE a.schedule_id = ?
+            AND NOT EXISTS (
+                SELECT 1 FROM ground_truth gt
+                WHERE gt.dataset_name = ?
+                AND a.source_eid = gt.source_eid
+                AND a.affected_provision = gt.affected_provision
+                AND LOWER(a.amendment_type) = LOWER(gt.type_of_amendment)
+            )
+        """,
+            (schedule_id, dataset_name),
+        )
+        false_positives = cursor.fetchone()[0]
+
+        # False negatives: ground truth not found by system
+        cursor.execute(
+            """
+            SELECT COUNT(*)
+            FROM ground_truth gt
+            WHERE gt.dataset_name = ?
+            AND NOT EXISTS (
+                SELECT 1 FROM amendments a
+                WHERE a.schedule_id = ?
+                AND a.source_eid = gt.source_eid
+                AND a.affected_provision = gt.affected_provision
+                AND LOWER(a.amendment_type) = LOWER(gt.type_of_amendment)
+            )
+        """,
+            (dataset_name, schedule_id),
+        )
+        false_negatives = cursor.fetchone()[0]
+
+        # Get the false positive details
+        cursor.execute(
+            """
+            SELECT source_eid, affected_provision, amendment_type
+            FROM amendments a
+            WHERE a.schedule_id = ?
+            AND NOT EXISTS (
+                SELECT 1 FROM ground_truth gt
+                WHERE gt.dataset_name = ?
+                AND a.source_eid = gt.source_eid
+                AND a.affected_provision = gt.affected_provision
+                AND LOWER(a.amendment_type) = LOWER(gt.type_of_amendment)
+            )
+            ORDER BY source_eid
+        """,
+            (schedule_id, dataset_name),
+        )
+
+        false_positive_details = [f"{row[0]} -> {row[1]} ({row[2]})" for row in cursor.fetchall()]
+
+        # Get the false negative details
+        cursor.execute(
+            """
+            SELECT source_eid, affected_provision, type_of_amendment
+            FROM ground_truth gt
+            WHERE gt.dataset_name = ?
+            AND NOT EXISTS (
+                SELECT 1 FROM amendments a
+                WHERE a.schedule_id = ?
+                AND a.source_eid = gt.source_eid
+                AND a.affected_provision = gt.affected_provision
+                AND LOWER(a.amendment_type) = LOWER(gt.type_of_amendment)
+            )
+            ORDER BY source_eid
+        """,
+            (dataset_name, schedule_id),
+        )
+
+        false_negative_details = [f"{row[0]} -> {row[1]} ({row[2]})" for row in cursor.fetchall()]
+
+        # Calculate metrics
+        precision = true_positives / (true_positives + false_positives) if (true_positives + false_positives) > 0 else 0
+        recall = true_positives / (true_positives + false_negatives) if (true_positives + false_negatives) > 0 else 0
+        f1 = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0
+
+        return {
+            "precision": precision,
+            "recall": recall,
+            "f1": f1,
+            "true_positives": true_positives,
+            "false_positives": false_positives,
+            "false_negatives": false_negatives,
+            "false_positive_details": false_positive_details,
+            "false_negative_details": false_negative_details,
+        }
+
+    def _calculate_metadata_accuracy(
+        self, cursor: sqlite3.Cursor, schedule_id: str, dataset_name: str
+    ) -> Dict[str, float]:
+        """
+        Calculate accuracy of location and whole_provision metadata for correctly identified amendments.
+
+        Args:
+            cursor: Database cursor
+            schedule_id: Schedule to evaluate
+            dataset_name: Name of the ground truth dataset
+
+        Returns:
+            Dictionary containing location_accuracy and whole_provision_accuracy
+        """
+        # Location accuracy
+        cursor.execute(
+            """
+            SELECT
+                COUNT(CASE WHEN LOWER(a.location) = LOWER(gt.location) THEN 1 END) as correct_location,
+                COUNT(*) as total_matched
+            FROM amendments a
+            JOIN ground_truth gt ON
+                a.source_eid = gt.source_eid
+                AND a.affected_provision = gt.affected_provision
+                AND LOWER(a.amendment_type) = LOWER(gt.type_of_amendment)
+            WHERE a.schedule_id = ? AND gt.dataset_name = ?
+        """,
+            (schedule_id, dataset_name),
+        )
+        row = cursor.fetchone()
+        location_accuracy = row[0] / row[1] if row[1] > 0 else 0
+
+        # Whole provision accuracy
+        cursor.execute(
+            """
+            SELECT
+                COUNT(CASE WHEN a.whole_provision = gt.whole_provision THEN 1 END) as correct_whole,
+                COUNT(*) as total_matched
+            FROM amendments a
+            JOIN ground_truth gt ON
+                a.source_eid = gt.source_eid
+                AND a.affected_provision = gt.affected_provision
+                AND LOWER(a.amendment_type) = LOWER(gt.type_of_amendment)
+            WHERE a.schedule_id = ? AND gt.dataset_name = ?
+        """,
+            (schedule_id, dataset_name),
+        )
+        row = cursor.fetchone()
+        whole_provision_accuracy = row[0] / row[1] if row[1] > 0 else 0
+
+        return {"location_accuracy": location_accuracy, "whole_provision_accuracy": whole_provision_accuracy}
+
+    def _calculate_application_rates_by_type(
+        self, cursor: sqlite3.Cursor, schedule_id: str, dataset_name: str
+    ) -> Dict[str, float]:
+        """
+        Calculate application rates by amendment type for correctly identified amendments only.
+
+        Note: This measures whether the system successfully applied amendments without errors,
+        not whether those applications are semantically correct (which would require manual
+        verification of the actual text transformations).
+
+        Args:
+            cursor: Database cursor
+            schedule_id: Schedule to evaluate
+            dataset_name: Name of the ground truth dataset
+
+        Returns:
+            Dictionary containing application rates by type and geometric mean
+        """
+        # Get application rates only for amendments that match ground truth
+        cursor.execute(
+            """
+            SELECT
+                LOWER(a.amendment_type) as type_normalized,
+                SUM(CASE WHEN a.application_status = 1 THEN 1 ELSE 0 END) as successful,
+                COUNT(*) as total
+            FROM amendments a
+            JOIN ground_truth gt ON
+                a.source_eid = gt.source_eid
+                AND a.affected_provision = gt.affected_provision
+                AND LOWER(a.amendment_type) = LOWER(gt.type_of_amendment)
+            WHERE a.schedule_id = ? AND gt.dataset_name = ?
+            GROUP BY LOWER(a.amendment_type)
+        """,
+            (schedule_id, dataset_name),
+        )
+
+        application_rates = {}
+        for row in cursor.fetchall():
+            type_name = row[0] if row[0] else "unknown"
+            rate = row[1] / row[2] if row[2] > 0 else 0
+            application_rates[f"{type_name}_application_rate"] = rate
+
+        # Calculate geometric mean of application rates
+        rates_list = [v for v in application_rates.values() if v > 0]
+        geometric_mean = math.pow(math.prod(rates_list), 1 / len(rates_list)) if rates_list else 0
+
+        return {**application_rates, "geometric_mean_application": geometric_mean}
+
+    def _update_schedule_evaluation_metrics(
+        self, cursor: sqlite3.Cursor, schedule_id: str, dataset_name: str, metrics: Dict[str, float]
+    ) -> None:
+        """
+        Update the schedules table with evaluation metrics.
+
+        Args:
+            cursor: Database cursor
+            schedule_id: Schedule to update
+            dataset_name: Name of the ground truth dataset
+            metrics: Dictionary of calculated metrics
+
+        Returns:
+            None
+        """
+        cursor.execute(
+            """
+            UPDATE schedules SET
+                dataset_name = ?,
+                identification_precision = ?,
+                identification_recall = ?,
+                identification_f1 = ?,
+                location_accuracy = ?,
+                whole_provision_accuracy = ?,
+                insertion_application_rate = ?,
+                deletion_application_rate = ?,
+                substitution_application_rate = ?,
+                geometric_mean_application = ?
+            WHERE schedule_id = ?
+        """,
+            (
+                dataset_name,
+                metrics.get("precision", 0),
+                metrics.get("recall", 0),
+                metrics.get("f1", 0),
+                metrics.get("location_accuracy", 0),
+                metrics.get("whole_provision_accuracy", 0),
+                metrics.get("insertion_application_rate", 0),
+                metrics.get("deletion_application_rate", 0),
+                metrics.get("substitution_application_rate", 0),
+                metrics.get("geometric_mean_application", 0),
+                schedule_id,
+            ),
+        )
+
+    def _log_evaluation_results(self, schedule_id: str, metrics: Dict[str, float]) -> None:
+        """
+        Log evaluation results to the logger.
+
+        Args:
+            schedule_id: Schedule that was evaluated
+            metrics: Dictionary of calculated metrics
+
+        Returns:
+            None
+        """
+        # Log the summary
+        logger.info(
+            f"Evaluation for schedule {schedule_id}: "
+            f"Precision={metrics.get('precision', 0):.3f}, "
+            f"Recall={metrics.get('recall', 0):.3f}, "
+            f"F1={metrics.get('f1', 0):.3f}, "
+            f"Location Acc={metrics.get('location_accuracy', 0):.3f}, "
+            f"Whole Provision Acc={metrics.get('whole_provision_accuracy', 0):.3f}, "
+            f"Geometric Mean App={metrics.get('geometric_mean_application', 0):.3f} "
+            f"(TP={metrics.get('true_positives', 0)}, "
+            f"FP={metrics.get('false_positives', 0)}, "
+            f"FN={metrics.get('false_negatives', 0)})"
+        )
+
+        # Log false positive details if present
+        fp_details = metrics.get("false_positive_details", [])
+        if fp_details:
+            logger.info(f"  False positives ({len(fp_details)}):")
+            for detail in fp_details:
+                logger.info(f"    - {detail}")
+
+        # Log false negative details if present
+        fn_details = metrics.get("false_negative_details", [])
+        if fn_details:
+            logger.info(f"  False negatives ({len(fn_details)}):")
+            for detail in fn_details:
+                logger.info(f"    - {detail}")
+
+    def _get_dataset_name_from_act(self, act_name: str) -> Optional[str]:
+        """
+        Match act name to available ground truth datasets using normalisation.
+
+        Args:
+            act_name: Name of the act being amended
+
+        Returns:
+            Dataset name if matched, None otherwise
+        """
+
+        def normalise(text: str) -> str:
+            """Normalise text for matching."""
+            # Convert to lowercase, remove special chars, compress spaces
+            normalised = text.lower()
+            normalised = re.sub(r"[^\w\s]", "", normalised)
+            normalised = re.sub(r"\s+", "_", normalised)
+            return normalised.strip("_")
+
+        # Normalise the act name
+        normalised_act = normalise(act_name)
+
+        # Remove "act" for better matching
+        normalised_act = re.sub(r"_act_|_act$|^act_", "_", normalised_act)
+        normalised_act = re.sub(r"_+", "_", normalised_act).strip("_")
+
+        # Get available ground truth datasets
+        conn = self._get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("SELECT DISTINCT dataset_name FROM ground_truth")
+        datasets = [row[0] for row in cursor.fetchall()]
+        conn.close()
+
+        # Check if normalised act name is contained in any dataset name
+        for dataset in datasets:
+            if normalised_act in dataset:
+                logger.debug(f"Matched act '{act_name}' (normalised: '{normalised_act}') to dataset '{dataset}'")
+                return dataset
+
+        return None

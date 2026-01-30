@@ -2,7 +2,6 @@
 """
 Unit tests for AmendmentProcessor class that handles applying amendments to XML documents.
 """
-
 import unittest
 from unittest.mock import Mock, patch
 from lxml import etree
@@ -1642,7 +1641,8 @@ class TestEachPlaceAmendments(unittest.TestCase):
     def test_apply_each_place_amendment_success(self):
         """Test successful application of each place amendment."""
         # Create XML with multiple occurrences
-        working_tree = self.create_test_xml("""
+        working_tree = self.create_test_xml(
+            """
             <section eId="sec_1" class="prov1">
                 <heading>Test Section</heading>
                 <subsection eId="sec_1__subsec_1" class="prov2">
@@ -1651,13 +1651,16 @@ class TestEachPlaceAmendments(unittest.TestCase):
                     </content>
                 </subsection>
             </section>
-        """)
+        """
+        )
 
-        amending_tree = self.create_test_xml("""
+        amending_tree = self.create_test_xml(
+            """
             <section eId="sec_25">
                 <content><p>Amendment text</p></content>
             </section>
-        """)
+        """
+        )
 
         amendment = Amendment(
             source_eid="sec_25",
@@ -1741,11 +1744,13 @@ class TestEachPlaceAmendments(unittest.TestCase):
 
     def test_apply_each_place_amendment_pattern_not_found(self):
         """Test when the pattern is not found in the text."""
-        working_tree = self.create_test_xml("""
+        working_tree = self.create_test_xml(
+            """
             <section eId="sec_1">
                 <content><p>This is some text without the pattern.</p></content>
             </section>
-        """)
+        """
+        )
         amending_tree = self.create_test_xml("<section eId='sec_25'><p>Amendment</p></section>")
 
         amendment = Amendment(
@@ -2923,7 +2928,8 @@ class TestEachPlaceAmendments(unittest.TestCase):
 
     def test_each_place_deletion_integration(self):
         """Integration test for deletion across multiple elements."""
-        working_tree = self.create_test_xml("""
+        working_tree = self.create_test_xml(
+            """
             <section eId="sec_1">
                 <subsection eId="sec_1__subsec_1">
                     <content>
@@ -2931,7 +2937,8 @@ class TestEachPlaceAmendments(unittest.TestCase):
                     </content>
                 </subsection>
             </section>
-        """)
+        """
+        )
 
         amending_tree = self.create_test_xml("<section eId='sec_25'><p>Amendment</p></section>")
 
@@ -2963,13 +2970,15 @@ class TestEachPlaceAmendments(unittest.TestCase):
 
     def test_each_place_insertion_integration(self):
         """Integration test for insertion pattern."""
-        working_tree = self.create_test_xml("""
+        working_tree = self.create_test_xml(
+            """
             <section eId="sec_1">
                 <content>
                     <p>Insert after this text and after this text too.</p>
                 </content>
             </section>
-        """)
+        """
+        )
 
         amending_tree = self.create_test_xml("<section eId='sec_25'><p>Amendment</p></section>")
 

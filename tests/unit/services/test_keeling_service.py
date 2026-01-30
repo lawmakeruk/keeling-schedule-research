@@ -2,7 +2,6 @@
 """
 Unit tests for the KeelingService class.
 """
-
 from unittest.mock import Mock, patch, ANY, MagicMock
 from concurrent.futures import Future
 import pytest
@@ -10,6 +9,7 @@ from lxml import etree
 
 from app.services.keeling_service import KeelingService
 from app.models.amendments import Amendment, AmendmentType, AmendmentLocation
+
 
 # ==================== Concurrent Testing Helpers ====================
 
@@ -163,6 +163,7 @@ class TestKeelingService:
             act_name="Test Act 2020",
             model_id="gpt-4",
             service_id="gpt-4",
+            max_worker_threads=256,
             bill_xml_size=1000,
             act_xml_size=None,
         )
@@ -1251,6 +1252,76 @@ class TestKeelingService:
         ]
         assert len(skipped_calls) == 1
         assert skipped_calls[0][1]["reason"] == "NO_AMENDMENTS_FOUND"
+
+    def test_identify_single_candidate_filters_other_acts(self, mock_llm_kernel, mock_dependencies):
+        """Test that amendments to other acts are filtered out and logged."""
+        service = KeelingService(mock_llm_kernel)
+
+        # Mock LLM response with amendments to multiple acts
+        csv_response = (
+            "source_eid,source,type_of_amendment,whole_provision,location,"
+            "affected_document,affected_provision\n"
+            "sec_1,s. 1,INSERTION,true,AFTER,Test Act,sec_10\n"
+            "sec_1,s. 1,DELETION,false,REPLACE,Test Act,sec_11\n"
+            "sec_1,s. 1,SUBSTITUTION,true,REPLACE,Other Act 2000,sec_20\n"
+            "sec_1,s. 1,INSERTION,false,BEFORE,Different Act 1999,sec_30\n"
+            "sec_1,s. 1,DELETION,true,REPLACE,Another Act 2010,sec_40"
+        )
+
+        mock_llm_kernel.run_inference.return_value = csv_response
+
+        # Mock the metrics logger to avoid database operations
+        with patch("app.services.keeling_service.logger") as mock_logger:
+            with patch("app.services.keeling_service.event") as mock_event:
+                result = service._identify_single_candidate(
+                    "<section>content</section>", "sec_1", "Test Act", "schedule-123"
+                )
+
+        # Should return only amendments for "Test Act"
+        assert len(result) == 2
+        assert all(a.affected_document == "Test Act" for a in result)
+
+        # Verify the INFO log about filtering was called
+        info_calls = [call for call in mock_logger.info.call_args_list]
+        filtering_log = None
+        for call in info_calls:
+            if "filtered out" in str(call):
+                filtering_log = call
+                break
+
+        assert filtering_log is not None
+        log_message = str(filtering_log[0][0])
+
+        # Check the log message contains expected information
+        assert "Candidate sec_1" in log_message
+        assert "identified 2 amendments to Test Act" in log_message
+        assert "filtered out 3 amendments to other acts" in log_message
+        assert "Other Act 2000" in log_message
+        assert "Different Act 1999" in log_message
+        assert "Another Act 2010" in log_message
+
+        # Verify CANDIDATE_IDENTIFIED event shows correct counts
+        identified_calls = [
+            call
+            for call in mock_event.call_args_list
+            if len(call[0]) >= 2 and hasattr(call[0][1], "value") and call[0][1].value == "CANDIDATE_IDENTIFIED"
+        ]
+        assert len(identified_calls) == 1
+        assert identified_calls[0][1]["amendments"] == 2  # Only target act amendments
+        assert identified_calls[0][1]["total_identified"] == 5  # All amendments found
+        assert identified_calls[0][1]["filtered_out"] == 3  # Non-target amendments
+
+        # Verify only target act amendments were logged to metrics
+        # The metrics_logger is mocked via mock_dependencies
+        assert service.metrics_logger.log_amendment.call_count == 2
+
+        # Verify the calls were for the correct amendments (only Test Act ones)
+        calls = service.metrics_logger.log_amendment.call_args_list
+        for call in calls:
+            # Each call should have affected_provision for Test Act amendments
+            kwargs = call[1] if len(call) > 1 else call[0][0] if call[0] else {}
+            if isinstance(kwargs, dict) and "affected_provision" in kwargs:
+                assert kwargs["affected_provision"] in ["sec_10", "sec_11"]
 
     def test_fetch_llm_responses_parallel_group_with_only_failures(self, mock_llm_kernel, mock_dependencies):
         """Test when a group returns failures but no successful responses."""

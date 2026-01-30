@@ -5,10 +5,10 @@ Service that provides utility methods for document types.
 Handles the classification of legislative documents by jurisdiction and type
 based on their document type codes used in UK legislation XML.
 """
-
 from enum import Enum
 from typing import Dict, Optional, Any
 from lxml import etree
+
 
 # ==================== Enumerations ====================
 

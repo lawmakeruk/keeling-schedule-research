@@ -5,10 +5,10 @@ Models for representing legislative amendments and their types.
 Provides enums for amendment locations and types, and a dataclass for
 representing complete amendments with their metadata.
 """
-
 from dataclasses import dataclass, field
 from enum import Enum
 from typing import Optional, Dict, Any, List
+
 
 # ==================== Enumerations ====================
 

@@ -34,3 +34,15 @@ logs/
 
 # Benchmarking data
 benchmarking_data/
+
+# Internal / infrastructure (excluded from research repo)
+Jenkinsfile
+docker/
+helm/
+scripts/set_aws_temp_credentials.sh
+scripts/test_endpoints.py
+scripts/test_keeling_schedule.py
+scripts/test_semantic_kernel.py
+scripts/update_tls_secrets.sh
+scripts/update_tls_secrets_cloudshell.sh
+scripts/apply_csv_amendments_to_amending_bill.py

@@ -2,7 +2,6 @@
 """
 Unit tests for XMLHandler class that manages XML document operations.
 """
-
 import os
 import tempfile
 import threading

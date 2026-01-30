@@ -4,7 +4,6 @@ Service for processing legislative amendments to create Keeling schedules.
 Identifies amendments in amending bills and applies them to target acts
 using parallel processing for LLM calls and sequential processing for XML modifications.
 """
-
 import time
 import uuid
 import copy
@@ -129,6 +128,7 @@ class KeelingService:
                 act_name=act_name,
                 model_id=model_id,
                 service_id=service_id,
+                max_worker_threads=self.MAX_WORKERS,
                 bill_xml_size=bill_xml_size,
                 act_xml_size=None,  # Will be updated in apply_amendments
             )
@@ -547,14 +547,42 @@ class KeelingService:
             # Calculate identification time
             ident_duration = time.time() - start_time
 
-            # Convert to Amendment objects and log
+            # Track statistics for logging
+            other_act_amendments = []
+            target_act_count = 0
+
+            # First pass: analyse what was returned
+            for data in amendment_data_list:
+                amendment = Amendment.from_dict(data)
+                if amendment.affected_document.lower() == act_name.lower():
+                    target_act_count += 1
+                else:
+                    other_act_amendments.append(amendment.affected_document)
+
+            # Log filtering statistics if amendments to other acts were found
+            if other_act_amendments:
+                unique_other_acts = list(set(other_act_amendments))
+                logger.info(
+                    f"Candidate {provision_eid}: identified {target_act_count} amendments to {act_name}, "
+                    f"filtered out {len(other_act_amendments)} amendments to other acts: {', '.join(unique_other_acts)}"
+                )
+
+            # Second pass: create and log only target act amendments
             amendments = []
             for data in amendment_data_list:
-                # Generate amendment ID
+                # Create Amendment object to check affected_document
+                amendment = Amendment.from_dict(data)
+
+                # Filter out amendments whose affected_document is not the target act
+                if amendment.affected_document.lower() != act_name.lower():
+                    continue
+
+                # Generate amendment ID only for valid amendments
                 amendment_id = str(uuid.uuid4())
                 data["amendment_id"] = amendment_id
+                amendment.amendment_id = amendment_id
 
-                # Log the amendment
+                # Log the amendment (only for target act)
                 self.metrics_logger.log_amendment(
                     schedule_id=schedule_id,
                     amendment_id=amendment_id,
@@ -565,19 +593,20 @@ class KeelingService:
                     amendment_type=data.get("type_of_amendment", ""),
                     whole_provision=data.get("whole_provision", False),
                     identification_time_seconds=(
-                        ident_duration / len(amendment_data_list) if amendment_data_list else ident_duration
+                        ident_duration / target_act_count if target_act_count else ident_duration
                     ),
                 )
 
-                # Create Amendment object
-                amendment = Amendment.from_dict(data)
-
-                # Filter out amendments whose affected_document is not the target act
-                if amendment.affected_document.lower() == act_name.lower():
-                    amendments.append(amendment)
+                amendments.append(amendment)
 
             with bind(schedule_id=schedule_id, candidate_eid=provision_eid):
-                event(logger, EVT.CANDIDATE_IDENTIFIED, amendments=len(amendment_data_list))
+                event(
+                    logger,
+                    EVT.CANDIDATE_IDENTIFIED,
+                    amendments=len(amendments),
+                    total_identified=len(amendment_data_list),
+                    filtered_out=len(amendment_data_list) - len(amendments),
+                )
 
             return amendments
 

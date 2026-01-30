@@ -3,7 +3,6 @@
 Handles all XML operations for legislative documents including loading, saving,
 normalisation, and element manipulation.
 """
-
 import copy
 import re
 import threading

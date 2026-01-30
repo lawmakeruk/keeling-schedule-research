@@ -4,7 +4,6 @@ API routes for the Keeling Schedule Service.
 
 Provides endpoints for health checks and Keeling schedule generation.
 """
-
 import os
 import tempfile
 import uuid
@@ -241,6 +240,9 @@ def _process_keeling_schedule(bill_xml: str, act_xml: str, act_name: str, schedu
 
         # Apply amendments
         keeling_service.apply_amendments(act_path, amendments, output_path, schedule_id)
+
+        # Evaluate accuracy if ground truth is available
+        keeling_service.metrics_logger.evaluate_schedule_accuracy(schedule_id, act_name)
 
         # Build the amendments table
         table_of_amendments = [
