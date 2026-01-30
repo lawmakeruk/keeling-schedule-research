@@ -497,8 +497,8 @@ def _parse_amendment_rows(reader: csv.DictReader, required_cols: set) -> List[Di
     for row_num, row in enumerate(reader, start=1):
         try:
             cleaned_row = _process_amendment_row(row, required_cols, row_num)
-            # Apply post-processing fixes
-            cleaned_row = _post_process_amendment(cleaned_row)
+            # ABLATION: eId correction disabled
+            # cleaned_row = _post_process_amendment(cleaned_row)
             amendments.append(cleaned_row)
         except Exception as e:
             logger.error(f"Error parsing CSV row {row_num}: {e}")
@@ -534,8 +534,9 @@ def _process_amendment_row(row: Dict[str, str], required_cols: set, row_num: int
             raise ValueError(f"Row {row_num}: Missing required field '{col}'")
 
     # Normalise eIds to match XML normalisation
-    cleaned_row["affected_provision"] = _normalise_eid_string(cleaned_row["affected_provision"])
-    cleaned_row["source_eid"] = _normalise_eid_string(cleaned_row["source_eid"])
+    # ABLATION: eId normalisation disabled - keeping raw values
+    # cleaned_row["affected_provision"] = _normalise_eid_string(cleaned_row["affected_provision"])
+    # cleaned_row["source_eid"] = _normalise_eid_string(cleaned_row["source_eid"])
 
     # Convert other types
     cleaned_row["whole_provision"] = cleaned_row["whole_provision"].lower() == "true"

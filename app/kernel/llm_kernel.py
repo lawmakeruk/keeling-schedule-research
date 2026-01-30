@@ -166,7 +166,9 @@ class LLMKernel:
                         total_tokens,
                     )
 
-                return self._clean_response(assistant_text)
+                # ABLATION: Response post-processing disabled
+                # return self._clean_response(assistant_text)
+                return assistant_text
             else:
                 # Error message from retry handler
                 event(logger, EVT.LLM_RESPONSE, "LLM inference failed", prompt_name=prompt_name, error=str(result))
