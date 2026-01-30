@@ -11,7 +11,6 @@ This processor is responsible for:
 4. Ensuring proper change tracking markup is applied
 5. Inserting error comments for failed amendments
 """
-
 import copy
 import re
 

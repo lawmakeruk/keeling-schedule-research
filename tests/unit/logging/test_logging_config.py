@@ -1,6 +1,5 @@
 # tests/unit/logging/test_logging_config.py
 """Tests for debug logging configuration."""
-
 import sys
 import pytest
 

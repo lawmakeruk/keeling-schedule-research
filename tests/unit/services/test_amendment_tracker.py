@@ -2,7 +2,6 @@
 """
 Unit tests for AmendmentTracker class that manages amendment lifecycle tracking.
 """
-
 import threading
 import time
 from unittest import TestCase
@@ -145,7 +144,7 @@ class TestAmendmentTracker(TestCase):
 
         # Check logger was called
         mock_logger.update_amendment_application.assert_called_once_with(
-            amendment_id="test-001", application_time_seconds=2.0, success_status=True
+            amendment_id="test-001", application_time_seconds=2.0, application_status=True
         )
 
     def test_mark_failed(self):
@@ -173,7 +172,7 @@ class TestAmendmentTracker(TestCase):
 
         # Check logger was called with failure
         mock_logger.update_amendment_application.assert_called_once_with(
-            amendment_id="test-001", application_time_seconds=1.5, success_status=False
+            amendment_id="test-001", application_time_seconds=1.5, application_status=False
         )
 
     def test_mark_error_commented(self):

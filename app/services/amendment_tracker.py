@@ -3,7 +3,6 @@
 Tracks the lifecycle of amendments from identification through application,
 ensuring complete accountability and no silent failures.
 """
-
 import threading
 from typing import Dict, List, Optional, Any, Set
 from enum import Enum
@@ -254,7 +253,7 @@ class AmendmentTracker:
         # Update MetricsLogger if available
         if self.metrics_logger and processing_time is not None:
             self.metrics_logger.update_amendment_application(
-                amendment_id=amendment_id, application_time_seconds=processing_time, success_status=True
+                amendment_id=amendment_id, application_time_seconds=processing_time, application_status=True
             )
 
         return True
@@ -316,7 +315,7 @@ class AmendmentTracker:
         # Update MetricsLogger if available
         if self.metrics_logger and processing_time is not None:
             self.metrics_logger.update_amendment_application(
-                amendment_id=amendment_id, application_time_seconds=processing_time, success_status=False
+                amendment_id=amendment_id, application_time_seconds=processing_time, application_status=False
             )
 
         logger.error(f"Amendment {amendment_id} failed: {error_message}")

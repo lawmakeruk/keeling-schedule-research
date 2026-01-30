@@ -5,7 +5,6 @@ Utilities for tracking Keeling Schedule generation progress from log files.
 Provides log parsing to extract the latest status of a schedule
 generation process by reading debug logs from the end backwards.
 """
-
 import re
 from datetime import datetime
 from pathlib import Path

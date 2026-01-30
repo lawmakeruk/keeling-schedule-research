@@ -1,6 +1,5 @@
 # app/logging/_config.py
 """Configuration for debug logging system."""
-
 from pathlib import Path
 import os
 

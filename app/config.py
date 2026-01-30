@@ -1,6 +1,5 @@
 # app/config.py
 """Configuration settings for the Keeling Schedule Service."""
-
 import os
 
 

@@ -25,6 +25,7 @@ from typing import Any
 
 from ._config import BLOB_DIR, INCLUDE_STACK_TRACES, MAX_FIELD_LENGTH
 
+
 # ==================== Event Types ====================
 
 

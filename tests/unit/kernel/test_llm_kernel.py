@@ -2,7 +2,6 @@
 """
 Unit tests for the LLMKernel class.
 """
-
 import threading
 from unittest.mock import Mock, patch, AsyncMock
 import pytest

@@ -4,7 +4,6 @@ Keeling Schedule Service Flask Application.
 Provides the application factory for creating Flask instances with proper
 configuration for running behind a TLS-terminating proxy.
 """
-
 import os
 from flask import Flask
 from app.logging import debug_logger

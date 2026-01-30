@@ -3,7 +3,6 @@
 Utility functions for the Keeling service.
 Handles data transformations and common operations.
 """
-
 import csv
 import io
 import logging
@@ -710,11 +709,9 @@ def _fix_provision_nesting_in_eid(eid: str) -> str:
     """
     Fix common nesting errors in eIds based on provision type.
 
-    For schedules:
-    - sched_1__para_1__subpara_a -> sched_1__para_1__para_a (letters should be para)
-
-    For other provisions (sec, reg, art, rule):
-    - reg_2__para_1__para_a -> reg_2__para_1__subpara_a (letters should be subpara)
+    For all provisions (schedules, sections, regulations):
+    - Letters should be 'para': reg_2__para_1__para_a (not subpara_a)
+    - Roman numerals should be 'subpara': reg_2__para_1__para_a__subpara_i
 
     Args:
         eid: Element ID to fix
@@ -732,11 +729,11 @@ def _fix_provision_nesting_in_eid(eid: str) -> str:
         if eid != original:
             logger.debug(f"Fixed schedule nesting: {original} -> {eid}")
 
-    # Fix other provision nesting (para -> subpara for letters)
+    # Fix other provision nesting (subpara -> para for letters)
     elif any(eid.startswith(prefix) for prefix in ["sec_", "reg_", "art_", "rule_"]):
-        # Pattern: [type]_X__para_Y__para_[letter] (should be subpara)
-        pattern = r"((?:sec|reg|art|rule)_\d+[A-Za-z]?__para_\d+[A-Za-z]?)__para_([a-z])(?=__|$)"
-        eid = re.sub(pattern, r"\1__subpara_\2", eid)
+        # Pattern: [type]_X__para_Y__subpara_[letter] (should be para)
+        pattern = r"((?:sec|reg|art|rule)_\d+[A-Za-z]?__para_\d+[A-Za-z]?)__subpara_([a-z])(?=__|$)"
+        eid = re.sub(pattern, r"\1__para_\2", eid)
         if eid != original:
             logger.debug(f"Fixed provision nesting: {original} -> {eid}")
 

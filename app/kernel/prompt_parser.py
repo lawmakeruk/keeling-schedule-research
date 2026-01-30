@@ -6,7 +6,6 @@ Handles extraction and parsing of prompt templates from KernelFunction objects,
 supporting custom <message> tags for structured chat conversations. Provides
 variable substitution and conversion to the format expected by LLM APIs.
 """
-
 import re
 from typing import Dict, List, Tuple
 
