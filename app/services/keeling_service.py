@@ -10,7 +10,6 @@ import copy
 import concurrent.futures
 from typing import List, Dict, Tuple, Optional, Any
 from lxml import etree
-import json
 import csv
 from io import StringIO
 
@@ -146,8 +145,9 @@ class KeelingService:
             # Store target act as instance variable for use in amendment expansion
             self._target_act = target_act
 
-            self._eid_patterns = self.xml_handler.extract_eid_patterns(target_act)
-            logger.info(f"Extracted eId patterns from target Act for schedule {schedule_id}")
+            # ABLATION: eId pattern extraction disabled
+            # self._eid_patterns = self.xml_handler.extract_eid_patterns(target_act)
+            # logger.info(f"Extracted eId patterns from target Act for schedule {schedule_id}")
 
             # Create a simplified copy for identification only
             simplified_bill = copy.deepcopy(self._amending_bill)
@@ -205,20 +205,30 @@ class KeelingService:
             # Sort all amendments by document order
             sorted_amendments = sort_amendments_by_affected_provision(amendments)
 
-            # Phase 1: Extract and validate patterns for "each place" amendments
-            validated_patterns, pattern_failures = self._extract_and_validate_patterns(sorted_amendments, schedule_id)
+            # ABLATION: Each place pattern extraction disabled
+            # # Phase 1: Extract and validate patterns for "each place" amendments
+            # validated_patterns, pattern_failures = self._extract_and_validate_patterns(sorted_amendments, schedule_id)
+            validated_patterns = {}
 
             # Separate amendments by processing order
             # Validated "Each place" amendments must be applied last to avoid being overwritten
             each_place_validated = []
             amendments_to_apply_first = []
 
-            for amendment in sorted_amendments:
-                aid = get_amendment_id(amendment)
-                if amendment.location == AmendmentLocation.EACH_PLACE and aid in validated_patterns:
-                    each_place_validated.append(amendment)
-                else:
-                    amendments_to_apply_first.append(amendment)
+            # ABLATION: Each place separation disabled
+            # # Separate amendments by processing order
+            # # Validated "Each place" amendments must be applied last to avoid being overwritten
+            # each_place_validated = []
+            # amendments_to_apply_first = []
+            #
+            # for amendment in sorted_amendments:
+            #     aid = get_amendment_id(amendment)
+            #     if amendment.location == AmendmentLocation.EACH_PLACE and aid in validated_patterns:
+            #         each_place_validated.append(amendment)
+            #     else:
+            #         amendments_to_apply_first.append(amendment)
+            each_place_validated = []
+            amendments_to_apply_first = sorted_amendments  # Process all normally - no each place
 
             logger.info(
                 f"Processing order: {len(amendments_to_apply_first)} regular amendments first, "
@@ -242,11 +252,12 @@ class KeelingService:
             for amendment in amendments_to_apply_first:
                 self._apply_single_amendment(amendment, output_act, schedule_id, llm_responses, validated_patterns)
 
-            # Phase 5: Apply validated "each place" amendments last
-            if each_place_validated:
-                logger.info(f"Applying {len(each_place_validated)} validated 'each place' amendments last")
-                for amendment in each_place_validated:
-                    self._apply_single_amendment(amendment, output_act, schedule_id, {}, validated_patterns)
+            # ABLATION: Each place final application disabled
+            # # Phase 5: Apply validated "each place" amendments last
+            # if each_place_validated:
+            #     logger.info(f"Applying {len(each_place_validated)} validated 'each place' amendments last")
+            #     for amendment in each_place_validated:
+            #         self._apply_single_amendment(amendment, output_act, schedule_id, {}, validated_patterns)
 
             # Insert error comments for any failed amendments
             self.amendment_processor.insert_all_error_comments(output_act, self.amendment_tracker)
@@ -374,27 +385,28 @@ class KeelingService:
         if self._element_mentions_act(element, act_name):
             return "text"
 
-        # Check ancestors
-        current = element.getparent()
-        while current is not None:
-            if self._is_provision(current) and self._element_mentions_act(current, act_name):
-                logger.debug(f"Found act mention in ancestor of {element.get('eId', '')}")
-                return "ancestor"
-            current = current.getparent()
+        # ABLATION: Ancestor and sibling checking disabled
+        # # Check ancestors
+        # current = element.getparent()
+        # while current is not None:
+        #     if self._is_provision(current) and self._element_mentions_act(current, act_name):
+        #         logger.debug(f"Found act mention in ancestor of {element.get('eId', '')}")
+        #         return "ancestor"
+        #     current = current.getparent()
 
-        # Check preceding siblings
-        parent = element.getparent()
-        if parent is not None:
-            for sibling in parent:
-                if sibling == element:
-                    break  # Stop at current element
-
-                if self._is_provision(sibling) and self._element_mentions_act(sibling, act_name):
-                    sibling_text = self.xml_handler.get_text_content(sibling, exclude_quoted=True)
-                    # For siblings, also check if they have context patterns
-                    if any(pattern in sibling_text.lower() for pattern in self.CONTEXT_PATTERNS):
-                        logger.debug(f"Found act mention in preceding sibling of {element.get('eId', '')}")
-                        return "sibling"
+        # # Check preceding siblings
+        # parent = element.getparent()
+        # if parent is not None:
+        #     for sibling in parent:
+        #         if sibling == element:
+        #             break  # Stop at current element
+        #
+        #         if self._is_provision(sibling) and self._element_mentions_act(sibling, act_name):
+        #             sibling_text = self.xml_handler.get_text_content(sibling, exclude_quoted=True)
+        #             # For siblings, also check if they have context patterns
+        #             if any(pattern in sibling_text.lower() for pattern in self.CONTEXT_PATTERNS):
+        #                 logger.debug(f"Found act mention in preceding sibling of {element.get('eId', '')}")
+        #                 return "sibling"
 
         return None
 
@@ -536,7 +548,9 @@ class KeelingService:
                 provision_eid,
                 act_name=act_name,
                 xml_provision=xml_provision,
-                eid_patterns=json.dumps(self._eid_patterns) if self._eid_patterns else "{}",
+                # ABLATION: eId pattern injection disabled
+                # eid_patterns=json.dumps(self._eid_patterns) if self._eid_patterns else "{}",
+                eid_patterns="{}",
             )
 
             # Parse CSV response with target act for range expansion
@@ -650,15 +664,16 @@ class KeelingService:
             logger.info("Preprocessing stage 1: Simplifying amending bill")
             self.xml_handler.simplify_amending_bill(bill_tree)
 
-            # Stage 2: Inject crossheading context
-            logger.info("Preprocessing stage 2: Injecting crossheading context")
-            crossheading_count = self._inject_crossheading_context(bill_tree)
-            logger.info(f"Injected crossheading context into {crossheading_count} provisions")
+            # ABLATION: Context injection disabled
+            # # Stage 2: Inject crossheading context
+            # logger.info("Preprocessing stage 2: Injecting crossheading context")
+            # crossheading_count = self._inject_crossheading_context(bill_tree)
+            # logger.info(f"Injected crossheading context into {crossheading_count} provisions")
 
-            # Stage 3: Context injection for regulation/section patterns
-            logger.info("Preprocessing stage 3: Context injection for regulation patterns")
-            injected_count = self._inject_document_context(bill_tree, act_name, schedule_id)
-            logger.info(f"Context injection complete: modified {injected_count} provisions")
+            # # Stage 3: Context injection for regulation/section patterns
+            # logger.info("Preprocessing stage 3: Context injection for regulation patterns")
+            # injected_count = self._inject_document_context(bill_tree, act_name, schedule_id)
+            # logger.info(f"Context injection complete: modified {injected_count} provisions")
 
     def _inject_crossheading_context(self, tree: etree.ElementTree) -> int:
         """
@@ -1275,20 +1290,22 @@ class KeelingService:
                 success = False
                 error_msg = None
 
-                # Check if this is an "each place" amendment with validated pattern
-                if amendment.location == AmendmentLocation.EACH_PLACE and aid in validated_patterns:
-                    # Apply algorithmically with validated pattern
-                    success, error_msg = self.amendment_processor.apply_each_place_amendment(
-                        amendment, output_act, self._amending_bill, validated_patterns[aid], schedule_id
-                    )
-
-                    if not success:
-                        logger.error(
-                            f"Validated pattern failed to apply for amendment {aid}. "
-                            f"This should not happen - pattern was pre-validated. Error: {error_msg}"
-                        )
-
-                elif amendment.whole_provision:
+                # ABLATION: Each place algorithmic application disabled
+                # # Check if this is an "each place" amendment with validated pattern
+                # if amendment.location == AmendmentLocation.EACH_PLACE and aid in validated_patterns:
+                #     # Apply algorithmically with validated pattern
+                #     success, error_msg = self.amendment_processor.apply_each_place_amendment(
+                #         amendment, output_act, self._amending_bill, validated_patterns[aid], schedule_id
+                #     )
+                #
+                #     if not success:
+                #         logger.error(
+                #             f"Validated pattern failed to apply for amendment {aid}. "
+                #             f"This should not happen - pattern was pre-validated. Error: {error_msg}"
+                #         )
+                #
+                # elif amendment.whole_provision:
+                if amendment.whole_provision:  # Skip straight to this condition
                     # Apply structural amendment directly
                     success, error_msg = self.amendment_processor.apply_amendment(
                         amendment, output_act, self._amending_bill, schedule_id

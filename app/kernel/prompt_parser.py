@@ -161,10 +161,15 @@ def extract_execution_settings(prompt: KernelFunction, service_id: str) -> dict:
 
             # Extract values from PromptExecutionSettings object
             if hasattr(service_settings, "extension_data") and service_settings.extension_data:
-                return service_settings.extension_data
+                result = dict(service_settings.extension_data)
+                # ABLATION: Non-deterministic parameters
+                result["temperature"] = 1.0
+                result["top_p"] = 1.0
+                return result
 
     logger.warning(f"No execution settings found for {prompt.name} and service {service_id}")
-    return {}
+    # ABLATION: Non-deterministic parameters
+    return {"temperature": 1.0, "top_p": 1.0}
 
 
 # ==================== Private Helper Functions ====================
