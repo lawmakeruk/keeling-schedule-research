@@ -1204,25 +1204,26 @@ class KeelingService:
                         )
                     return None
 
-                # Check token limits
-                is_within_limits, token_estimate = self.amendment_processor.check_token_limits(
-                    amendment, target, source_element
-                )
-
-                if not is_within_limits:
-                    # Mark as failed with user-friendly error message
-                    error_msg = (
-                        f"Amendment in {amendment.source} was not applied because "
-                        f"the affected provision is too large to process."
-                    )
-                    logger.debug(
-                        f"Amendment {aid} exceeds token limit. "
-                        f"Estimated output tokens: {token_estimate}, "
-                        f"Max allowed: {self.llm_kernel.llm_config.get_max_completion_tokens()}"
-                    )
-                    if aid:
-                        self.amendment_tracker.mark_failed(aid, error_msg, error_location="token_limit_check")
-                    return None
+                # ABLATION: Token limit detection disabled
+                # # Check token limits
+                # is_within_limits, token_estimate = self.amendment_processor.check_token_limits(
+                #     amendment, target, source_element
+                # )
+                # 
+                # if not is_within_limits:
+                #     # Mark as failed with user-friendly error message
+                #     error_msg = (
+                #         f"Amendment in {amendment.source} was not applied because "
+                #         f"the affected provision is too large to process."
+                #     )
+                #     logger.debug(
+                #         f"Amendment {aid} exceeds token limit. "
+                #         f"Estimated output tokens: {token_estimate}, "
+                #         f"Max allowed: {self.llm_kernel.llm_config.get_max_completion_tokens()}"
+                #     )
+                #     if aid:
+                #         self.amendment_tracker.mark_failed(aid, error_msg, error_location="token_limit_check")
+                #     return None
 
                 # Prepare LLM call data
                 llm_data = self.amendment_processor.prepare_llm_amendment(
