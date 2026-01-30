@@ -1,0 +1,743 @@
+[ {
+  "source" : "s. 1(2)",
+  "source_eid" : "sec_1__subsec_2",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "pt_2A__hdg",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "s. 1(3)",
+  "source_eid" : "sec_1__subsec_3",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_27A",
+  "location" : "Before",
+  "whole_provision" : true
+}, {
+  "source" : "s. 1(4)",
+  "source_eid" : "sec_1__subsec_4",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_27B",
+  "location" : "After",
+  "whole_provision" : true
+}, {
+  "source" : "s. 2",
+  "source_eid" : "sec_2",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_27BH",
+  "location" : "After",
+  "whole_provision" : true
+}, {
+  "source" : "s. 3",
+  "source_eid" : "sec_3",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_27BN",
+  "location" : "After",
+  "whole_provision" : true
+}, {
+  "source" : "s. 4(1)",
+  "source_eid" : "sec_4__subsec_1",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_27BT",
+  "location" : "After",
+  "whole_provision" : true
+}, {
+  "source" : "s. 6(2)",
+  "source_eid" : "sec_6__subsec_2",
+  "type_of_amendment" : "substitution",
+  "affected_provision" : "sec_27B__subsec_1",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 6(3)",
+  "source_eid" : "sec_6__subsec_3",
+  "type_of_amendment" : "deletion",
+  "affected_provision" : "sec_27B__subsec_2__para_b",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 6(4)(a)(i)",
+  "source_eid" : "sec_6__subsec_4__para_a__subpara_i",
+  "type_of_amendment" : "deletion",
+  "affected_provision" : "sec_27B__subsec_4__para_a",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 6(4)(a)(ii)",
+  "source_eid" : "sec_6__subsec_4__para_a__subpara_ii",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_27B__subsec_4__para_a",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "s. 6(4)(b)",
+  "source_eid" : "sec_6__subsec_4__para_b",
+  "type_of_amendment" : "deletion",
+  "affected_provision" : "sec_27B__subsec_4__para_b",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 6(5)",
+  "source_eid" : "sec_6__subsec_5",
+  "type_of_amendment" : "deletion",
+  "affected_provision" : "sec_27B__subsec_5__para_a__subpara_ii",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 6(6)(a)",
+  "source_eid" : "sec_6__subsec_6__para_a",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_27B__subsec_6",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "s. 6(6)(b)",
+  "source_eid" : "sec_6__subsec_6__para_b",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_27B__subsec_6",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "s. 6(6)(c)",
+  "source_eid" : "sec_6__subsec_6__para_c",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_27B__subsec_6",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "s. 7(3)",
+  "source_eid" : "sec_7__subsec_3",
+  "type_of_amendment" : "substitution",
+  "affected_provision" : "sec_80G__subsec_1__para_b",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 7(4)",
+  "source_eid" : "sec_7__subsec_4",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_80G__subsec_1ZA",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "s. 7(5)",
+  "source_eid" : "sec_7__subsec_5",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_80G__subsec_1D",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "s. 7(6)",
+  "source_eid" : "sec_7__subsec_6",
+  "type_of_amendment" : "substitution",
+  "affected_provision" : "sec_80H__subsec_1__para_a",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 10(2)",
+  "source_eid" : "sec_10__subsec_2",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_27I__subsec_2",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "s. 10(3)",
+  "source_eid" : "sec_10__subsec_3",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_27I__subsec_3",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "s. 10(4)",
+  "source_eid" : "sec_10__subsec_4",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_27I__subsec_6",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "s. 11",
+  "source_eid" : "sec_11",
+  "type_of_amendment" : "deletion",
+  "affected_provision" : "sec_76__subsec_1__para_a",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 12(1)(a)",
+  "source_eid" : "sec_12__subsec_1__para_a",
+  "type_of_amendment" : "deletion",
+  "affected_provision" : "sec_80A__subsec_1__para_a",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 12(1)(b)",
+  "source_eid" : "sec_12__subsec_1__para_b",
+  "type_of_amendment" : "deletion",
+  "affected_provision" : "sec_80A__subsec_6A__para_a",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 12(2)(a)",
+  "source_eid" : "sec_12__subsec_2__para_a",
+  "type_of_amendment" : "deletion",
+  "affected_provision" : "sec_80B__subsec_1__para_a",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 12(2)(b)",
+  "source_eid" : "sec_12__subsec_2__para_b",
+  "type_of_amendment" : "deletion",
+  "affected_provision" : "sec_80B__subsec_6C__para_a",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 13(1)(a)",
+  "source_eid" : "sec_13__subsec_1__para_a",
+  "type_of_amendment" : "deletion",
+  "affected_provision" : "sec_80A__subsec_4A",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 13(1)(b)",
+  "source_eid" : "sec_13__subsec_1__para_b",
+  "type_of_amendment" : "deletion",
+  "affected_provision" : "sec_80A__subsec_6A__para_c",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 13(2)(a)",
+  "source_eid" : "sec_13__subsec_2__para_a",
+  "type_of_amendment" : "deletion",
+  "affected_provision" : "sec_80B__subsec_4A",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 13(2)(b)",
+  "source_eid" : "sec_13__subsec_2__para_b",
+  "type_of_amendment" : "deletion",
+  "affected_provision" : "sec_80B__subsec_6C__para_c",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 14(2)",
+  "source_eid" : "sec_14__subsec_2",
+  "type_of_amendment" : "substitution",
+  "affected_provision" : "pt_8__chp_4__hdg",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 14(3)(a)",
+  "source_eid" : "sec_14__subsec_3__para_a",
+  "type_of_amendment" : "substitution",
+  "affected_provision" : "sec_80EA__subsec_1",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 14(3)(b)",
+  "source_eid" : "sec_14__subsec_3__para_b",
+  "type_of_amendment" : "substitution",
+  "affected_provision" : "sec_80EA__subsec_2",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 14(3)(c)",
+  "source_eid" : "sec_14__subsec_3__para_c",
+  "type_of_amendment" : "substitution",
+  "affected_provision" : "sec_80EA__subsec_3",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 14(3)(d)",
+  "source_eid" : "sec_14__subsec_3__para_d",
+  "type_of_amendment" : "substitution",
+  "affected_provision" : "sec_80EA__subsec_4__para_a",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 14(3)(e)",
+  "source_eid" : "sec_14__subsec_3__para_e",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_80EA__subsec_5",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "s. 14(3)(f)",
+  "source_eid" : "sec_14__subsec_3__para_f",
+  "type_of_amendment" : "substitution",
+  "affected_provision" : "sec_80EA__subsec_6",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 14(3)(g)",
+  "source_eid" : "sec_14__subsec_3__para_g",
+  "type_of_amendment" : "substitution",
+  "affected_provision" : "sec_80EA__subsec_7",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 14(3)(h)",
+  "source_eid" : "sec_14__subsec_3__para_h",
+  "type_of_amendment" : "substitution",
+  "affected_provision" : "sec_80EA__hdg",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 14(4)",
+  "source_eid" : "sec_14__subsec_4",
+  "type_of_amendment" : "deletion",
+  "affected_provision" : "sec_47C__subsec_2__para_cb",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 14(5)",
+  "source_eid" : "sec_14__subsec_5",
+  "type_of_amendment" : "deletion",
+  "affected_provision" : "sec_75I__subsec_3__para_f",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 14(6)",
+  "source_eid" : "sec_14__subsec_6",
+  "type_of_amendment" : "deletion",
+  "affected_provision" : "sec_80C__subsec_2__para_bb,sec_80C__subsec_4__para_bb",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 14(7)",
+  "source_eid" : "sec_14__subsec_7",
+  "type_of_amendment" : "deletion",
+  "affected_provision" : "sec_80EG__subsec_2__para_f",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 14(8)(a)",
+  "source_eid" : "sec_14__subsec_8__para_a",
+  "type_of_amendment" : "substitution",
+  "affected_provision" : "sec_88__subsec_1__para_c",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 14(8)(b)",
+  "source_eid" : "sec_14__subsec_8__para_b",
+  "type_of_amendment" : "substitution",
+  "affected_provision" : "sec_88__subsec_2",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 14(9)(a)",
+  "source_eid" : "sec_14__subsec_9__para_a",
+  "type_of_amendment" : "substitution",
+  "affected_provision" : "sec_89__subsec_3__para_b",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 14(9)(b)",
+  "source_eid" : "sec_14__subsec_9__para_b",
+  "type_of_amendment" : "substitution",
+  "affected_provision" : "sec_89__subsec_4",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 14(10)",
+  "source_eid" : "sec_14__subsec_10",
+  "type_of_amendment" : "deletion",
+  "affected_provision" : "sec_99__subsec_3__para_cb",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 14(11)(a)",
+  "source_eid" : "sec_14__subsec_11__para_a",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_235__subsec_1__def_business",
+  "location" : "Before",
+  "whole_provision" : false
+}, {
+  "source" : "s. 14(11)(b)",
+  "source_eid" : "sec_14__subsec_11__para_b",
+  "type_of_amendment" : "deletion",
+  "affected_provision" : "sec_235__subsec_1__def_parentalbereavementleave",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 18(2)",
+  "source_eid" : "sec_18__subsec_2",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_43B__subsec_1__para_d",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "s. 18(3)",
+  "source_eid" : "sec_18__subsec_3",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_43L__subsec_1",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "s. 19(a)",
+  "source_eid" : "sec_19__para_a",
+  "type_of_amendment" : "deletion",
+  "affected_provision" : "sec_108",
+  "location" : "Replace",
+  "whole_provision" : true
+}, {
+  "source" : "s. 20(2)",
+  "source_eid" : "sec_20__subsec_2",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_49D__hdg",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "s. 20(3)",
+  "source_eid" : "sec_20__subsec_3",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_49D__subsec_1",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "s. 20(4)",
+  "source_eid" : "sec_20__subsec_4",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_49D__subsec_3",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "s. 20(5)",
+  "source_eid" : "sec_20__subsec_5",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "pt_5B__hdg",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "s. 21(2)",
+  "source_eid" : "sec_21__subsec_2",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_74__subsec_2",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "s. 21(3)",
+  "source_eid" : "sec_21__subsec_3",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_75C__subsec_1__para_b",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "s. 21(4)",
+  "source_eid" : "sec_21__subsec_4",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_75J__subsec_1__para_b",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "s. 21(5)(a)",
+  "source_eid" : "sec_21__subsec_5__para_a",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_80D__subsec_1A__para_b",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "s. 21(5)(b)",
+  "source_eid" : "sec_21__subsec_5__para_b",
+  "type_of_amendment" : "substitution",
+  "affected_provision" : "sec_80D__subsec_3__para_b",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "s. 21(6)",
+  "source_eid" : "sec_21__subsec_6",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_80EH__subsec_1__para_b",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "s. 22(3)",
+  "source_eid" : "sec_22__subsec_3",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_105",
+  "location" : "Before",
+  "whole_provision" : true
+}, {
+  "source" : "s. 22(4)",
+  "source_eid" : "sec_22__subsec_4",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_108__subsec_3__para_gm",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "s. 22(5)",
+  "source_eid" : "sec_22__subsec_5",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_236__subsec_3",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "s. 51(12)",
+  "source_eid" : "sec_51__subsec_12",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_104__subsec_4__para_c",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "s. 59(5)",
+  "source_eid" : "sec_59__subsec_5",
+  "type_of_amendment" : "substitution",
+  "affected_provision" : "sec_104__subsec_4__para_c",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "para. 3 of schedule 1",
+  "source_eid" : "sched_1__para_3",
+  "type_of_amendment" : "deletion",
+  "affected_provision" : "sec_27A__subsec_1,sec_27A__subsec_2",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "para. 4(a) of schedule 1",
+  "source_eid" : "sched_1__para_4__para_a",
+  "type_of_amendment" : "deletion",
+  "affected_provision" : "sec_27B__subsec_4",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "para. 4(b) of schedule 1",
+  "source_eid" : "sched_1__para_4__para_b",
+  "type_of_amendment" : "substitution",
+  "affected_provision" : "sec_27B__subsec_6__para_a,sec_27B__subsec_6__para_b",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "para. 4(c) of schedule 1",
+  "source_eid" : "sched_1__para_4__para_c",
+  "type_of_amendment" : "deletion",
+  "affected_provision" : "sec_27B__subsec_7,sec_27B__subsec_8",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "para. 5 of schedule 1",
+  "source_eid" : "sched_1__para_5",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_47G",
+  "location" : "After",
+  "whole_provision" : true
+}, {
+  "source" : "para. 6(2) of schedule 1",
+  "source_eid" : "sched_1__para_6__subpara_2",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_48__subsec_1B",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "para. 6(3) of schedule 1",
+  "source_eid" : "sched_1__para_6__subpara_3",
+  "type_of_amendment" : "substitution",
+  "affected_provision" : "sec_48__subsec_2",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "para. 7(2) of schedule 1",
+  "source_eid" : "sched_1__para_7__subpara_2",
+  "type_of_amendment" : "substitution",
+  "affected_provision" : "sec_49__subsec_1",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "para. 7(3) of schedule 1",
+  "source_eid" : "sched_1__para_7__subpara_3",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_49__subsec_7",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "para. 8 of schedule 1",
+  "source_eid" : "sched_1__para_8",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_104B",
+  "location" : "After",
+  "whole_provision" : true
+}, {
+  "source" : "para. 9 of schedule 1",
+  "source_eid" : "sched_1__para_9",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_105__subsec_7B",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "para. 10 of schedule 1",
+  "source_eid" : "sched_1__para_10",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_108__subsec_3__para_gh",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "para. 11(2) of schedule 1",
+  "source_eid" : "sched_1__para_11__subpara_2",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_205__subsec_1",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "para. 11(3) of schedule 1",
+  "source_eid" : "sched_1__para_11__subpara_3",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_205__subsec_1A",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "para. 12 of schedule 1",
+  "source_eid" : "sched_1__para_12",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_225__subsec_1",
+  "location" : "Before",
+  "whole_provision" : false
+}, {
+  "source" : "para. 13 of schedule 1",
+  "source_eid" : "sched_1__para_13",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_227__subsec_1__para_zza",
+  "location" : "Before",
+  "whole_provision" : false
+}, {
+  "source" : "para. 14(a) of schedule 1",
+  "source_eid" : "sched_1__para_14__para_a",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_235__subsec_2A",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "para. 14(b) of schedule 1",
+  "source_eid" : "sched_1__para_14__para_b",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_235__subsec_2B",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "para. 15 of schedule 1",
+  "source_eid" : "sched_1__para_15",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_236__subsec_3",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "para. 1 of schedule 2",
+  "source_eid" : "sched_2__para_1",
+  "type_of_amendment" : "deletion",
+  "affected_provision" : "sec_108",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "para. 2 of schedule 2",
+  "source_eid" : "sched_2__para_2",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_108",
+  "location" : "After",
+  "whole_provision" : true
+}, {
+  "source" : "para. 3(2) of schedule 2",
+  "source_eid" : "sched_2__para_3__subpara_2",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_98",
+  "location" : "After",
+  "whole_provision" : true
+}, {
+  "source" : "para. 3(3) of schedule 2",
+  "source_eid" : "sched_2__para_3__subpara_3",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_236__subsec_3",
+  "location" : "Before",
+  "whole_provision" : false
+}, {
+  "source" : "para. 5(2)(a) of schedule 2",
+  "source_eid" : "sched_2__para_5__subpara_2__para_a",
+  "type_of_amendment" : "substitution",
+  "affected_provision" : "sec_92__subsec_3",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "para. 5(2)(b) of schedule 2",
+  "source_eid" : "sched_2__para_5__subpara_2__para_b",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_92__subsec_3",
+  "location" : "After",
+  "whole_provision" : false
+}, {
+  "source" : "para. 5(2)(c) of schedule 2",
+  "source_eid" : "sched_2__para_5__subpara_2__para_c",
+  "type_of_amendment" : "substitution",
+  "affected_provision" : "sec_92__subsec_4",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "para. 5(2)(d) of schedule 2",
+  "source_eid" : "sched_2__para_5__subpara_2__para_d",
+  "type_of_amendment" : "substitution",
+  "affected_provision" : "sec_92__subsec_4A",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "para. 5(3) of schedule 2",
+  "source_eid" : "sched_2__para_5__subpara_3",
+  "type_of_amendment" : "substitution",
+  "affected_provision" : "sec_94__subsec_2",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "para. 5(4)(a) of schedule 2",
+  "source_eid" : "sched_2__para_5__subpara_4__para_a",
+  "type_of_amendment" : "deletion",
+  "affected_provision" : "sec_97__subsec_2",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "para. 5(4)(b) of schedule 2",
+  "source_eid" : "sched_2__para_5__subpara_4__para_b",
+  "type_of_amendment" : "deletion",
+  "affected_provision" : "sec_97__subsec_4",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "para. 5(5) of schedule 2",
+  "source_eid" : "sched_2__para_5__subpara_5",
+  "type_of_amendment" : "substitution",
+  "affected_provision" : "sec_98__subsec_6__para_a",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "para. 5(6)(a) of schedule 2",
+  "source_eid" : "sched_2__para_5__subpara_6__para_a",
+  "type_of_amendment" : "deletion",
+  "affected_provision" : "sec_192__subsec_2__para_e",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "para. 5(6)(b) of schedule 2",
+  "source_eid" : "sched_2__para_5__subpara_6__para_b",
+  "type_of_amendment" : "insertion",
+  "affected_provision" : "sec_192__subsec_2__para_e",
+  "location" : "Before",
+  "whole_provision" : false
+}, {
+  "source" : "para. 5(7) of schedule 2",
+  "source_eid" : "sched_2__para_5__subpara_7",
+  "type_of_amendment" : "substitution",
+  "affected_provision" : "sec_205A__subsec_10",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "para. 5(8) of schedule 2",
+  "source_eid" : "sched_2__para_5__subpara_8",
+  "type_of_amendment" : "deletion",
+  "affected_provision" : "sec_209__subsec_5",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "para. 5(9) of schedule 2",
+  "source_eid" : "sched_2__para_5__subpara_9",
+  "type_of_amendment" : "deletion",
+  "affected_provision" : "sec_213__subsec_1",
+  "location" : "Replace",
+  "whole_provision" : false
+}, {
+  "source" : "para. 5(10) of schedule 2",
+  "source_eid" : "sched_2__para_5__subpara_10",
+  "type_of_amendment" : "deletion",
+  "affected_provision" : "sched_1__para_56__para_8",
+  "location" : "Replace",
+  "whole_provision" : false
+} ]

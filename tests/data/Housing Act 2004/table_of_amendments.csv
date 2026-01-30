@@ -1,0 +1,50 @@
+source,source_eid,type_of_amendment,affected_provision,location,whole_provision
+s. 28(2)(a),sec_28__subsec_2__para_a,substitution,sec_212__subsec_1,Replace,false
+s. 28(2)(b),sec_28__subsec_2__para_b,substitution,sec_212__subsec_2,Replace,false
+s. 28(2)(c)(i),sec_28__subsec_2__para_c__subpara_i,insertion,sec_212__subsec_8,After,false
+s. 28(2)(c)(ii),sec_28__subsec_2__para_c__subpara_ii,deletion,sec_212__subsec_8,Replace,false
+s. 28(2)(c)(iii),sec_28__subsec_2__para_c__subpara_iii,substitution,sec_212__subsec_8,Replace,false
+s. 28(2)(d),sec_28__subsec_2__para_d,substitution,sec_212__subsec_9__para_a,Replace,false
+s. 28(3),sec_28__subsec_3,substitution,sec_213,Replace,false
+s. 28(4)(a)(i),sec_28__subsec_4__para_a__subpara_i,substitution,sec_214__subsec_1,Replace,false
+s. 28(4)(a)(ii),sec_28__subsec_4__para_a__subpara_ii,deletion,sec_214__subsec_1,Replace,false
+s. 28(4)(b),sec_28__subsec_4__para_b,insertion,sec_214__subsec_1,After,false
+s. 28(4)(c),sec_28__subsec_4__para_c,substitution,sec_214__subsec_5,Replace,false
+s. 28(5),sec_28__subsec_5,substitution,sec_215,Replace,true
+s. 28(6),sec_28__subsec_6,deletion,sec_215A,Replace,true
+s. 28(7)(a),sec_28__subsec_7__para_a,substitution,sec_215B__title,Replace,false
+s. 28(7)(b)(i),sec_28__subsec_7__para_b__subpara_i,substitution,sec_215B__subsec_1__para_a,Replace,false
+s. 28(7)(b)(ii),sec_28__subsec_7__para_b__subpara_ii,substitution,sec_215B__subsec_1__para_d,Replace,false
+s. 28(8),sec_28__subsec_8,deletion,sec_215C,Replace,true
+s. 28(9)(a),sec_28__subsec_9__para_a,substitution,sched_10,Replace,false
+s. 28(9)(b),sec_28__subsec_9__para_b,substitution,sched_10,Replace,false
+s. 63(2),sec_63__subsec_2,substitution,sec_1__subsec_4,Replace,false
+s. 101(2),sec_101__subsec_2,insertion,sec_1__subsec_3,After,false
+s. 101(3),sec_101__subsec_3,insertion,sec_1__subsec_4__para_d,After,false
+s. 101(4),sec_101__subsec_4,insertion,sec_1__subsec_4,After,false
+s. 101(5),sec_101__subsec_5,insertion,sec_2,After,true
+s. 101(6),sec_101__subsec_6,insertion,sched_4,After,false
+s. 105(2),sec_105__subsec_2,substitution,sec_72__subsec_1,Replace,false
+s. 105(3),sec_105__subsec_3,insertion,sec_72__subsec_4,After,false
+s. 105(4),sec_105__subsec_4,substitution,sec_72__subsec_5,Replace,false
+s. 105(4),sec_105__subsec_4,deletion,sec_72__subsec_5__para_a,Replace,false
+s. 105(6),sec_105__subsec_6,substitution,sec_95__subsec_1,Replace,false
+s. 105(7),sec_105__subsec_7,insertion,sec_95__subsec_3,After,false
+s. 105(8),sec_105__subsec_8,substitution,sec_95__subsec_4,Replace,false
+s. 106(a),sec_106__para_a,insertion,sched_1__para_2__subpara_2,After,false
+s. 106(b),sec_106__para_b,deletion,"sched_1__para_2__subpara_2__para_a,sched_1__para_2__subpara_2__para_b",Replace,false
+s. 134(2),sec_134__subsec_2,insertion,sec_212A__subsec_5__para_a,After,false
+s. 134(3),sec_134__subsec_3,substitution,sec_212A__subsec_5__para_b,Replace,false
+s. 134(5),sec_134__subsec_5,insertion,sec_237__subsec_1__para_a,After,false
+s. 134(6),sec_134__subsec_6,substitution,sec_237__subsec_1__para_b,Replace,false
+s. 135(1)(a),sec_135__subsec_1__para_a,insertion,sec_235__subsec_1__para_a,After,false
+s. 135(1)(b),sec_135__subsec_1__para_b,substitution,sec_235__subsec_1__para_b,Replace,false
+s. 135(2),sec_135__subsec_2,insertion,sec_239__subsec_5,After,false
+para. 59 of schedule 2,sched_2__para_59,deletion,sec_75,Replace,true
+para. 60 of schedule 2,sched_2__para_60,deletion,sec_98,Replace,true
+para. 61(a) of schedule 2,sched_2__para_61__para_a,deletion,sec_116__subsec_4__para_a__subpara_ii,Replace,false
+para. 61(b) of schedule 2,sched_2__para_61__para_b,substitution,sec_116__subsec_4__para_b,Replace,false
+para. 62 of schedule 2,sched_2__para_62,insertion,sec_136__subsec_5__para_a,Before,false
+para. 63(a) of schedule 2,sched_2__para_63__para_a,deletion,sched_7__para_10__subpara_4__para_a__subpara_ii,Replace,false
+para. 63(b) of schedule 2,sched_2__para_63__para_b,substitution,sched_7__para_10__subpara_4__para_b,Replace,false
+para. 42 of schedule 4,sched_4__para_42,insertion,sec_40__subsec_4,After,false

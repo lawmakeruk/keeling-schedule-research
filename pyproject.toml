@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+line-length = 120
+target-version = ['py39']
+include = '\.pyi?$'
+extend-exclude = '''
+# A regex preceded with ^/ will apply only to files and directories
+# in the root of the project.
+^/docs
+'''
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "--cov=app --cov-report=term-missing --show-capture=no"
+testpaths = [
+    "tests/unit",
+]
+markers = [
+    "unit: mark a test as a unit test",
+]
+filterwarnings = [
+    "ignore:datetime\\.datetime\\.utcnow\\(\\) is deprecated:DeprecationWarning",
+    "ignore:.*coroutine 'LLMKernel.run_inference_async' was never awaited.*:RuntimeWarning",
+    "ignore:The `__get_pydantic_core_schema__` method of the `BaseModel` class is deprecated.*:DeprecationWarning",
+]
+asyncio_mode = "strict"
+asyncio_default_fixture_loop_scope = "function"
+log_cli = false
+log_cli_level = "ERROR"
+log_level = "ERROR"
+
+[project]
+name = "keeling-schedule"
+version = "0.1.0"
+description = "Service for generating Keeling schedules from legislative amendments"
+requires-python = ">=3.11,<3.13"
+authors = [
+    {name = "Leidos"}
+]
+
+[tool.coverage.run]
+source = ["app"]
+omit = ["tests/*"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if __name__ == .__main__.:",
+    "raise NotImplementedError",
+    "if typing.TYPE_CHECKING:",
+    "pass",
+]

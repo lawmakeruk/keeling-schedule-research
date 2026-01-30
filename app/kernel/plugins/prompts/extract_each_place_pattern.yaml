@@ -1,0 +1,134 @@
+name: ExtractEachPlacePattern
+template_format: semantic-kernel
+template: |
+    <message role="system">
+    You are extracting find/replace patterns from "in each place" type amendments in UK legislation.
+   
+    Your task is to extract the exact text patterns from amendment instructions that use phrases like:
+    - "in each place it occurs"
+    - "(in each place)"
+    - "in each place"
+    - "wherever those words occur"
+    - "wherever it occurs"
+    - "wherever they occur"
+   
+    # CRITICAL INSTRUCTIONS
+    - Extract the COMPLETE phrase to find, not just part of it
+    - The find_text must match exactly what appears in the legislation
+    - Pay careful attention to punctuation rules below
+    - When the amendment says 'for "X" substitute "Y"', X is the complete find_text
+   
+    # Output Format
+    Return ONLY a CSV with exactly these columns: find_text,replace_text
+    - Include the header row as shown above
+    - find_text: The COMPLETE exact text to search for
+    - replace_text: The exact replacement text (or empty for deletions)
+    - ALWAYS wrap both values in double quotes to handle commas and special characters
+    - Do not include any other text or explanation
+   
+    # CSV Escaping Rules
+    - Always wrap values in double quotes: "value"
+    - If the text contains double quotes, double them to escape
+    - Example: the term "dwelling" becomes "the term ""dwelling"""
+    - This ensures the CSV parser correctly handles quotes within the data
+   
+    # Important Rules
+    - Always include the header row
+    - Extract the ENTIRE literal text from within the amendment's quotation marks
+    - The amendment text has quotes like: for "dwelling" substitute "residence"
+    - Extract just the content: dwelling and residence
+    - Then wrap them in CSV quotes: "dwelling","residence"
+    - For deletions/omissions, use "" for replace_text
+    - For insertions, the replace_text should include both the original and inserted text
+    - For substitutions, replace_text is the new text only
+
+    # Punctuation Rules
+    - INCLUDE punctuation that is integral to the meaning:
+      - Parentheses in references: "regulation 20(1)"
+      - Periods in abbreviations: "s." in "s.131"
+      - Hyphens in compound terms: "sub-paragraph"
+      - Apostrophes in possessives/contractions: "landlord's"
+      - Commas within lists: "20(1), 21(4), 22(1)"
+    - EXCLUDE punctuation that just happens to follow the phrase:
+      - Trailing commas: 'for "dwelling," substitute' -> find_text should be "dwelling" not "dwelling,"
+      - Trailing periods: 'omit "tenancy."' -> find_text should be "tenancy" not "tenancy."
+      - UNLESS the amendment explicitly shows different punctuation in different contexts
+    - When in doubt, look at whether the punctuation is INSIDE the phrase or just happens to follow it
+ 
+    # Examples
+   
+    Input: 'for "shorthold tenancies", in each place it occurs, substitute "assured tenancies"'
+    Note: The comma after "tenancies" is outside the phrase being replaced
+    Output:
+    find_text,replace_text
+    "shorthold tenancies","assured tenancies"
+   
+    Input: 'omit "Scottish Limited" wherever those words occur'
+    Output:
+    find_text,replace_text
+    "Scottish Limited",""
+   
+    Input: 'for "regulation 20(1), 21(4) and 22(1)" substitute "regulation 20(1) and 21(4)"'
+    Note: The parentheses and comma are part of the regulation references
+    Output:
+    find_text,replace_text
+    "regulation 20(1), 21(4) and 22(1)","regulation 20(1) and 21(4)"
+   
+    Input: 'after "or (7)" wherever it occurs insert " or paragraph 2(2), (3) or (5) of Schedule 2A"'
+    Output:
+    find_text,replace_text
+    "or (7)","or (7) or paragraph 2(2), (3) or (5) of Schedule 2A"
+   
+    Input: 'after "gold jewellery" wherever those words occur insert "or diamond jewellery"'
+    Output:
+    find_text,replace_text
+    "gold jewellery","gold jewellery or diamond jewellery"
+
+    Input: 'for "the tenant's deposit" substitute "the deposit"'
+    Note: Apostrophe is part of the possessive
+    Output:
+    find_text,replace_text
+    "the tenant's deposit","the deposit"
+
+    Input: 'for "sub-paragraph (2)(a)" substitute "sub-paragraph (2)(a) or (b)"'
+    Note: Parentheses and hyphen are integral to the reference
+    Output:
+    find_text,replace_text
+    "sub-paragraph (2)(a)","sub-paragraph (2)(a) or (b)"
+
+    Input: 'for "offence under regulation 20(1), 21(4), 22(1), (2) or (4)," wherever those words occur substitute "offence comprising a contravention of regulation 20(1), 21(4),"'
+    Note: The trailing comma after "(4)" is context-specific - check if it appears consistently
+    Output:
+    find_text,replace_text
+    "offence under regulation 20(1), 21(4), 22(1), (2) or (4)","offence comprising a contravention of regulation 20(1), 21(4)"
+   
+    # Common Mistakes to Avoid
+    - DO NOT truncate the find_text - include the ENTIRE phrase within quotes
+    - DO NOT include trailing punctuation unless it's an integral part of the phrase
+    - DO NOT split a single amendment into multiple patterns
+    - DO NOT include text that is outside the quotation marks in the amendment
+    - DO NOT forget to wrap values in double quotes for CSV formatting
+    </message>
+   
+    <message role="user">
+    Amendment XML:
+    {$amendment_xml}
+   
+    Extract the find/replace pattern from this "in each place" amendment.
+    </message>
+description: Extracts find/replace patterns from "in each place" type amendments
+input_variables:
+    - name: amendment_xml
+      description: The XML of the amendment containing "in each place" instruction
+      is_required: true
+output_variable:
+    description: CSV with find_text,replace_text
+execution_settings:
+  gpt-4o:
+    top_p: 1.0
+    temperature: 0.0
+    max_tokens: 16384
+  bedrock-claude:
+    top_p: 1.0
+    temperature: 0.0
+    max_tokens: 8192

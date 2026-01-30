@@ -1,0 +1,127 @@
+name: ApplyDeletionAmendment
+template_format: semantic-kernel
+template: |
+    <message role="system">
+    You are an expert in applying amendments to legislation represented in Akoma Ntoso XML.
+    An amendment is an instruction to make a single change to another piece of legislation.
+    Respond with XML only, no markdown. Do not make any changes to the original XML other than the attributes, //ins and //authorialNote elements specified in the instructions.
+    </message>
+    <message role="user">
+    Apply the deletion-type amendment contained in "Amendment instruction XML" to the correct place in the provisions in "Original provision XML",
+    according to the following instructions:
+
+    # Validate the text match before deletion
+    Before applying any deletion, first verify that the exact text to be deleted exists in the specified location.
+
+    # Exact text deletion rules
+    When deleting text (not whole provisions):
+    1. ONLY delete the EXACT text specified in quotes in the amendment - nothing more, nothing less
+    2. If the amendment says delete "the word 'and'", then ONLY the word "and" should be deleted
+    3. NEVER delete punctuation (commas, periods, semicolons) unless they are explicitly mentioned in the text to be deleted
+    4. Treat each character literally - do not infer or assume any characters are included in the deletion
+    5. If the amendment specifies a location like "immediately following paragraph (a)", ensure you're targeting the correct instance of the text
+
+    # Example: Deletion of connective words
+    If the instruction is to delete "the word 'and' immediately following paragraph (a)":
+    - The text in paragraph (a) ends with something like "... section 31, and"
+    - ONLY the word "and" should be wrapped in <del> tags
+    - The comma before "and" must be preserved
+    - The resulting text should be "... section 31,"
+
+    # Handle punctuation carefully
+    When the deletion involves text adjacent to punctuation, treat punctuation (commas, periods, etc.) as separate tokens from words. If the instruction is to delete a word, do not delete adjacent punctuation unless explicitly specified.
+
+    # Confirm deletion target
+    Before applying the deletion, add a step to explicitly identify and confirm the exact text being deleted by extracting it and checking it against the amendment instruction.
+
+    # Support regex-style matching
+    For complex text matching cases, use simple pattern matching: {paragraph_id} followed by optional whitespace, optional punctuation, then the exact word to delete.
+
+    # Apply deletion-type amendment
+    1. If provisions are being deleted, omitted or repealed (e.g. <section>, <subsection>, <level>, <hcontainer>, <paragraph>),
+      then add an attribute ukl:change="del" to each of the top-level elements being omitted (and don't add an <del> element around text in the provisions).
+    2. If text is being deleted, omitted or repealed within an existing <p> element (e.g. 'omit "[word to be deleted]"'),
+      then wrap the text in a <del></del> element (and don't add a ukl:change attribute).
+    3. If the target is a heading element (e.g. <heading>), ensure that the entire quoted phrase from the amendment instruction is removed, not just part of it.
+    For example, if the heading is:
+      "Inspections by local housing authorities to see whether category 1 or 2 hazards exist"
+    and the amendment instruction is to omit:
+      "to see whether category 1 or 2 hazards exist"
+    then all of the specified phrase — including "to see whether" — must be deleted.
+
+    The resulting XML should wrap the entire matched sequence in <del>:
+      <heading>Inspections by local housing authorities <del ukl:changeStart="true" ukl:changeEnd="true" ukl:changeGenerated="true">to see whether category 1 or 2 hazards exist</del></heading>
+
+    Do not stop the deletion early just because part of the text matches — partial deletions are incorrect.
+
+    # Mark the beginning of the amendment
+    Add an attribute ukl:changeStart="true" to the <del> element or element containing ukl:change="del" attribute at the beginning of the change such that there is only one occurrence of the attribute.
+  
+    # Mark the end of the amendment
+    Add an attribute ukl:changeEnd="true" to the <ins> element or element containing ukl:change="ins" attribute at the end of the change such that there is only one occurrence of the attribute.
+    If there is only one change in the amendment, then the ukl:changeStart and ukl:changeEnd attributes should be added to the same element.
+  
+    # Mark the change as generated
+    Add an attribute ukl:changeGenerated="true" to the <ins> element or element containing the ukl:changeEnd attribute such that there is only one occurrence of the attribute.
+
+    # Example of cumulative amendments with proper tracking
+    When applying a deletion to a provision that already has amendments:
+
+    Original with existing amendments:
+    <p>regulations under section 9B(3), 9C(6),<ins ukl:changeStart="true" ukl:changeEnd="true" ukl:changeGenerated="true" ukl:changeDnum="KS1"> 31A,</ins> 36(7), paragraph (c)</p>
+
+    New deletion removing "paragraph (c)":
+    <p>regulations under section 9B(3), 9C(6),<ins ukl:changeStart="true" ukl:changeEnd="true" ukl:changeGenerated="true" ukl:changeDnum="KS1"> 31A,</ins> 36(7), <del ukl:changeStart="true" ukl:changeEnd="true" ukl:changeGenerated="true">paragraph (c)</del></p>
+
+    Note: The deletion has ALL THREE tracking attributes. Existing insertions are preserved with their tracking.
+
+    # CRITICAL: Maintain change tracking for ALL deletions
+    EVERY deletion made in this amendment MUST have proper change tracking:
+    - For textual deletions: Every <del> element MUST include ALL THREE attributes:
+      - ukl:changeStart="true" 
+      - ukl:changeEnd="true"
+      - ukl:changeGenerated="true"
+    - For structural deletions: Every element with ukl:change="del" MUST include ALL THREE attributes:
+      - ukl:changeStart="true"
+      - ukl:changeEnd="true" 
+      - ukl:changeGenerated="true"
+    - The system will handle ukl:changeDnum allocation separately - do not generate these values
+    - Never create a <del> element or add ukl:change="del" without ALL THREE change tracking attributes
+
+    # Output the amended XML
+    Return the 'amended provision XML' (and only return this) as the response.
+    Where the 'amended provision XML' is the XML of original provision with the amendment applied. Obey these further instructions:
+    1. Leave out all GUID attributes in the response XML but do not change any eId attributes.
+    2. Don't leave out any of the XML in the response.
+    3. Preserve whitespace within any <p> and <heading> element.
+    4. Don't add comments or otherwise change XML from original provision.
+    5. DO NOT wrap the XML response in Markdown formatting such as triple backticks (```xml). The response must begin directly with the root XML element.
+
+    Original provision XML:
+    {{$original_xml}}
+
+    Amendment instruction XML:
+    {{$amendment_xml}}
+    </message>
+description: A prompt to apply a deletion amendment to the original XML
+input_variables:
+    - name: source
+      description: The provision from which the amendment was derived.
+      is_required: true
+    - name: original_xml
+      description: The XML of the document to be amended.
+      is_required: true
+    - name: amendment_xml
+      description: The XML of the amendment to be applied.
+      is_required: true
+output_variable:
+    description: The amended XML document.
+execution_settings:
+  gpt-4o:
+    top_p: 1.0
+    temperature: 0.0
+    max_tokens: 16384
+  bedrock-claude:
+    top_p: 1.0
+    temperature: 0.0
+    max_tokens: 8192

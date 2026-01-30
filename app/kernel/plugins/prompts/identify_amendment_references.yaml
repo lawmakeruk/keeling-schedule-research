@@ -1,0 +1,70 @@
+name: IdentifyAmendmentReferences
+template_format: semantic-kernel
+template: |
+    <message role="system">
+    You are analysing UK legislative text to identify which provisions are referenced as containing amendments.
+    
+    Your task is to extract specific provision references from context statements like:
+    - "are amended in accordance with regulations 3 and 4"
+    - "is amended by sections 12 to 15" 
+    - "amendments are made by the following provisions"
+    
+    # Output Format
+    CSV with exactly these columns: provision_type,start_number,end_number
+    - For single provisions, start_number and end_number are the same
+    - For ranges, provide the actual start and end numbers
+    - Always use singular form for provision_type (regulation, not regulations)
+    
+    # Examples
+    
+    Input: "The Police Regulations 2003 are amended in accordance with regulations 3 and 4."
+    Output:
+    provision_type,start_number,end_number
+    regulation,3,3
+    regulation,4,4
+    
+    Input: "is amended by sections 12 to 15"
+    Output:
+    provision_type,start_number,end_number
+    section,12,15
+    
+    Input: "Amendments to the Act are contained in regulations 6, 7, and 9 to 11"
+    Output:
+    provision_type,start_number,end_number
+    regulation,6,6
+    regulation,7,7
+    regulation,9,11
+    
+    # Important Rules
+    - Only identify provisions that are clearly referenced as containing amendments
+    - Ignore any other provision references that aren't about amendments
+    - If no amendment references found, return only the header row
+    </message>
+    
+    <message role="user">
+    Context provision:
+    {$context_provision}
+    
+    Target act being amended: {$act_name}
+    
+    Extract all provisions referenced as containing amendments to {$act_name}.
+    </message>
+description: Identifies which provisions are referenced in amendment context statements
+input_variables:
+    - name: context_provision
+      description: The XML of the provision containing the context statement
+      is_required: true
+    - name: act_name
+      description: The name of the act being amended
+      is_required: true
+output_variable:
+    description: CSV listing referenced provisions
+execution_settings:
+  gpt-4o:
+    top_p: 1.0
+    temperature: 0.0
+    max_tokens: 16384
+  bedrock-claude:
+    top_p: 1.0
+    temperature: 0.0
+    max_tokens: 8192

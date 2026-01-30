@@ -1,0 +1,15 @@
+flask
+gunicorn
+requests
+pytest
+flake8
+black
+pytest-cov
+semantic-kernel==1.30.*
+boto3
+botocore
+aiortc
+pytest-asyncio
+lxml
+pandas
+tiktoken>=0.5.0

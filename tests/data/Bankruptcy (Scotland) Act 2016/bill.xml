@@ -1,0 +1,2387 @@
+<?xml version="1.0" encoding="UTF-8"?><akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0" xmlns:ukl="https://www.legislation.gov.uk/namespaces/UK-AKN" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0 ../schemas/akomantoso30.xsd">
+ 
+ <bill contains="originalVersion" name="sppubb">
+  <meta>
+   
+   <identification source="#ldapp">
+    <FRBRWork>
+     <FRBRthis value="#varWork"/>
+     <FRBRuri value="#varWorkUri"/>
+     <FRBRalias name="ttflConfigHistory" value="#varCHOiid"/>
+     <FRBRalias name="alternateUri" value="https://lawmaker.legislation.gov.uk/pdr/sppubb/SP/6/27/bill"/>
+     <FRBRalias name="alternateUri" value="https://lawmaker.legislation.gov.uk/pdr/sppubb/SP/6/27A/bill"/>
+     <FRBRdate date="9999-01-01" name="sppubb"/>
+     <FRBRdate date="2024-03-21T13:23:27Z" name="published"/>
+     <FRBRauthor href="#varAuthor"/>
+     <FRBRcountry value="GB-SCT"/>
+     <FRBRsubtype value="#varDocSubType"/>
+     <FRBRnumber value="#varProjectId"/>
+     <FRBRname value="#varBillTitle"/>
+     <FRBRprescriptive value="true"/>
+     <FRBRauthoritative value="false"/>
+    </FRBRWork>
+    <FRBRExpression>
+     <FRBRthis value="#varExpression"/>
+     <FRBRuri value="#varExpressionUri"/>
+     <FRBRalias name="ttflVersionDescription" value="#varVDOiid"/>
+     <FRBRalias name="alternateUri" value="https://lawmaker.legislation.gov.uk/pdr/sppubb/SP/6/27A/bill"/>
+     <FRBRdate date="9999-01-01" name="draft"/>
+     <FRBRdate date="2024-03-21T13:23:27Z" name="published"/>
+     <FRBRauthor href="#varAuthor"/>
+     <FRBRversionNumber value="stage2"/>
+     <FRBRauthoritative value="false"/>
+     <FRBRmasterExpression href="" showAs=""/>
+     <FRBRlanguage language="eng"/>
+    </FRBRExpression>
+    <FRBRManifestation>
+     <FRBRthis value="#varManifestation"/>
+     <FRBRuri value="#varManifestationUri"/>
+     <FRBRdate date="9999-01-01" name="akn_xml"/>
+     <FRBRdate date="2024-03-21T13:23:27Z" name="published"/>
+     <FRBRauthor href="#varAuthor"/>
+     <FRBRformat value="application/akn+xml"/>
+    </FRBRManifestation>
+   </identification>
+   <references source="#author">
+    <TLCConcept GUID="_193f663e-c34e-4bd5-a758-93649e36f5ca" eId="varDocSubType" href="#varOntologies" showAs="Government Bill"/>
+    <TLCConcept GUID="_4bd2bf11-66e1-4f93-a35e-c433e5d69753" eId="varBillTitle" href="#varOntologies" showAs="Bankruptcy and Diligence (Scotland) Bill"/>
+    <TLCProcess GUID="_730704b4-9268-4d03-9052-7745b6d8ac38" eId="varStageVersion" href="#varOntologies" showAs="As amended at Stage 2"/>
+    <TLCProcess GUID="_e54554dd-23b4-4b65-8fce-66c7214bd516" eId="varProjectId" href="#varOntologies" showAs="SP000039P"/>
+    <TLCProcess GUID="_3e6b8026-2937-46df-95a3-d0918f5d3f8f" eId="varWork" href="#varOntologies" showAs="https://lawmaker.legislation.gov.uk/pdr/SP000121/bill"/>
+    <TLCProcess GUID="_2b5bbbc6-4e8d-49df-93ee-eb07d7b2771b" eId="varWorkUri" href="#varOntologies" showAs="https://lawmaker.legislation.gov.uk/pdr/SP000121/bill"/>
+    <TLCProcess GUID="_d8cf065e-3a50-4054-b518-bbf28aaa93ec" eId="varCHOiid" href="#varOntologies" showAs=""/>
+    <TLCProcess GUID="_984e10ce-6953-45d5-9cc0-a3a4d509e33c" eId="varExpression" href="#varOntologies" showAs="073df176-a1f3-43df-95d7-1d5f639b4f10"/>
+    <TLCProcess GUID="_11f46b90-cfe1-4ff3-a883-d035852c00b6" eId="varExpressionUri" href="#varOntologies" showAs="dma:///45e6b900-8929-11d4-b772-0050da06bfb4/80742cea-0ebb-4cf6-9759-1e52358d9b5b/;guid=073df176-a1f3-43df-95d7-1d5f639b4f10;class=Version%20Description"/>
+    <TLCProcess GUID="_66651932-065f-4bf4-84cb-c331ac318c3c" eId="varVDOiid" href="#varOntologies" showAs=""/>
+    <TLCProcess GUID="_f5ebfff1-a192-4433-90ed-134d5e33f73d" eId="varManifestation" href="#varOntologies" showAs="https://lawmaker.legislation.gov.uk/pdr/SP000121/bill@stage2/xml"/>
+    <TLCProcess GUID="_13f88105-16dc-4041-8ff9-095386e42455" eId="varManifestationUri" href="#varOntologies" showAs="https://lawmaker.legislation.gov.uk/pdr/SP000121/bill@stage2/xml"/>
+    <TLCConcept GUID="_d260d7e3-f393-4a44-a5b2-78eceda60cb2" eId="varActYear" href="#varOntologies" showAs=""/>
+    <TLCConcept GUID="_c8448a41-ec70-4fd6-a195-71941bd8b09e" eId="varActTitle" href="#varOntologies" showAs="Bankruptcy and Diligence (Scotland) Bill #varActYear"/>
+    <TLCConcept GUID="_b98eae0f-bc85-457a-866d-162cc241dcb2" eId="varIntroDate" href="#varOntologies" showAs="2023-04-27"/>
+    <TLCConcept GUID="_9abf941a-ec51-4984-96b4-9d4f860c83d1" eId="varBillNoComp" href="#varOntologies" showAs="27A"/>
+    <TLCConcept GUID="_037fd5e6-f3d7-4b77-873c-847a4a24cec5" eId="varBillNo" href="#varOntologies" showAs="SP Bill 27A"/>
+    <TLCConcept GUID="_be7ef778-5361-4453-9ecb-9a4ab191e935" eId="varSessionNo" href="#varOntologies" showAs="6"/>
+    <TLCConcept GUID="_b0942b26-40bd-4d64-9f0a-06e81904395a" eId="varBillYear" href="#varOntologies" showAs="2024"/>
+    <TLCConcept GUID="_955ee319-f4cf-49cc-8e6d-d4eb7ab6fb8a" eId="varSession" href="#varOntologies" showAs="Session 6 (2024)"/>
+    <TLCConcept GUID="_af12fd03-5658-43d1-82ba-dc75e5883c51" eId="varPassedDate" href="#varOntologies" showAs=""/>
+    <TLCConcept GUID="_c136a0c0-dffb-4378-9ce0-dd1df8218b9b" eId="varAssentDate" href="#varOntologies" showAs=""/>
+    <TLCConcept GUID="_086968e6-8fdc-4d11-b443-15c94be091be" eId="varActNo" href="#varOntologies" showAs=""/>
+    <TLCConcept GUID="_7cf53ca0-eed6-4ee5-82d4-3afeb40f3f7b" eId="varISBN" href="#varOntologies" showAs=""/>
+    <TLCConcept GUID="_48594954-f456-411d-b47f-d844d353cb05" eId="varDocType" href="#varOntologies" showAs="SP Bill"/>
+    <TLCProcess GUID="_f9456a4c-2580-4d26-a828-16cc6791625c" eId="varSystem" href="#varOntologies" showAs="LDAPP"/>
+    <TLCOrganization GUID="_cc7f7344-e386-47ca-ad5c-de606f15118f" eId="varAuthor" href="#varOntologies" showAs="Scottish Parliament"/>
+    <TLCLocation GUID="_4d923e99-9c83-4548-8ce5-add51b49e791" eId="varJurisdiction" href="#varOntologies" showAs="Scotland"/>
+    <TLCConcept GUID="_af206a82-a81b-4589-aabd-d3aa84cf39fd" eId="varOntologies" href="https://www.legislation.gov.uk/ontologies/UK-AKN" showAs="https://www.legislation.gov.uk/ontologies/UK-AKN"/>
+    <TLCPerson GUID="_7b7b91a7-1dda-4cb6-ab95-8d2975c949bd" eId="person-1870" href="#Shona_Robison" showAs="Shona Robison" ukl:class="varIntroducingMember"/>
+    <TLCPerson GUID="_3c30cd4e-c3ca-4afe-b889-ba0ab0992e27" eId="person-5868" href="#Tom_Arthur" showAs="Tom Arthur" ukl:class="varSupportingMembers"/>
+   </references>
+  </meta>
+  <coverPage GUID="_291156d6-e4d3-4950-9e56-5119b4a5c937" eId="cp">
+   
+   <block GUID="_b2ac8f5f-5399-4d8c-ac7d-2ec17d06abc2" eId="cp__st" name="title"><docTitle GUID="_85a6b50f-4aa5-4b04-9284-1ba81f7dffe3" eId="cp__st__dtitle"><ref class="placeholder" href="#varBillTitle"/></docTitle></block>
+   <block GUID="_ff873d8b-20f9-44d6-8822-44b54dd2f54c" eId="cp__stage" name="stageVersion">[<docStage><ref class="placeholder" href="#varStageVersion"/></docStage>]</block>
+   <block GUID="_3c50a9a8-252b-4402-9b7f-ea17e23de217" eId="cp__hdg" name="ToCHeading">CONTENTS</block>
+   <block name="ToCType">Section</block>
+   <toc>
+    <tocItem class="group7ToC" href="#xhdg_1" level="7"><inline name="tocHeading">Mental health moratorium</inline></tocItem>
+    <tocItem class="prov1ToC" href="#sec_1" level="5"><inline name="tocNum">1</inline><inline name="tocHeading">Moratorium on debt recovery action: debtors who have a mental illness</inline></tocItem>
+    <tocItem class="group7ToC" href="#xhdg_2" level="7"><inline name="tocHeading">Modification of the Bankruptcy (Scotland) Act 2016</inline></tocItem>
+    <tocItem class="prov1ToC" href="#sec_2" level="5"><inline name="tocNum">2</inline><inline name="tocHeading">Process for applying for recall of an award of sequestration</inline></tocItem>
+    <tocItem class="prov1ToC" href="#sec_2A" level="5"><inline name="tocNum">2A</inline><inline name="tocHeading">Recall of sequestration: payment of interest</inline></tocItem>
+    <tocItem class="prov1ToC" href="#sec_3" level="5"><inline name="tocNum">3</inline><inline name="tocHeading">When sequestration is awarded: minimal asset process</inline></tocItem>
+    <tocItem class="prov1ToC" href="#sec_3A" level="5"><inline name="tocNum">3A</inline><inline name="tocHeading">Petition for sequestration: citation of debtor</inline></tocItem>
+    <tocItem class="prov1ToC" href="#sec_4" level="5"><inline name="tocNum">4</inline><inline name="tocHeading">Gratuitous alienations: right acquired in good faith and for value</inline></tocItem>
+    <tocItem class="prov1ToC" href="#sec_5" level="5"><inline name="tocNum">5</inline><inline name="tocHeading">Time periods for appeals against decisions by AiB</inline></tocItem>
+    <tocItem class="prov1ToC" href="#sec_5A" level="5"><inline name="tocNum">5A</inline><inline name="tocHeading">Debtor not traced: former trustee’s outlays and remuneration</inline></tocItem>
+    <tocItem class="prov1ToC" href="#sec_5B" level="5"><inline name="tocNum">5B</inline><inline name="tocHeading">Failure of debtor to co-operate with trustee in sequestration</inline></tocItem>
+    <tocItem class="prov1ToC" href="#sec_5C" level="5"><inline name="tocNum">5C</inline><inline name="tocHeading">Commissioners: disqualification from office where AiB is trustee</inline></tocItem>
+    <tocItem class="group7ToC" href="#xhdg_3" level="7"><inline name="tocHeading">Arrestee’s duty of disclosure</inline></tocItem>
+    <tocItem class="prov1ToC" href="#sec_6" level="5"><inline name="tocNum">6</inline><inline name="tocHeading">Arrestment and action of furthcoming</inline></tocItem>
+    <tocItem class="prov1ToC" href="#sec_7" level="5"><inline name="tocNum">7</inline><inline name="tocHeading">Diligence against earnings</inline></tocItem>
+    <tocItem class="group7ToC" href="#xhdg_5" level="7"><inline name="tocHeading">Diligence on the dependence</inline></tocItem>
+    <tocItem class="prov1ToC" href="#sec_8" level="5"><inline name="tocNum">8</inline><inline name="tocHeading">Provision of debt advice and information package</inline></tocItem>
+    <tocItem class="group7ToC" href="#xhdg_6" level="7"><inline name="tocHeading">Exceptional attachment</inline></tocItem>
+    <tocItem class="prov1ToC" href="#sec_9" level="5"><inline name="tocNum">9</inline><inline name="tocHeading">Notice and redemption periods</inline></tocItem>
+    <tocItem class="group7ToC" href="#xhdg_7" level="7"><inline name="tocHeading">Money attachment</inline></tocItem>
+    <tocItem class="prov1ToC" href="#sec_10" level="5"><inline name="tocNum">10</inline><inline name="tocHeading">Money attachment when premises are open</inline></tocItem>
+    <tocItem class="group7ToC" href="#xhdg_10A" level="7"><inline name="tocHeading">Arrestment of ships</inline></tocItem>
+    <tocItem class="prov1ToC" href="#sec_10A" level="5"><inline name="tocNum">10A</inline><inline name="tocHeading">Arrestment of ships on a Sunday</inline></tocItem>
+    <tocItem class="group7ToC" href="#xhdg_11" level="7"><inline name="tocHeading">Final provisions</inline></tocItem>
+    <tocItem class="prov1ToC" href="#sec_11" level="5"><inline name="tocNum">11</inline><inline name="tocHeading">Ancillary provision</inline></tocItem>
+    <tocItem class="prov1ToC" href="#sec_12" level="5"><inline name="tocNum">12</inline><inline name="tocHeading">Commencement</inline></tocItem>
+    <tocItem class="prov1ToC" href="#sec_13" level="5"><inline name="tocNum">13</inline><inline name="tocHeading">Short title</inline></tocItem>
+   </toc>
+  </coverPage>
+  <preface GUID="_e671f449-8b0d-415a-8819-84d25fe9918e" eId="preface">
+   
+   <tblock GUID="_10140639-1ea0-43a9-a413-72417b4d7d37" class="explanatoryNotesStatement" eId="preface__explNotesStmnt">
+    <p>Amendments to the Bill since the previous version are indicated by sidelining in the right margin. Wherever possible, provisions that were in the Bill as introduced retain the original numbering.</p>
+   </tblock>
+   <block GUID="_585f8463-a7f1-4e30-afff-8b806a366c38" eId="preface__st" name="title"><docTitle GUID="_da3bdb7c-99c1-44b7-be3b-74c6cb0f0427" eId="preface__st__dtitle"><ref class="placeholder" href="#varBillTitle"/></docTitle></block>
+   <block name="stageVersion">[<docStage GUID="_87811399-f96c-4d06-8315-dd0de28e9246" eId="preface__docStage"><ref class="placeholder" href="#varStageVersion"/></docStage>]</block>
+   <longTitle GUID="_81b89c4b-5fc5-451b-9cfb-b9b3593c4ff2" eId="preface__longtitle">
+    <p><?L 1-1?>An Act of the Scottish Parliament to make provision to establish a mental health moratorium; <?L 1-2?>to modify the Bankruptcy (Scotland) Act 2016; and to modify the law of diligence.</p>
+   </longTitle>
+  </preface>
+  <body>
+   
+   <hcontainer GUID="_f8daf771-42a1-4e3e-93bc-3c817072593f" class="group7" eId="xhdg_1" name="crossheading">
+    
+    <heading GUID="_1deb2165-c762-454b-921b-fbf105c6d6ce" eId="xhdg_1__hdg"><?L 1-3?>Mental health moratorium</heading>
+    <section GUID="_be3d77fa-c3e4-4463-97ba-b1e385266460" class="prov1" eId="sec_1">
+     
+     <num><?L 1-4?>1</num>
+     <heading GUID="_eab9d066-bfed-4bcf-b2ae-c02e1b6ccfa3" eId="sec_1__hdg">Moratorium on debt recovery action: debtors who have a mental illness</heading>
+     <subsection GUID="_82d7419b-03aa-461d-b95f-36e810d12b3e" class="prov2" eId="sec_1__subsec_1">
+      <num><?L 1-5?>(1)</num>
+      <content>
+       <p>The Scottish Ministers may by regulations make provision establishing a moratorium <?L 1-6?>on debt recovery action by creditors against individuals who have a mental illness.</p>
+      </content>
+     </subsection>
+     <subsection GUID="_a5914cc9-71fc-4c59-8949-1141a3b854f7" class="prov2" eId="sec_1__subsec_2">
+      <num><?L 1-7?>(2)</num>
+      <intro GUID="_115b0a38-bc34-444f-9bec-b80d95b1cd5b" eId="sec_1__subsec_2__intro">
+       <p>Regulations under <ref class="valid" href="#sec_1__subsec_1" ukl:targetGuid="_82d7419b-03aa-461d-b95f-36e810d12b3e">subsection (1)</ref> may (among other things) include provision about—</p>
+      </intro>
+      <level GUID="_1ec0c10c-20af-4763-9855-95b6fa50ef8a" class="para1" eId="sec_1__subsec_2__para_a">
+       <num><?L 1-8?>(a)</num>
+       <content>
+        <p>the eligibility criteria, or conditions, which must be met for the moratorium to <?L 1-9?>apply in relation to an individual,</p>
+       </content>
+      </level>
+      <level GUID="_f1d147b9-7ae9-40f1-876e-d260cc78535e" class="para1" eId="sec_1__subsec_2__para_b">
+       <num><?L 1-10?>(b)</num>
+       <content>
+        <p>the types of debts in respect of which the moratorium applies,</p>
+       </content>
+      </level>
+      <level GUID="_7341f9eb-951a-43c6-a372-523072cea818" class="para1" eId="sec_1__subsec_2__para_c">
+       <num><?L 1-11?>(c)</num>
+       <content>
+        <p>the process for determining if the eligibility criteria, or conditions, are met (for <?L 1-12?>example, by conferring functions on a person or persons of a description specified <?L 1-13?>in the regulations),</p>
+       </content>
+      </level>
+      <level GUID="_cb03874f-f978-43ee-a5d0-fd72a5170e9c" class="para1" eId="sec_1__subsec_2__para_d">
+       <num><?L 1-14?>(d)</num>
+       <content>
+        <p>the time period for which the moratorium is to apply in relation to an individual <?L 1-15?>(“the moratorium period”),</p>
+       </content>
+      </level>
+      <level GUID="_9390efd9-9ca6-4dcc-8d66-46b8b5bf5d2e" class="para1" eId="sec_1__subsec_2__para_e">
+       <num><?L 1-16?>(e)</num>
+       <content>
+        <p>the actions creditors must, may or may not take during the moratorium period in <?L 1-17?>relation to an individual who is the subject of the moratorium and the consequences <?L 1-18?>(if any) for creditors for taking or failing to take such actions,</p>
+       </content>
+      </level>
+      <level GUID="_0ad6ff0d-463b-49b3-a4db-db158c652bda" class="para1" eId="sec_1__subsec_2__para_f">
+       <num><?L 1-19?>(f)</num>
+       <content>
+        <p>the obligations on an individual who is the subject of the moratorium during the <?L 1-20?>moratorium period,</p>
+       </content>
+      </level>
+      <level GUID="_e743b8b6-6efd-4752-86b6-ec65bfb13f70" class="para1" eId="sec_1__subsec_2__para_g">
+       <num><?L 1-21?>(g)</num>
+       <content>
+        <p>the arrangements for the recording of, and access to, information that the <?L 1-22?>moratorium is applying in relation to an individual,</p>
+       </content>
+      </level>
+      <level GUID="_3a07c881-9b0c-48c9-889f-a149e6d510d7" class="para1" eId="sec_1__subsec_2__para_h">
+       <num><?L 1-23?>(h)</num>
+       <content>
+        <p>appeals against decisions made under the regulations.</p>
+       </content>
+      </level>
+     </subsection>
+     <subsection GUID="_be2c14ad-d66b-409b-96f8-d951ae4b6dea" class="prov2" eId="sec_1__subsec_3">
+      <num><?L 1-24?>(3)</num>
+      <intro GUID="_c600c99a-98f2-48aa-bbe0-3b57d26e4179" eId="sec_1__subsec_3__intro">
+       <p>Regulations under <ref class="valid" href="#sec_1" ukl:targetGuid="_be3d77fa-c3e4-4463-97ba-b1e385266460">this section</ref> may—</p>
+      </intro>
+      <level GUID="_672bfb00-b823-4e10-95f9-34964e59150b" class="para1" eId="sec_1__subsec_3__para_a">
+       <num><?L 1-25?>(a)</num>
+       <content>
+        <p>make different provision for different purposes,</p>
+       </content>
+      </level>
+      <level GUID="_a8dade96-6bb3-4400-bc01-b229d7c5c05c" class="para1" eId="sec_1__subsec_3__para_b">
+       <num><?L 1-26?>(b)</num>
+       <content>
+        <p>modify any enactment,</p>
+       </content>
+      </level>
+      <level GUID="_47dd1658-31c4-484b-ad82-4f261ca78f87" class="para1" eId="sec_1__subsec_3__para_c">
+       <num><?L 1-27?>(c)</num>
+       <content>
+        <p>include incidental, supplementary, consequential, transitional, transitory or saving <?L 1-28?>provision.</p>
+       </content>
+      </level>
+     </subsection>
+     <subsection GUID="_66d96f77-52cb-4a88-8a1a-8d16b14fe6b0" class="prov2" eId="sec_1__subsec_4">
+      <num><?L 1-29?>(4)</num>
+      <content>
+       <p>Regulations under <ref class="valid" href="#sec_1" ukl:targetGuid="_be3d77fa-c3e4-4463-97ba-b1e385266460">this section</ref> are subject to the affirmative procedure.</p>
+      </content>
+     </subsection>
+    </section>
+   </hcontainer>
+   <hcontainer GUID="_4ce3ee36-eb77-4724-ba7b-a17070973a77" class="group7" eId="xhdg_2" name="crossheading">
+    
+    <heading GUID="_50b3350a-9659-4947-85dc-ad06046a3531" eId="xhdg_2__hdg"><?L 2-1?>Modification of the <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/contents">Bankruptcy (Scotland) Act 2016</ref></heading>
+    <section GUID="_51dac9c3-0286-430b-a9d2-c4fe0fb09535" class="prov1" eId="sec_2">
+     
+     <num><?L 2-2?>2</num>
+     <heading GUID="_7d150c86-fb71-4a1b-b37a-eb0c352fe6a5" eId="sec_2__hdg">Process for applying for recall of an award of sequestration</heading>
+     <subsection GUID="_4625d9f6-269d-40be-997f-e27f807ba10e" class="prov2" eId="sec_2__subsec_1">
+      <num><?L 2-3?>(1)</num>
+      <content>
+       <p><mref><ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#pt_2" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/part/2">Part 2</ref> of the <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/contents">Bankruptcy (Scotland) Act 2016</ref></mref> is modified as follows.</p>
+      </content>
+     </subsection>
+     <subsection GUID="_481b54e7-4b85-40fa-9169-54497cd007fa" class="prov2" eId="sec_2__subsec_2">
+      <num><?L 2-4?>(2)</num>
+      <intro GUID="_84de9d01-4ea9-4820-b039-5ef0c64a858e" eId="sec_2__subsec_2__intro">
+       <p>In <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_29" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/29">section 29</ref> (petitions for recall of sequestration), in <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_29__subsec_4" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/29">subsection (4)</ref>—</p>
+      </intro>
+      <level GUID="_bdff5f3c-5262-4259-8beb-21c224696b77" class="para1" eId="sec_2__subsec_2__para_a">
+       <num><?L 2-5?>(a)</num>
+       <content>
+        <p>in <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_29__subsec_4__para_a" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/29">paragraph (a)</ref>, after “debtor” insert “(where the debtor is not the petitioner)”,</p>
+       </content>
+      </level>
+      <level GUID="_7e71e0bb-53c2-4b80-b056-3804823804e5" class="para1" eId="sec_2__subsec_2__para_b">
+       <num><?L 2-6?>(b)</num>
+       <content>
+        <p>in <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_29__subsec_4__para_b" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/29">paragraph (b)</ref>, after “any” insert “other”,</p>
+       </content>
+      </level>
+      <level GUID="_6dc09abb-dff6-47c0-bfd8-70963edbe83c" class="para1" eId="sec_2__subsec_2__para_c">
+       <num><?L 2-7?>(c)</num>
+       <content>
+        <p>in <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_29__subsec_4__para_c" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/29">paragraph (c)</ref>, after “trustee” insert “(where the trustee is not the petitioner)”,</p>
+       </content>
+      </level>
+      <level GUID="_708f950f-d3bf-47f8-a6e5-f39ab11b422e" class="para1" eId="sec_2__subsec_2__para_d">
+       <num><?L 2-8?>(d)</num>
+       <content>
+        <p>in <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_29__subsec_4__para_d" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/29">paragraph (d)</ref>, after “AiB” insert “(where AiB is not the petitioner)”.</p>
+       </content>
+      </level>
+     </subsection>
+     <subsection GUID="_5796a6f1-1586-4f35-b95e-c3cb34e2eac9" class="prov2" eId="sec_2__subsec_3">
+      <num><?L 2-9?>(3)</num>
+      <intro GUID="_a63ab50e-9483-4add-83a0-f4465d9e4700" eId="sec_2__subsec_3__intro">
+       <p>In <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_31" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/31">section 31</ref> (application to Accountant in Bankruptcy for recall of sequestration)—</p>
+      </intro>
+      <level GUID="_bf8742cc-5e5a-4fc0-a775-bcd992bc612f" class="para1" eId="sec_2__subsec_3__para_a">
+       <num><?L 2-10?>(a)</num>
+       <content>
+        <p>in <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_31__subsec_3" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/31">subsection (3)</ref>, in the opening words, before “persons” insert “other”,</p>
+       </content>
+      </level>
+      <level GUID="_206e7432-fad8-4e16-ab6c-499c51f6613f" class="para1" eId="sec_2__subsec_3__para_b">
+       <num><?L 2-11?>(b)</num>
+       <intro GUID="_ea4a5c30-037f-400b-afaf-bc79673d43bf" eId="sec_2__subsec_3__para_b__intro">
+        <p>in <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_31__subsec_4" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/31">subsection (4)</ref>—</p>
+       </intro>
+       <level GUID="_f688e3ae-69ea-4b11-b30d-36ebc3cac1c7" class="para2" eId="sec_2__subsec_3__para_b__subpara_i">
+        <num><?L 2-12?>(i)</num>
+        <content>
+         <p>in <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_31__subsec_4__para_a" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/31">paragraph (a)</ref>, the words “(where the debtor is not the applicant)” are <?L 2-13?>repealed,</p>
+        </content>
+       </level>
+       <level GUID="_68726715-26df-4402-986d-95200d291e0f" class="para2" eId="sec_2__subsec_3__para_b__subpara_ii">
+        <num><?L 2-14?>(ii)</num>
+        <content>
+         <p>in <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_31__subsec_4__para_c" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/31">paragraph (c)</ref>, after “trustee” insert “(where AiB is not the trustee)”,</p>
+        </content>
+       </level>
+      </level>
+      <level GUID="_241cbd29-1d2c-40c5-ba04-39639ba47647" class="para1" eId="sec_2__subsec_3__para_c">
+       <num><?L 2-15?>(c)</num>
+       <intro GUID="_dab571cc-6fd8-4c3c-b587-0dc9683b0cb8" eId="sec_2__subsec_3__para_c__intro">
+        <p>in <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_31__subsec_5" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/31">subsection (5)</ref>—</p>
+       </intro>
+       <level GUID="_ea56d6de-f86c-4bfd-96fd-8225f65e0645" class="para2" eId="sec_2__subsec_3__para_c__subpara_i">
+        <num><?L 2-16?>(i)</num>
+        <content>
+         <p><mod>after “granted” insert “—<quotedStructure GUID="_d3e3b4cb-9127-4b89-8adf-a3ce62b3c8a5" eId="sec_2__subsec_3__para_c__subpara_i__qstr" endQuote="”" startQuote="" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+          <level GUID="_019b3a60-45a0-422e-b68f-b6b9da67d24f" class="para1" eId="sec_2__subsec_3__para_c__subpara_i__qstr__para_a">
+           <num ukl:autonumber="no"><?L 2-17?>(a)</num>
+           <content>
+            <p>where AiB is not the trustee,</p>
+           </content>
+          </level>
+          </quotedStructure><inline name="AppendText">,</inline></mod> </p>
+        </content>
+       </level>
+       <level GUID="_d4ca9703-3bf9-43c3-ad0e-7571712efdb7" class="para2" eId="sec_2__subsec_3__para_c__subpara_ii">
+        <num><?L 2-18?>(ii)</num>
+        <content>
+         <p><mod>at the end insert—<quotedStructure GUID="_a4dc4b6c-ad81-4205-9350-e768d0558b4d" eId="sec_2__subsec_3__para_c__subpara_ii__qstr" endQuote="”" startQuote="“" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+          <level GUID="_3f1b5eca-ed1d-470c-87a2-482ebe21f83f" class="para1" eId="sec_2__subsec_3__para_c__subpara_ii__qstr__para_b">
+           <num ukl:autonumber="no"><?L 2-19?>(b)</num>
+           <content>
+            <p>where AiB is the trustee, under section 35(6) (subject to any conditions <?L 2-20?>imposed under section 35<ref class="valid" href="#sec_2__subsec_7__para_e__qstr__subsec_6B" ukl:targetGuid="_316e8da6-3ca9-4a04-a229-1333fb83d1a3" ukl:targetJref="">(6B)</ref>).</p>
+           </content>
+          </level>
+          </quotedStructure><inline name="AppendText">.</inline></mod> </p>
+        </content>
+       </level>
+      </level>
+     </subsection>
+     <subsection GUID="_fba2082f-1240-460b-8203-46191e78b61e" class="prov2" eId="sec_2__subsec_4">
+      <num><?L 2-21?>(4)</num>
+      <intro GUID="_7dadaac9-9fc6-4e12-98ef-618f3e6f4fda" eId="sec_2__subsec_4__intro">
+       <p>In <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_32" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/32">section 32</ref> (application under section 31: further procedure)—</p>
+      </intro>
+      <level GUID="_5b5dcdd9-4092-40e8-8c96-26172a67b14a" class="para1" eId="sec_2__subsec_4__para_a">
+       <num><?L 2-22?>(a)</num>
+       <content>
+        <p><mod>for <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_32__subsec_1" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/32">subsection (1)</ref> substitute—<quotedStructure GUID="_33fa5a82-6f99-4979-bcfd-b60bf667ee28" eId="sec_2__subsec_4__para_a__qstr" endQuote="”" startQuote="“" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+         <subsection GUID="_1bc13c12-8af2-4ca3-94ea-a3bc440d0255" class="prov2" eId="sec_2__subsec_4__para_a__qstr__subsec_1">
+          <num ukl:autonumber="no"><?L 2-23?>(1)</num>
+          <intro GUID="_a105dd61-bcba-455d-944d-f1bac27cd7b7" eId="sec_2__subsec_4__para_a__qstr__subsec_1__intro">
+           <p>This section applies where—</p>
+          </intro>
+          <level GUID="_ad74fbdb-49b1-4e7d-8bb4-b84742414372" class="para1" eId="sec_2__subsec_4__para_a__qstr__subsec_1__para_a">
+           <num><?L 2-24?>(a)</num>
+           <content>
+            <p>an application is made under section 31, and</p>
+           </content>
+          </level>
+          <level GUID="_d49a20a2-d012-4d6b-b976-066a1da5b6f0" class="para1" eId="sec_2__subsec_4__para_a__qstr__subsec_1__para_b">
+           <num><?L 2-25?>(b)</num>
+           <content>
+            <p>AiB is not the trustee.</p>
+           </content>
+          </level>
+         </subsection>
+         </quotedStructure><inline name="AppendText">,</inline></mod> </p>
+       </content>
+      </level>
+      <level GUID="_bd3a2d0a-f9a3-4495-8e91-6be205809e06" class="para1" eId="sec_2__subsec_4__para_b">
+       <num><?L 2-26?>(b)</num>
+       <content>
+        <p>the heading of the section becomes “<b>Application under section 31: further <?L 2-27?>procedure where Accountant in Bankruptcy is not trustee</b>”.</p>
+       </content>
+      </level>
+     </subsection>
+     <subsection GUID="_6fc06215-5e31-40b4-a6fb-79d83aeba378" class="prov2" eId="sec_2__subsec_5">
+      <num><?L 2-28?>(5)</num>
+      <intro GUID="_17e59b98-4ced-4ff2-82fd-04f97b2987fc" eId="sec_2__subsec_5__intro">
+       <p>In <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_33" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/33">section 33</ref> (determination where amount of outlays and remuneration not agreed), in <?L 2-29?><ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_33__subsec_1" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/33">subsection (1)</ref>—</p>
+      </intro>
+      <level GUID="_0894ecc5-656f-42a4-a558-92dbb429ff47" class="para1" eId="sec_2__subsec_5__para_a">
+       <num><?L 2-30?>(a)</num>
+       <content>
+        <p>the word “and” immediately following <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_33__subsec_1__para_a" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/33">paragraph (a)</ref> is repealed,</p>
+       </content>
+      </level>
+      <level GUID="_b339f053-c877-49ec-adb6-521d7d58d24e" class="para1" eId="sec_2__subsec_5__para_b">
+       <num><?L 2-31?>(b)</num>
+       <content>
+        <p><mod>after <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_33__subsec_1__para_a" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/33">paragraph (a)</ref>, insert—<quotedStructure GUID="_50679dba-c67e-434e-ac00-7c1cb9d80e70" eId="sec_2__subsec_5__para_b__qstr" endQuote="”" startQuote="“" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+         <level GUID="_ae08ec58-959a-497c-9b52-44254fc11c59" class="para1" eId="sec_2__subsec_5__para_b__qstr__para_aa">
+          <num ukl:autonumber="no"><?L 2-32?>(aa)</num>
+          <content>
+           <p>AiB is not the trustee, and</p>
+          </content>
+         </level>
+         </quotedStructure><inline name="AppendText">.</inline></mod> </p>
+       </content>
+      </level>
+     </subsection>
+     <subsection GUID="_a5f4b185-aba4-4bc4-82da-4afae677a3ad" class="prov2" eId="sec_2__subsec_6">
+      <num><?L 2-33?>(6)</num>
+      <intro GUID="_cc577c20-5b6c-4968-aced-7f054fa94ca0" eId="sec_2__subsec_6__intro">
+       <p>In <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_34" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/34">section 34</ref> (recall of sequestration by Accountant in Bankruptcy)—</p>
+      </intro>
+      <level GUID="_d43d3ce9-a816-481d-a857-9668bac1290a" class="para1" eId="sec_2__subsec_6__para_a">
+       <num><?L 2-34?>(a)</num>
+       <content>
+        <p><mod>before <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_34__subsec_1" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/34">subsection (1)</ref>, insert—<quotedStructure GUID="_2606099d-8a19-4108-815c-5de7def32ffe" eId="sec_2__subsec_6__para_a__qstr" endQuote="”" startQuote="“" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+         <subsection GUID="_c72fd07f-660a-433b-bfa3-a0ca4aa6e90c" class="prov2" eId="sec_2__subsec_6__para_a__qstr__subsec_A1">
+          <num ukl:autonumber="no"><?L 2-35?>(A1)</num>
+          <content>
+           <p>This section applies where AiB is not the trustee.</p>
+          </content>
+         </subsection>
+         </quotedStructure><inline name="AppendText">,</inline></mod> </p>
+       </content>
+      </level>
+      <level GUID="_868838ad-4649-450f-a688-c0642be0dba9" class="para1" eId="sec_2__subsec_6__para_b">
+       <num><?L 2-36?>(b)</num>
+       <content>
+        <p><mod>after <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_34__subsec_1" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/34">subsection (1)</ref>, insert—<quotedStructure GUID="_0026961a-35ba-4d0c-b580-96d8ea0a8920" eId="sec_2__subsec_6__para_b__qstr" endQuote="”" startQuote="“" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+         <subsection GUID="_e61cdde8-bf4b-47c3-9ddc-515e661525a8" class="prov2" eId="sec_2__subsec_6__para_b__qstr__subsec_1A">
+          <num ukl:autonumber="no"><?L 3-1?>(1A)</num>
+          <content>
+           <p>Before recalling an award of sequestration AiB must take into account any <?L 3-2?>representations made by an interested person within 21 days beginning with <?L 3-3?>the day on which notice is given under section 31(3)(b).</p>
+          </content>
+         </subsection>
+         </quotedStructure><inline name="AppendText">,</inline></mod> </p>
+       </content>
+      </level>
+      <level GUID="_4a691eb3-24ec-4ec4-acc2-a959bbb78a0c" class="para1" eId="sec_2__subsec_6__para_c">
+       <num><?L 3-4?>(c)</num>
+       <content>
+        <p>in <mref><ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_34__subsec_2" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/34">subsection (2)</ref><ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_34__subsec_2__para_a" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/34">(a)</ref></mref>, for “8 weeks” substitute “9 weeks”,</p>
+       </content>
+      </level>
+      <level GUID="_1cd47644-1cf3-44cd-ab87-5999b085f223" class="para1" eId="sec_2__subsec_6__para_d">
+       <num><?L 3-5?>(d)</num>
+       <content>
+        <p>the title to the section becomes “<b>Recall of sequestration where Accountant in <?L 3-6?>Bankruptcy is not trustee</b>”.</p>
+       </content>
+      </level>
+     </subsection>
+     <subsection GUID="_9f921106-36fe-4195-a990-146d77bb28d3" class="prov2" eId="sec_2__subsec_7">
+      <num><?L 3-7?>(7)</num>
+      <intro GUID="_26a4d3be-668c-4358-a74d-d275365056e2" eId="sec_2__subsec_7__intro">
+       <p>In <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_35" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/35">section 35</ref> (recall where Accountant in Bankruptcy trustee)—</p>
+      </intro>
+      <level GUID="_6d2f7918-73f7-4f5d-b6ae-cb8418456527" class="para1" eId="sec_2__subsec_7__para_a">
+       <num><?L 3-8?>(a)</num>
+       <intro GUID="_8459405a-d22c-40a3-ba63-d59fd22b6db4" eId="sec_2__subsec_7__para_a__intro">
+        <p>in <mref><ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_35__subsec_1" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/35">subsection (1)</ref><ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_35__subsec_1__para_b" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/35">(b)</ref></mref>—</p>
+       </intro>
+       <level GUID="_ff44795b-3570-4682-a84e-9fad2edc1c6b" class="para2" eId="sec_2__subsec_7__para_a__subpara_i">
+        <num><?L 3-9?>(i)</num>
+        <content>
+         <p><mod>before “considers” insert “either—<quotedStructure GUID="_014e3d96-2a22-4366-a1d4-e7544ed814f4" eId="sec_2__subsec_7__para_a__subpara_i__qstr" endQuote="”" startQuote="" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+          <level GUID="_9a632db3-d595-4d79-be24-aef94b0f7986" class="para2" eId="sec_2__subsec_7__para_a__subpara_i__qstr__subpara_i">
+           <num ukl:autonumber="no"><?L 3-10?>(i)</num>
+           <content>
+            <p>receives an application under section 31, or</p>
+           </content>
+          </level>
+          <level GUID="_2629b09a-8c0c-40e4-90f2-02fab5a771e6" class="para2" eId="sec_2__subsec_7__para_a__subpara_i__qstr__subpara_ii">
+           <num><?L 3-11?>(ii)</num>
+           <content>
+            <p/>
+           </content>
+          </level>
+          </quotedStructure><inline name="AppendText">,</inline></mod> </p>
+        </content>
+       </level>
+       <level GUID="_decbcdf3-d130-431d-ba7a-cb89ad500a7b" class="para2" eId="sec_2__subsec_7__para_a__subpara_ii">
+        <num><?L 3-12?>(ii)</num>
+        <content>
+         <p>for “should” substitute “may”,</p>
+        </content>
+       </level>
+      </level>
+      <level GUID="_afe04b5f-b1be-4ef3-aed8-4e11ae58005c" class="para1" eId="sec_2__subsec_7__para_b">
+       <num><?L 3-13?>(b)</num>
+       <content>
+        <p><mod>in <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_35__subsec_2" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/35">subsection (2)</ref>, after “must” insert “—<quotedStructure GUID="_78ac7d67-3285-4e86-be98-d9564c7059f3" eId="sec_2__subsec_7__para_b__qstr" endQuote="”" startQuote="" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+         <level GUID="_62d752cb-a3e7-408c-9c3f-0e362570cf6a" class="para1" eId="sec_2__subsec_7__para_b__qstr__para_a">
+          <num ukl:autonumber="no"><?L 3-14?>(a)</num>
+          <content>
+           <p>where an application under section 31 is received, notify every creditor <?L 3-15?>known to AiB that the application has been made within 7 days <?L 3-16?>beginning with the day on which the application is received,</p>
+          </content>
+         </level>
+         <level GUID="_fba098e7-8e43-4048-9b30-db2f9617af22" class="para1" eId="sec_2__subsec_7__para_b__qstr__para_b">
+          <num><?L 3-17?>(b)</num>
+          <content>
+           <p>where AiB is acting on its own accord,</p>
+          </content>
+         </level>
+         </quotedStructure><inline name="AppendText">,</inline></mod> </p>
+       </content>
+      </level>
+      <level GUID="_360f29b2-7e45-4f89-985d-ef7361d65f4f" class="para1" eId="sec_2__subsec_7__para_c">
+       <num><?L 3-18?>(c)</num>
+       <content>
+        <p><mod>after <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_35__subsec_2" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/35">subsection (2)</ref>, insert—<quotedStructure GUID="_2f06ef82-c816-4a56-a6ff-57d9824332b3" eId="sec_2__subsec_7__para_c__qstr" endQuote="”" startQuote="“" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+         <subsection GUID="_34b27d5a-af1e-4d22-ba22-a3b395cd5234" class="prov2" eId="sec_2__subsec_7__para_c__qstr__subsec_2A">
+          <num ukl:autonumber="no"><?L 3-19?>(2A)</num>
+          <content>
+           <p>At the same time as giving notice under subsection (2)(b), AiB must give to <?L 3-20?>the persons mentioned in subsection (2B) a notice informing the recipient that <?L 3-21?>the person has a right to make representations to AiB in relation to the <?L 3-22?>notification within 21 days beginning with the day on which the notice is <?L 3-23?>given.</p>
+          </content>
+         </subsection>
+         <subsection GUID="_082578d1-06a0-4fa3-ad5e-f57ee3472dba" class="prov2" eId="sec_2__subsec_7__para_c__qstr__subsec_2B">
+          <num><?L 3-24?>(2B)</num>
+          <intro GUID="_2ed974a8-6e6a-48d8-9b05-1b30e394f70e" eId="sec_2__subsec_7__para_c__qstr__subsec_2B__intro">
+           <p>The persons are—</p>
+          </intro>
+          <level GUID="_5ce4f7fd-ba9f-4b43-a610-895e70f380c0" class="para1" eId="sec_2__subsec_7__para_c__qstr__subsec_2B__para_a">
+           <num><?L 3-25?>(a)</num>
+           <content>
+            <p>the debtor, and</p>
+           </content>
+          </level>
+          <level GUID="_ba7fdee0-bac0-4c2f-ac4c-be54a16fe23f" class="para1" eId="sec_2__subsec_7__para_c__qstr__subsec_2B__para_b">
+           <num><?L 3-26?>(b)</num>
+           <content>
+            <p>any person who was a petitioner for, or concurred in a debtor application <?L 3-27?>for, the sequestration.</p>
+           </content>
+          </level>
+         </subsection>
+         </quotedStructure><inline name="AppendText">,</inline></mod> </p>
+       </content>
+      </level>
+      <level GUID="_71bc5e3f-df02-4e28-a172-944a691987b2" class="para1" eId="sec_2__subsec_7__para_d">
+       <num><?L 3-28?>(d)</num>
+       <content>
+        <p>in <mref><ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_35__subsec_5" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/35">subsection (5)</ref><ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_35__subsec_5__para_a" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/35">(a)</ref></mref>, for “subsection (2)” substitute “subsection (2A) or, as the <?L 3-29?>case may be, section 31(3)(b)”,</p>
+       </content>
+      </level>
+      <level GUID="_be01032a-5deb-4f13-8af4-9139687a98b5" class="para1" eId="sec_2__subsec_7__para_e">
+       <num><?L 3-30?>(e)</num>
+       <content>
+        <p><mod>after <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_35__subsec_6" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/35">subsection (6)</ref>, insert—<quotedStructure GUID="_d791d411-ad4c-4ea0-8ae4-3ad7d4b0b92c" eId="sec_2__subsec_7__para_e__qstr" endQuote="”" startQuote="“" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+         <subsection GUID="_7a5e5292-ef8f-407c-853f-1a1e99606e60" class="prov2" eId="sec_2__subsec_7__para_e__qstr__subsec_6A">
+          <num ukl:autonumber="no"><?L 3-31?>(6A)</num>
+          <intro GUID="_81740395-3db6-43bb-ab37-4f5f54bc5886" eId="sec_2__subsec_7__para_e__qstr__subsec_6A__intro">
+           <p>AiB may not recall an award of sequestration after—</p>
+          </intro>
+          <level GUID="_fda73e68-8ad7-4e0f-80a7-0ecdc2e4f2dd" class="para1" eId="sec_2__subsec_7__para_e__qstr__subsec_6A__para_a">
+           <num><?L 3-32?>(a)</num>
+           <content>
+            <p>where no appeal is made under section 37(5)(a), the day which is 9 <?L 3-33?>weeks after the days mentioned in subsection (5)(a) have expired, or</p>
+           </content>
+          </level>
+          <level GUID="_f068a9b1-ff7b-4642-afe6-884c9a718d9c" class="para1" eId="sec_2__subsec_7__para_e__qstr__subsec_6A__para_b">
+           <num><?L 3-34?>(b)</num>
+           <content>
+            <p>where such an appeal is made, such later day which is 14 days after the <?L 3-35?>day on which the appeal is finally determined or abandoned.</p>
+           </content>
+          </level>
+         </subsection>
+         <subsection GUID="_316e8da6-3ca9-4a04-a229-1333fb83d1a3" class="prov2" eId="sec_2__subsec_7__para_e__qstr__subsec_6B">
+          <num><?L 3-36?>(6B)</num>
+          <content>
+           <p>If AiB does not under subsection (6) recall an award of sequestration, the <?L 3-37?>sequestration must continue but is to be subject to such conditions as AiB <?L 3-38?>thinks fit.</p>
+          </content>
+         </subsection>
+         <subsection GUID="_921b1e3f-abfd-4859-8783-9f83b3e7c7ce" class="prov2" eId="sec_2__subsec_7__para_e__qstr__subsec_6C">
+          <num><?L 3-39?>(6C)</num>
+          <content>
+           <p>Despite notice being given under subsection (2)(b), the proceedings in the <?L 3-40?>sequestration are to continue as if the notification had not been made until a <?L 3-41?>recall of an award of sequestration is granted under subsection (6) (subject to <?L 3-42?>any conditions imposed under subsection (6B)).</p>
+          </content>
+         </subsection>
+         </quotedStructure><inline name="AppendText">,</inline></mod> </p>
+       </content>
+      </level>
+      <level GUID="_cdbe8427-844e-48b9-91c1-5959ff35cbf1" class="para1" eId="sec_2__subsec_7__para_f">
+       <num><?L 4-1?>(f)</num>
+       <content>
+        <p>the heading of the section becomes “<b>Recall of sequestration where Accountant <?L 4-2?>in Bankruptcy is trustee</b>”.</p>
+       </content>
+      </level>
+     </subsection>
+    </section>
+    <section GUID="_9e95e700-c52a-452c-8282-80dee21e6de9" class="prov1" eId="sec_2A">
+     
+     <num ukl:autonumber="yes"><?L 4-3?>2A</num>
+     <heading GUID="_16a94b0e-6a7f-419c-8643-a9264bcc829c" eId="sec_2A__hdg">Recall of sequestration: payment of interest</heading>
+     <subsection GUID="_cf01e712-ddae-405a-9b60-45303c44c6d1" class="prov2" eId="sec_2A__subsec_1">
+      <num><?L 4-4?>(1)</num>
+      <content>
+       <p><mref><ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#pt_2" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/part/2">Part 2</ref> of the <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/contents">Bankruptcy (Scotland) Act 2016</ref></mref> is modified as follows.</p>
+      </content>
+     </subsection>
+     <subsection GUID="_0bbf3e80-0a0f-434b-beb0-f690384028ba" class="prov2" eId="sec_2A__subsec_2">
+      <num><?L 4-5?>(2)</num>
+      <intro GUID="_213c0521-2c2c-47bb-afc4-d22657c8cd56" eId="sec_2A__subsec_2__intro">
+       <p>In <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_30" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/30">section 30</ref> (recall of sequestration by sheriff)—</p>
+      </intro>
+      <level GUID="_9dd1d717-eac5-406d-b6bc-eb23ef98ac21" class="para1" eId="sec_2A__subsec_2__para_a">
+       <num><?L 4-6?>(a)</num>
+       <content>
+        <p>in <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_30__subsec_2" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/30">subsection (2)</ref>, in <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_30__subsec_2__para_a" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/30">paragraph (a)</ref>, after “full” insert “(including the payment of <?L 4-7?>any interest payable on the debtor’s debts and the payment of the outlays and <?L 4-8?>remuneration of the interim trustee and of the trustee)”, and</p>
+       </content>
+      </level>
+      <level GUID="_23b47534-39cc-4d92-8c19-09da4f88ec1d" class="para1" eId="sec_2A__subsec_2__para_b">
+       <num><?L 4-9?>(b)</num>
+       <content>
+        <p><mod>in <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_30__subsec_4" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/30">subsection (4)</ref>, in <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_30__subsec_4__para_a" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/30">paragraph (a)</ref>, after “full of” insert “—<quotedStructure GUID="_32aa7f25-2149-457f-94a5-ee302bf54a98" eId="sec_2A__subsec_2__para_b__qstr" endQuote="”" startQuote="" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+         <level GUID="_c5e4bcd3-ba0e-48e9-920b-6262fde17711" class="para2" eId="sec_2A__subsec_2__para_b__qstr__subpara_i">
+          <num ukl:autonumber="no"><?L 4-10?>(i)</num>
+          <content>
+           <p>any interest payable on the debtor’s debts (see section 37A), and</p>
+          </content>
+         </level>
+         <level GUID="_273aaed6-1050-4d75-8c81-c1176be3fab5" class="para2" eId="sec_2A__subsec_2__para_b__qstr__subpara_ii">
+          <num><?L 4-11?>(ii)</num>
+          <content>
+           <p/>
+          </content>
+         </level>
+         </quotedStructure><inline name="AppendText">.</inline></mod></p>
+       </content>
+      </level>
+     </subsection>
+     <subsection GUID="_ed3bd5c8-e135-4389-b151-e52b0ad4885b" class="prov2" eId="sec_2A__subsec_3">
+      <num><?L 4-12?>(3)</num>
+      <intro GUID="_dcaae34f-eec5-41b5-8e5a-cf27ddbaa7b5" eId="sec_2A__subsec_3__intro">
+       <p>In <mref><ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_32" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/32">section 32</ref><ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_32__subsec_4" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/32">(4)</ref></mref> (application under section 31: further procedure)—</p>
+      </intro>
+      <level GUID="_add286e5-f308-42dd-b682-25d42a3fcd72" class="para1" eId="sec_2A__subsec_3__para_a">
+       <num><?L 4-13?>(a)</num>
+       <content>
+        <p><mod>in <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_32__subsec_4__para_b" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/32">paragraph (b)</ref>, for “(including” to the end of <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_32__subsec_4__para_b" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/32">that paragraph</ref> substitute “, including <?L 4-14?>the payment in full of—<quotedStructure GUID="_c9f11d6b-2cd6-43a8-ab0a-0bb00e87ba1e" eId="sec_2A__subsec_3__para_a__qstr" endQuote="”" startQuote="" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+         <level GUID="_6ecf9471-d6e6-408a-8caf-33806ad81ad2" class="para2" eId="sec_2A__subsec_3__para_a__qstr__subpara_i">
+          <num ukl:autonumber="no"><?L 4-15?>(i)</num>
+          <content>
+           <p>any interest payable on the debtor’s debts (see section 37A),</p>
+          </content>
+         </level>
+         <level GUID="_a07069d6-8b65-426f-b89c-4555e499c16a" class="para2" eId="sec_2A__subsec_3__para_a__qstr__subpara_ii">
+          <num><?L 4-16?>(ii)</num>
+          <content>
+           <p>the outlays and remuneration of the interim trustee and of the <?L 4-17?>trustee,</p>
+          </content>
+         </level>
+         </quotedStructure><inline name="AppendText">, and</inline></mod></p>
+       </content>
+      </level>
+      <level GUID="_8a082e74-2e20-4440-a86b-6fc24bdcee41" class="para1" eId="sec_2A__subsec_3__para_b">
+       <num><?L 4-18?>(b)</num>
+       <content>
+        <p>in <mref><ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_32__subsec_4__para_c" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/32">paragraph (c)</ref><ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_32__subsec_4__para_c__subpara_ii" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/32">(ii)</ref></mref>, after “payment of” insert “any interest payable on the debtor’s <?L 4-19?>debts and payment of”.</p>
+       </content>
+      </level>
+     </subsection>
+     <subsection GUID="_279c62da-13f1-43c2-8b3c-dfeb4aa09f4d" class="prov2" eId="sec_2A__subsec_4">
+      <num><?L 4-20?>(4)</num>
+      <content>
+       <p><mod>In <mref><ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_34" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/34">section 34</ref><ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_34__subsec_1" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/34">(1)</ref></mref> (recall of sequestration by Accountant in Bankruptcy), in <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_34__subsec_1__para_a" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/34">paragraph <?L 4-21?>(a)</ref>, for “(including the outlays and remuneration of the interim trustee and the trustee)” <?L 4-22?>substitute “, including the payment in full of— <quotedStructure GUID="_e3bd75aa-6879-41ac-b245-af056b0a36d9" eId="sec_2A__subsec_4__qstr" endQuote="”" startQuote="“" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+        <level GUID="_e9abb237-4d27-4e3d-bc56-e173aa7a69d7" class="para2" eId="sec_2A__subsec_4__qstr__subpara_i">
+         <num ukl:autonumber="no"><?L 4-23?>(i)</num>
+         <content>
+          <p>any interest payable on the debtor’s debts (see section 37A),</p>
+         </content>
+        </level>
+        <level GUID="_10545346-5576-467f-835b-d7c3a3bf205a" class="para2" eId="sec_2A__subsec_4__qstr__subpara_ii">
+         <num><?L 4-24?>(ii)</num>
+         <content>
+          <p>the outlays and remuneration of the interim trustee and of the <?L 4-25?>trustee,</p>
+         </content>
+        </level>
+        </quotedStructure><inline name="AppendText">.</inline></mod></p>
+      </content>
+     </subsection>
+     <subsection GUID="_5cfb2c7b-c278-4037-b8cc-c69e03b24208" class="prov2" eId="sec_2A__subsec_5">
+      <num><?L 4-26?>(5)</num>
+      <intro GUID="_e5c60718-c60d-46b2-8f91-fa729f5162ef" eId="sec_2A__subsec_5__intro">
+       <p>In <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_35" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/35">section 35</ref> (recall where Accountant in Bankruptcy trustee)—</p>
+      </intro>
+      <level GUID="_3952d621-8550-4293-97de-84b8783b5ed6" class="para1" eId="sec_2A__subsec_5__para_a">
+       <num><?L 4-27?>(a)</num>
+       <content>
+        <p>in <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_35__subsec_1" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/35">subsection (1)</ref>, in <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_35__subsec_1__para_b" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/35">paragraph (b)</ref>, after “including” insert “the payment of any <?L 4-28?>interest payable on the debtor’s debts and the payment of”, and</p>
+       </content>
+      </level>
+      <level GUID="_60ffb0c3-c00a-45ea-b9f7-e06bf6e12aab" class="para1" eId="sec_2A__subsec_5__para_b">
+       <num><?L 4-29?>(b)</num>
+       <content>
+        <p><mod>in <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_35__subsec_6" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/35">subsection (6)</ref>, in <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_35__subsec_6__para_a" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/35">paragraph (a)</ref>, for “(including” to the end of <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_35__subsec_6__para_a" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/35">that paragraph</ref>
+         <?L 4-30?>substitute “, including the payment in full of—<quotedStructure GUID="_2275c813-2d2a-4861-bf5e-7d228ec30683" eId="sec_2A__subsec_5__para_b__qstr" endQuote="”" startQuote="“" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+         <level GUID="_6b695c30-eabd-453b-b803-c16fe44ae016" class="para2" eId="sec_2A__subsec_5__para_b__qstr__subpara_i">
+          <num ukl:autonumber="no"><?L 4-31?>(i)</num>
+          <content>
+           <p>any interest payable on the debtor’s debts (see section 37A),</p>
+          </content>
+         </level>
+         <level GUID="_49ded70e-29af-4105-bb7a-85e022ff117d" class="para2" eId="sec_2A__subsec_5__para_b__qstr__subpara_ii">
+          <num><?L 4-32?>(ii)</num>
+          <content>
+           <p>the outlays and remuneration of the interim trustee and of the <?L 4-33?>trustee,</p>
+          </content>
+         </level>
+         </quotedStructure><inline name="AppendText">.</inline></mod></p>
+       </content>
+      </level>
+     </subsection>
+     <subsection GUID="_b9f7b266-49f2-4612-8ece-402037c60ecf" class="prov2" eId="sec_2A__subsec_6">
+      <num><?L 4-34?>(6)</num>
+      <content>
+       <p><mod>After <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_37" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/37">section 37</ref>, insert—<quotedStructure GUID="_4f92056f-fbd4-4e73-a3f4-2a869aec1e82" eId="sec_2A__subsec_6__qstr" endQuote="”" startQuote="“" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+        <section GUID="_64a15f6e-6704-4ba3-9f10-a651381b4285" class="prov1" eId="sec_2A__subsec_6__qstr__sec_37A">
+         <num ukl:autonumber="no"><?L 4-35?>37A</num>
+         <heading GUID="_663d4e01-f359-44a0-8196-7de8d373c3ed" eId="sec_2A__subsec_6__qstr__sec_37A__hdg">Interest</heading>
+         <subsection GUID="_42fd517f-1672-4ecb-b54f-b8c980ef40bb" class="prov2" eId="sec_2A__subsec_6__qstr__sec_37A__subsec_1">
+          <num><?L 4-36?>(1)</num>
+          <content>
+           <p>This section applies for the purpose of determining the amount of interest <?L 4-37?>payable on the debtor’s debts in relation to a recall of an award of sequestration.</p>
+          </content>
+         </subsection>
+         <subsection GUID="_b5080ed8-62b0-4902-8bc2-531e664d1c44" class="prov2" eId="sec_2A__subsec_6__qstr__sec_37A__subsec_2">
+          <num><?L 4-38?>(2)</num>
+          <content>
+           <p>Interest, between the date of sequestration and the date of payment of the debt, <?L 4-39?>is payable at the rate specified in section 129(10), unless subsection (3) applies.</p>
+          </content>
+         </subsection>
+         <subsection GUID="_778bdbc6-7251-4fd6-a94a-05d2aa09298e" class="prov2" eId="sec_2A__subsec_6__qstr__sec_37A__subsec_3">
+          <num><?L 5-1?>(3)</num>
+          <content>
+           <p>This subsection applies if the whole of the debt is paid in full within 6 months <?L 5-2?>after the date of the award of sequestration, in which case interest is not payable <?L 5-3?>on the debt.</p>
+          </content>
+         </subsection>
+         <subsection GUID="_e61bcc5e-5f72-4db8-b47a-135ce15064bd" class="prov2" eId="sec_2A__subsec_6__qstr__sec_37A__subsec_4">
+          <num><?L 5-4?>(4)</num>
+          <content>
+           <p>For the avoidance of doubt, if only part of the debt is paid within 6 months <?L 5-5?>after the date of the award of sequestration, interest is payable on the whole <?L 5-6?>of debt (including any part of the debt already paid since the award) in <?L 5-7?>accordance with subsection (2).</p>
+          </content>
+         </subsection>
+        </section>
+        </quotedStructure><inline name="AppendText">.</inline></mod></p>
+      </content>
+     </subsection>
+    </section>
+    <section GUID="_30b7c7f2-1ab1-4693-9382-cf37d0ea3f2a" class="prov1" eId="sec_3">
+     
+     <num><?L 5-8?>3</num>
+     <heading GUID="_47816538-6ba0-42af-b3d2-ee4959698730" eId="sec_3__hdg">When sequestration is awarded: minimal asset process</heading>
+     <subsection GUID="_7fa20e0f-837c-481a-9df3-98896dd2fbfc" class="prov2" eId="sec_3__subsec_1">
+      <num><?L 5-9?>(1)</num>
+      <content>
+       <p><mref><ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_22" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/22">Section 22</ref> (when sequestration is awarded) of the <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/contents">Bankruptcy (Scotland) Act 2016</ref></mref> is <?L 5-10?>modified as follows.</p>
+      </content>
+     </subsection>
+     <subsection GUID="_663bcc68-8fd7-4547-9c23-a546388c72c5" class="prov2" eId="sec_3__subsec_2">
+      <num><?L 5-11?>(2)</num>
+      <content>
+       <p>In <mref><ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_22__subsec_1" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/22">subsection (1)</ref><ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_22__subsec_1__para_b" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/22">(b)</ref></mref>, for “2(8)” substitute “2(2) or (8)”.</p>
+      </content>
+     </subsection>
+    </section>
+    <section GUID="_f3be2db1-7ea8-44d6-b220-1762d1343805" class="prov1" eId="sec_3A">
+     
+     <num ukl:autonumber="yes"><?L 5-12?>3A</num>
+     <heading GUID="_fe506b68-8e92-4464-a2f8-d6c4b04a1ed2" eId="sec_3A__hdg">Petition for sequestration: citation of debtor</heading>
+     <subsection GUID="_5d5890b9-9560-473b-be3c-f59c8b9a05c1" class="prov2" eId="sec_3A__subsec_1">
+      <num><?L 5-13?>(1)</num>
+      <content>
+       <p><mref><ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_22" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/22">Section 22</ref> (when sequestration is awarded) of the <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/contents">Bankruptcy (Scotland) Act 2016</ref></mref> is <?L 5-14?>modified as follows.</p>
+      </content>
+     </subsection>
+     <subsection GUID="_5fb80958-a3ce-4350-a2cf-bfe84579834d" class="prov2" eId="sec_3A__subsec_2">
+      <num><?L 5-15?>(2)</num>
+      <content>
+       <p><mod>For <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_22__subsec_4" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/22">subsection (4)</ref> substitute—<quotedStructure GUID="_6a957cb0-03ee-4b4b-9e38-65e9df2a5b7d" eId="sec_3A__subsec_2__qstr" endQuote="”" startQuote="“" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+        <subsection GUID="_1387aec2-cb91-463e-b4c0-c40f4d638930" class="prov2" eId="sec_3A__subsec_2__qstr__subsec_4">
+         <num ukl:autonumber="no"><?L 5-16?>(4)</num>
+         <content>
+          <p>The debtor must be cited no fewer than 6 days before the date specified under <?L 5-17?>subsection (3).</p>
+         </content>
+        </subsection>
+        </quotedStructure><inline name="AppendText">.</inline></mod></p>
+      </content>
+     </subsection>
+    </section>
+    <section GUID="_4eab1fff-f293-48f4-bbc8-2ca83ae05044" class="prov1" eId="sec_4">
+     
+     <num><?L 5-18?>4</num>
+     <heading GUID="_c914690e-e927-4999-9876-dcc19ebec6f7" eId="sec_4__hdg">Gratuitous alienations: right acquired in good faith and for value</heading>
+     <subsection GUID="_771fb44f-b173-4e31-b6e4-554fab3cb63f" class="prov2" eId="sec_4__subsec_1">
+      <num><?L 5-19?>(1)</num>
+      <content>
+       <p><mref><ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_98" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/98">Section 98</ref> (gratuitous alienations) of the <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/contents">Bankruptcy (Scotland) Act 2016</ref></mref> is modified <?L 5-20?>as follows.</p>
+      </content>
+     </subsection>
+     <subsection GUID="_dcd038e5-2e08-440a-9744-f4588bc9aaeb" class="prov2" eId="sec_4__subsec_2">
+      <num><?L 5-21?>(2)</num>
+      <content>
+       <p>In <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_98__subsec_7" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/98">subsection (7)</ref>, for “(6)” substitute “(5)”.</p>
+      </content>
+     </subsection>
+    </section>
+    <section GUID="_3eefedf2-b230-4b5b-84ab-d3208aeb21ab" class="prov1" eId="sec_5">
+     
+     <num><?L 5-22?>5</num>
+     <heading GUID="_14075b8c-59d3-4988-a7c8-67fc844421fd" eId="sec_5__hdg">Time periods for appeals against decisions by AiB</heading>
+     <subsection GUID="_8875404a-beb2-43f4-baec-00eb6e8a7ce0" class="prov2" eId="sec_5__subsec_1">
+      <num><?L 5-23?>(1)</num>
+      <content>
+       <p>The <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/contents">Bankruptcy (Scotland) Act 2016</ref> is modified as follows.</p>
+      </content>
+     </subsection>
+     <subsection GUID="_2a2334fe-d19f-4036-9cbe-64666c73d965" class="prov2" eId="sec_5__subsec_2">
+      <num><?L 5-24?>(2)</num>
+      <intro GUID="_a91d2bcd-2ed8-4e62-a67d-afa67959adad" eId="sec_5__subsec_2__intro">
+       <p>In <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_69" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/69">section 69</ref> (resignation or death of trustee)—</p>
+      </intro>
+      <level GUID="_40956be4-0799-4510-8ad4-ac96ec665035" class="para1" eId="sec_5__subsec_2__para_a">
+       <num><?L 5-25?>(a)</num>
+       <content>
+        <p>in <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_69__subsec_9" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/69">subsection (9)</ref>, for “subsection (11)” substitute “subsections (11) and (12)”,</p>
+       </content>
+      </level>
+      <level GUID="_cbabb705-67a4-4c17-9481-0177fdd34b97" class="para1" eId="sec_5__subsec_2__para_b">
+       <num><?L 5-26?>(b)</num>
+       <content>
+        <p><mod>for <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_69__subsec_12" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/69">subsection (12)</ref> substitute—<quotedStructure GUID="_dd226634-1aa0-48a3-be59-e8fadf049105" eId="sec_5__subsec_2__para_b__qstr" endQuote="”" startQuote="“" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+         <subsection GUID="_afbe2023-cbb6-4494-89c2-f146df36c771" class="prov2" eId="sec_5__subsec_2__para_b__qstr__subsec_12">
+          <num ukl:autonumber="no"><?L 5-27?>(12)</num>
+          <content>
+           <p>T or T's representatives, NT, the debtor or any creditor may, within 14 days <?L 5-28?>beginning with the date of any decision of AiB in an appeal under subsection <?L 5-29?>(11)(a), appeal to the sheriff against that decision.</p>
+          </content>
+         </subsection>
+         </quotedStructure><inline name="AppendText">.</inline></mod> </p>
+       </content>
+      </level>
+     </subsection>
+     <subsection GUID="_afe0b071-ab6a-49a4-9bdf-cc016cb130bb" class="prov2" eId="sec_5__subsec_3">
+      <num><?L 5-30?>(3)</num>
+      <intro GUID="_dfd51cc1-1b3b-40a7-a214-4f540d22b14c" eId="sec_5__subsec_3__intro">
+       <p>In <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_134" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/134">section 134</ref> (appeal against determination as to outlays and remuneration payable to <?L 5-31?>trustee)—</p>
+      </intro>
+      <level GUID="_d65357cc-dc9c-494c-afa7-123aae01d31e" class="para1" eId="sec_5__subsec_3__para_a">
+       <num><?L 5-32?>(a)</num>
+       <content>
+        <p><mod>for <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_134__subsec_3" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/134">subsection (3)</ref> substitute—<quotedStructure GUID="_91103798-5fd4-40c0-b16a-cbbd091259b4" eId="sec_5__subsec_3__para_a__qstr" endQuote="”" startQuote="“" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+         <subsection GUID="_db01b2f2-2f15-4823-82f1-02e757e432a1" class="prov2" eId="sec_5__subsec_3__para_a__qstr__subsec_3">
+          <num ukl:autonumber="no"><?L 5-33?>(3)</num>
+          <content>
+           <p>The trustee, the debtor or any creditor may, within 14 days beginning with <?L 5-34?>the date of any decision of AiB in an appeal under subsection (1)(a), appeal <?L 5-35?>to the sheriff against that decision.</p>
+          </content>
+         </subsection>
+         </quotedStructure><inline name="AppendText">,</inline></mod> </p>
+       </content>
+      </level>
+      <level GUID="_ca00ffad-3d26-4523-919d-a1af6ea659b6" class="para1" eId="sec_5__subsec_3__para_b">
+       <num><?L 5-36?>(b)</num>
+       <content>
+        <p>in <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_134__subsec_4" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/134">subsection (4)</ref>, after “(1)” insert “or (3)”,</p>
+       </content>
+      </level>
+      <level GUID="_be8d67b0-babf-42fb-9e6b-a87304fec5e1" class="para1" eId="sec_5__subsec_3__para_c">
+       <num><?L 5-37?>(c)</num>
+       <content>
+        <p><mod>after <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_134__subsec_5" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/134">subsection (5)</ref>, insert—<quotedStructure GUID="_33980c10-b9bb-4603-993a-2e04d75db2c2" eId="sec_5__subsec_3__para_c__qstr" endQuote="”" startQuote="“" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+         <subsection GUID="_889d22a1-d4a3-4ce9-91b9-c079de797cf0" class="prov2" eId="sec_5__subsec_3__para_c__qstr__subsec_6">
+          <num ukl:autonumber="no"><?L 6-1?>(6)</num>
+          <content>
+           <p>The decision of the sheriff on an appeal under subsection (1)(b) or (3) is <?L 6-2?>final.</p>
+          </content>
+         </subsection>
+         </quotedStructure><inline name="AppendText">.</inline></mod> </p>
+       </content>
+      </level>
+     </subsection>
+    </section>
+    <section GUID="_5decc6b0-e3c8-43db-bf8f-7f46f55cb551" class="prov1" eId="sec_5A">
+     
+     <num><?L 6-3?>5A</num>
+     <heading GUID="_8ca1973e-31e1-43bd-8dbf-21f1f35c7e06" eId="sec_5A__hdg">Debtor not traced: former trustee’s outlays and remuneration</heading>
+     <subsection GUID="_ff87f769-f75e-4233-ab4d-358fedb670d7" class="prov2" eId="sec_5A__subsec_1">
+      <num><?L 6-4?>(1)</num>
+      <content>
+       <p><mref><ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_142" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/142">Section 142</ref> (debtor not traced: new trustee) of the <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/contents">Bankruptcy (Scotland) Act 2016</ref></mref> is <?L 6-5?>modified as follows.</p>
+      </content>
+     </subsection>
+     <subsection GUID="_c1a33a25-26bb-44f9-b288-b254ade11d5c" class="prov2" eId="sec_5A__subsec_2">
+      <num><?L 6-6?>(2)</num>
+      <content>
+       <p>In <mref><ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_142__subsec_6" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/142">subsection (6)</ref><ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_142__subsec_6__para_c" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/142">(c)</ref></mref>, after “133” insert “(there being no effect on any outlays and <?L 6-7?>remuneration paid to the former trustee before the issue of the notice)”.</p>
+      </content>
+     </subsection>
+    </section>
+    <section GUID="_c6635af5-2268-4402-ae5f-ce7cb6fc02ad" class="prov1" eId="sec_5B">
+     
+     <num><?L 6-8?>5B</num>
+     <heading GUID="_4d6b8dc8-03be-4ca5-b82f-324a60c9a00e" eId="sec_5B__hdg">Failure of debtor to co-operate with trustee in sequestration</heading>
+     <subsection GUID="_46fd64bb-5673-47f9-b1d3-8fc4fd247666" class="prov2" eId="sec_5B__subsec_1">
+      <num><?L 6-9?>(1)</num>
+      <content>
+       <p>The <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/contents">Bankruptcy (Scotland) Act 2016</ref> is modified by <mref><ref class="valid" href="#sec_5B__subsec_2" ukl:targetGuid="_5d6cc5ab-7f6a-4862-8a2e-19a49eec6a90">subsections (2)</ref> and <ref class="valid" href="#sec_5B__subsec_3" ukl:targetGuid="_e3b3b277-59b4-4b61-ba77-cf2dad0de127">(3)</ref></mref>.</p>
+      </content>
+     </subsection>
+     <subsection GUID="_5d6cc5ab-7f6a-4862-8a2e-19a49eec6a90" class="prov2" eId="sec_5B__subsec_2">
+      <num><?L 6-10?>(2)</num>
+      <content>
+       <p><mod>After <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_147" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/147">section 147</ref>, insert—<quotedStructure GUID="_d7c3ed77-bc6e-415e-b0c7-6434cfad4afd" eId="sec_5B__subsec_2__qstr" endQuote="”" startQuote="“" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+        <hcontainer GUID="_9ba60b3c-4945-4c1a-940a-555d8de19f3d" class="group7" eId="sec_5B__subsec_2__qstr__xhdg_147A" name="crossheading">
+         <heading GUID="_5980e390-4b2e-4f70-9343-b3f080b03cc1" eId="sec_5B__subsec_2__qstr__xhdg_147A__hdg"><?L 6-11?>Failure of debtor to co-operate with trustee</heading>
+         <section GUID="_cd6fab74-face-4b53-8916-477a7bd486a6" class="prov1" eId="sec_5B__subsec_2__qstr__sec_147A">
+          <num ukl:autonumber="no"><?L 6-12?>147A</num>
+          <heading GUID="_74d8faa3-a255-407b-ad94-30442a460a13" eId="sec_5B__subsec_2__qstr__sec_147A__hdg">Debtor fails to co-operate: Accountant in Bankruptcy appointment as new <?L 6-13?>trustee</heading>
+          <subsection GUID="_560a7de7-6b9a-44da-8d76-404963f9eee4" class="prov2" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_1">
+           <num><?L 6-14?>(1)</num>
+           <intro GUID="_4cf88037-948c-481f-83f0-c9a3206d1b11" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_1__intro">
+            <p>This section applies where—</p>
+           </intro>
+           <level GUID="_0bc55148-4e0d-4c2b-9394-99b58f41a2f9" class="para1" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_1__para_a">
+            <num><?L 6-15?>(a)</num>
+            <content>
+             <p>AiB is not the trustee in the sequestration,</p>
+            </content>
+           </level>
+           <level GUID="_05883340-0ac8-4793-ac29-eceec6773c58" class="para1" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_1__para_b">
+            <num><?L 6-16?>(b)</num>
+            <content>
+             <p>the period of 5 years beginning with the date of sequestration of a <?L 6-17?>debtor’s estate has expired, and</p>
+            </content>
+           </level>
+           <level GUID="_1a98913e-66aa-42d4-85d8-6259a3c16a75" class="para1" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_1__para_c">
+            <num><?L 6-18?>(c)</num>
+            <content>
+             <p>the debtor has not been discharged from that sequestration.</p>
+            </content>
+           </level>
+          </subsection>
+          <subsection GUID="_7cdbc1ad-887c-4b5b-8cb8-9a4d7edef808" class="prov2" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_2">
+           <num><?L 6-19?>(2)</num>
+           <content>
+            <p>The trustee in the sequestration may apply to AiB for authority to resign office <?L 6-20?>on account of the debtor’s failure to co-operate.</p>
+           </content>
+          </subsection>
+          <subsection GUID="_1237e2e4-0f7f-453c-bd1f-2d4d7a509768" class="prov2" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_3">
+           <num><?L 6-21?>(3)</num>
+           <intro GUID="_55ef9fcd-75c3-4453-bcd4-5242a4ee065d" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_3__intro">
+            <p>An application under <ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147A__subsec_2" ukl:targetGuid="_7cdbc1ad-887c-4b5b-8cb8-9a4d7edef808">subsection (2)</ref> must be made in the prescribed form and <?L 6-22?>include information about—</p>
+           </intro>
+           <level GUID="_0e5b2c66-167c-486a-9a4e-91ff433926cb" class="para1" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_3__para_a">
+            <num><?L 6-23?>(a)</num>
+            <content>
+             <p>the nature and the extent of the debtor’s failure to co-operate with the <?L 6-24?>trustee,</p>
+            </content>
+           </level>
+           <level GUID="_39c43a15-197f-4410-a207-b57f5d5a85d0" class="para1" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_3__para_b">
+            <num><?L 6-25?>(b)</num>
+            <content>
+             <p>the actions taken by the trustee to secure the debtor’s co-operation,</p>
+            </content>
+           </level>
+           <level GUID="_af3d96fd-b14b-4a10-bf6d-9b910db81ac2" class="para1" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_3__para_c">
+            <num><?L 6-26?>(c)</num>
+            <content>
+             <p>any other matters that the trustee considers relevant, and</p>
+            </content>
+           </level>
+           <level GUID="_4e85bf25-5393-497a-a377-3ed05d1befa6" class="para1" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_3__para_d">
+            <num><?L 6-27?>(d)</num>
+            <content>
+             <p>details of every creditor known to the trustee.</p>
+            </content>
+           </level>
+          </subsection>
+          <subsection GUID="_12f81fc5-1831-47f1-bb25-99b21a2ff47d" class="prov2" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_4">
+           <num><?L 6-28?>(4)</num>
+           <intro GUID="_1948552c-bfb0-4614-a6a0-7cc642c34989" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_4__intro">
+            <p>Before making an application under <ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147A__subsec_2" ukl:targetGuid="_7cdbc1ad-887c-4b5b-8cb8-9a4d7edef808">subsection (2)</ref>, the trustee must—</p>
+           </intro>
+           <level GUID="_9dc1f1b0-a472-4ba0-b9cb-a5417b791cc6" class="para1" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_4__para_a">
+            <num><?L 6-29?>(a)</num>
+            <content>
+             <p>notify the debtor by sending an intention to resign notice, and</p>
+            </content>
+           </level>
+           <level GUID="_c74d048c-0da1-48b7-afa8-3f686f759029" class="para1" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_4__para_b">
+            <num><?L 6-30?>(b)</num>
+            <content>
+             <p>give an intention to resign notice to every creditor known to the trustee.</p>
+            </content>
+           </level>
+          </subsection>
+          <subsection GUID="_f69b3609-c546-4b55-9284-009f38e7a4eb" class="prov2" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_5">
+           <num><?L 6-31?>(5)</num>
+           <intro GUID="_498785be-ee35-4971-8104-06eed6625125" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_5__intro">
+            <p>An intention to resign notice must—</p>
+           </intro>
+           <level GUID="_5e1db194-219e-4a2f-9a25-e60416b7c906" class="para1" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_5__para_a">
+            <num><?L 6-32?>(a)</num>
+            <content>
+             <p>be in the prescribed form, and</p>
+            </content>
+           </level>
+           <level GUID="_ef2e7107-5243-4e5f-856a-a3b4b39168bc" class="para1" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_5__para_b">
+            <num><?L 6-33?>(b)</num>
+            <content>
+             <p>include a statement informing the recipient that the recipient has a right <?L 6-34?>to make representations to AiB in relation to the application within 14 <?L 6-35?>days beginning with the day on which the application is made.</p>
+            </content>
+           </level>
+          </subsection>
+          <subsection GUID="_c5e306bd-032f-4d01-9d54-dad9e107b8ba" class="prov2" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_6">
+           <num><?L 6-36?>(6)</num>
+           <intro GUID="_17388c2a-be45-4fe8-be4c-370bd4ff4a89" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_6__intro">
+            <p>After receiving an application under <ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147A__subsec_2" ukl:targetGuid="_7cdbc1ad-887c-4b5b-8cb8-9a4d7edef808">subsection (2)</ref>, AiB must—</p>
+           </intro>
+           <level GUID="_5b35354c-3fa3-4205-9efd-f64b97b4ab3f" class="para1" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_6__para_a">
+            <num><?L 6-37?>(a)</num>
+            <content>
+             <p>take into account any representations made by an interested person within <?L 6-38?>14 days beginning with the day on which the application is made, and</p>
+            </content>
+           </level>
+           <level GUID="_4b997214-73e4-47cd-94e6-a70a6267880a" class="para1" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_6__para_b">
+            <num><?L 7-1?>(b)</num>
+            <content>
+             <p>if satisfied of the matters mentioned in <ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147A__subsec_7" ukl:targetGuid="_5d4c933b-4d72-4350-afb1-1cba3e4625d1">subsection (7)</ref>, issue to the trustee <?L 7-2?>who made the application a notice in the prescribed form granting the <?L 7-3?>application.</p>
+            </content>
+           </level>
+          </subsection>
+          <subsection GUID="_5d4c933b-4d72-4350-afb1-1cba3e4625d1" class="prov2" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_7">
+           <num><?L 7-4?>(7)</num>
+           <intro GUID="_e2bf68f7-283c-4994-a27a-3bd3a0875d8d" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_7__intro">
+            <p>The matters are—</p>
+           </intro>
+           <level GUID="_8fe9d69f-b4a2-4660-9945-064f1aef3094" class="para1" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_7__para_a">
+            <num><?L 7-5?>(a)</num>
+            <content>
+             <p>that the debtor has failed to co-operate with the trustee to such an extent <?L 7-6?>that the trustee is prevented from carrying out the trustee's functions <?L 7-7?>under this Act,</p>
+            </content>
+           </level>
+           <level GUID="_be87ea7b-f827-43da-9a16-3829bed6fe6b" class="para1" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_7__para_b">
+            <num><?L 7-8?>(b)</num>
+            <content>
+             <p>that the failure is likely to continue, and</p>
+            </content>
+           </level>
+           <level GUID="_d95d2910-d9f2-4644-800a-00b819a1a612" class="para1" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_7__para_c">
+            <num><?L 7-9?>(c)</num>
+            <content>
+             <p>that the trustee has taken all reasonable steps to secure the debtor’s <?L 7-10?>co-operation.</p>
+            </content>
+           </level>
+          </subsection>
+          <subsection GUID="_b8a444b6-b5d3-4d9c-aaeb-99c3505e9446" class="prov2" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_8">
+           <num><?L 7-11?>(8)</num>
+           <intro GUID="_ea2efa43-4961-42ae-bc27-4762087c0d15" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_8__intro">
+            <p>AiB—</p>
+           </intro>
+           <level GUID="_9113aaa2-9339-4d0e-86e6-c27b734e7edc" class="para1" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_8__para_a">
+            <num><?L 7-12?>(a)</num>
+            <content>
+             <p>may request such further information from the trustee as AiB considers <?L 7-13?>necessary to make a decision under <ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147A__subsec_6" ukl:targetGuid="_c5e306bd-032f-4d01-9d54-dad9e107b8ba" ukl:targetJref="">subsection (6)</ref>, and</p>
+            </content>
+           </level>
+           <level GUID="_9592fc71-5e62-4d0e-80d0-a2ebd91a9fc9" class="para1" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_8__para_b">
+            <num><?L 7-14?>(b)</num>
+            <content>
+             <p>must notify the trustee, the debtor and every creditor known to AiB of <?L 7-15?>its decision under <ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147A__subsec_6" ukl:targetGuid="_c5e306bd-032f-4d01-9d54-dad9e107b8ba" ukl:targetJref="">subsection (6)</ref>.</p>
+            </content>
+           </level>
+          </subsection>
+          <subsection GUID="_82626106-b920-47c4-8e77-8b45672335f7" class="prov2" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_9">
+           <num><?L 7-16?>(9)</num>
+           <intro GUID="_78056859-0111-4529-8f2c-df8d8ad32d08" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_9__intro">
+            <p>Where a notice is issued under <ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147A__subsec_6" ukl:targetGuid="_c5e306bd-032f-4d01-9d54-dad9e107b8ba">subsection (6)</ref><ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147A__subsec_6__para_b" ukl:targetGuid="_4b997214-73e4-47cd-94e6-a70a6267880a">(b)</ref>, 14 days after the notice is <?L 7-17?>given—</p>
+           </intro>
+           <level GUID="_fc92639a-b8bd-42fb-a954-9f5ab501d5e5" class="para1" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_9__para_a">
+            <num><?L 7-18?>(a)</num>
+            <content>
+             <p>AiB is deemed to be the trustee,</p>
+            </content>
+           </level>
+           <level GUID="_df99d241-0a97-4fe8-8eb5-e1f9d813bcc7" class="para1" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_9__para_b">
+            <num><?L 7-19?>(b)</num>
+            <content>
+             <p>AiB must notify the debtor and every creditor known to AiB that AiB <?L 7-20?>is deemed to be the trustee,</p>
+            </content>
+           </level>
+           <level GUID="_ced74518-6991-418c-89d2-e88d3bdc7d59" class="para1" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_9__para_c">
+            <num><?L 7-21?>(c)</num>
+            <content>
+             <p>AiB must make an appropriate entry in the register of insolvencies,</p>
+            </content>
+           </level>
+           <level GUID="_f2e2549e-023b-40cb-bc1c-1388f9b305fc" class="para1" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_9__para_d">
+            <num><?L 7-22?>(d)</num>
+            <content>
+             <p>the former trustee is not entitled to recover, other than by a claim in the <?L 7-23?>final distribution of the debtor's estate, outlays and remuneration payable <?L 7-24?>under sections 132 and 133 (there being no effect on any outlays and <?L 7-25?>remuneration paid to the former trustee before the issue of the notice),</p>
+            </content>
+           </level>
+           <level GUID="_98003ec6-e8cf-47c2-849e-643068474333" class="para1" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_9__para_e">
+            <num><?L 7-26?>(e)</num>
+            <content>
+             <p>subsections (9) to (13) of section 69 apply in relation to the appointment <?L 7-27?>of AiB as the new trustee as they apply in relation to the appointment <?L 7-28?>of a new trustee under that section,</p>
+            </content>
+           </level>
+           <level GUID="_8282bce9-777b-4f69-b20d-4d3faa0d2a7d" class="para1" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_9__para_f">
+            <num><?L 7-29?>(f)</num>
+            <content>
+             <p><mod>section 116 applies as if there were substituted for subsection (2)—<quotedStructure GUID="_1b78fd34-1b79-4e57-87aa-79502eb14415" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_9__para_f__qstr" endQuote="”" startQuote="“" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+              <subsection GUID="_66dfc111-cf7b-445a-adcb-0615b96e43f5" class="prov2" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_9__para_f__qstr__subsec_2">
+               <num ukl:autonumber="no"><?L 7-30?>(2)</num>
+               <content>
+                <p>AiB may at any time before the discharge of the debtor require the <?L 7-31?>debtor to give an account in writing, in such form as may be <?L 7-32?>prescribed, of the debtor's current state of affairs.</p>
+               </content>
+              </subsection>
+              </quotedStructure><inline name="AppendText">, and</inline></mod></p>
+            </content>
+           </level>
+           <level GUID="_fe8c228a-00c4-468f-b7e7-aa518c8705f2" class="para1" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_9__para_g">
+            <num><?L 7-33?>(g)</num>
+            <content>
+             <p>section 138 applies to the sequestration with the modifications in <ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147A__subsec_10" ukl:targetGuid="_e06e62c5-87c9-4308-b906-a87af4ebdb3f"><?L 7-34?>subsection (10)</ref>.</p>
+            </content>
+           </level>
+          </subsection>
+          <subsection GUID="_e06e62c5-87c9-4308-b906-a87af4ebdb3f" class="prov2" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_10">
+           <num><?L 7-35?>(10)</num>
+           <intro GUID="_ad653925-6841-45c7-9d48-ae5b4dff1e2a" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_10__intro">
+            <p>The modifications are—</p>
+           </intro>
+           <level GUID="_f7a51096-7aaa-40d6-b235-07a42d6dbc50" class="para1" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_10__para_a">
+            <num><?L 7-36?>(a)</num>
+            <content>
+             <p>in subsection (2), the words “after the date which is 12 months after the <?L 7-37?>date on which sequestration is awarded” are omitted,</p>
+            </content>
+           </level>
+           <level GUID="_3c1073bf-96b9-4088-bd8d-0e7f4a989a12" class="para1" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_10__para_b">
+            <num><?L 7-38?>(b)</num>
+            <content>
+             <p>in subsection (3), for “must, as soon as practicable after the date which <?L 7-39?>is 12 months after the date on which sequestration is awarded” substitute <?L 7-40?>“may, if the debtor co-operates with AiB to such an extent that AiB is <?L 7-41?>able to carry out the trustee's functions under this Act”,</p>
+            </content>
+           </level>
+           <level GUID="_b9cd76cb-3142-4016-8c77-3afe38a10165" class="para1" eId="sec_5B__subsec_2__qstr__sec_147A__subsec_10__para_c">
+            <num><?L 7-42?>(c)</num>
+            <content>
+             <p>in subsection (6), for “must, as soon as practicable after the date which <?L 7-43?>is 12 months after the date of the refusal” substitute “may, at any time <?L 8-1?>after a refusal, if the debtor co-operates with AiB to such an extent that <?L 8-2?>AiB is able to carry out the trustee's functions under this Act”.</p>
+            </content>
+           </level>
+          </subsection>
+         </section>
+         <section GUID="_549609fd-4545-46b5-9817-639ac1395cf7" class="prov1" eId="sec_5B__subsec_2__qstr__sec_147B">
+          <num><?L 8-3?>147B</num>
+          <heading GUID="_1351a591-953d-493b-baf7-068747efdf72" eId="sec_5B__subsec_2__qstr__sec_147B__hdg">Accountant in Bankruptcy appointment as new trustee: review and appeal</heading>
+          <subsection GUID="_7cdcc2dd-99df-4e99-b680-530383354632" class="prov2" eId="sec_5B__subsec_2__qstr__sec_147B__subsec_1">
+           <num><?L 8-4?>(1)</num>
+           <content>
+            <p>The trustee may apply to AiB for a review of a decision under <ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147A" ukl:targetGuid="_cd6fab74-face-4b53-8916-477a7bd486a6">section 147A</ref><ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147A__subsec_6" ukl:targetGuid="_c5e306bd-032f-4d01-9d54-dad9e107b8ba">(6)</ref><?L 8-5?> to refuse an application.</p>
+           </content>
+          </subsection>
+          <subsection GUID="_df93b603-c87c-4dab-8253-b3deabe746c4" class="prov2" eId="sec_5B__subsec_2__qstr__sec_147B__subsec_2">
+           <num><?L 8-6?>(2)</num>
+           <content>
+            <p>The debtor or any creditor may apply to AiB for a review of a decision under <ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147A" ukl:targetGuid="_cd6fab74-face-4b53-8916-477a7bd486a6"><?L 8-7?>section 147A</ref><ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147A__subsec_6" ukl:targetGuid="_c5e306bd-032f-4d01-9d54-dad9e107b8ba">(6)</ref> to grant an application.</p>
+           </content>
+          </subsection>
+          <subsection GUID="_4fde85ce-2167-4741-b80c-2dae422eedf8" class="prov2" eId="sec_5B__subsec_2__qstr__sec_147B__subsec_3">
+           <num><?L 8-8?>(3)</num>
+           <content>
+            <p>Any application under subsection <ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147B__subsec_1" ukl:targetGuid="_7cdcc2dd-99df-4e99-b680-530383354632">(1)</ref> or <ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147B__subsec_2" ukl:targetGuid="_df93b603-c87c-4dab-8253-b3deabe746c4">(2)</ref> must be made within 14 days <?L 8-9?>beginning with the day of notification of the decision in question.</p>
+           </content>
+          </subsection>
+          <subsection GUID="_6087557e-6b19-4818-9519-672df52a865a" class="prov2" eId="sec_5B__subsec_2__qstr__sec_147B__subsec_4">
+           <num><?L 8-10?>(4)</num>
+           <content>
+            <p>If an application for review under <ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147B__subsec_2" ukl:targetGuid="_df93b603-c87c-4dab-8253-b3deabe746c4">subsection (2)</ref> is made, the grant of the <?L 8-11?>application is suspended until the determination of that review by AiB.</p>
+           </content>
+          </subsection>
+          <subsection GUID="_4a7d06e6-c6ea-46a7-bb04-c44404e8da71" class="prov2" eId="sec_5B__subsec_2__qstr__sec_147B__subsec_5">
+           <num><?L 8-12?>(5)</num>
+           <intro GUID="_7b5e2632-0ce0-41b9-a67e-9c64232154b6" eId="sec_5B__subsec_2__qstr__sec_147B__subsec_5__intro">
+            <p>If an application for a review under subsection <ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147B__subsec_1" ukl:targetGuid="_7cdcc2dd-99df-4e99-b680-530383354632">(1)</ref> or <ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147B__subsec_2" ukl:targetGuid="_df93b603-c87c-4dab-8253-b3deabe746c4">(2)</ref> is made, AiB must—</p>
+           </intro>
+           <level GUID="_d6d93fb7-4cea-484a-9c56-ce6b6581924f" class="para1" eId="sec_5B__subsec_2__qstr__sec_147B__subsec_5__para_a">
+            <num><?L 8-13?>(a)</num>
+            <content>
+             <p>take into account any representations made by an interested person within <?L 8-14?>21 days beginning with the day on which the application is made, and</p>
+            </content>
+           </level>
+           <level GUID="_f304ee7e-d3b5-42f3-9b38-ed26376599d1" class="para1" eId="sec_5B__subsec_2__qstr__sec_147B__subsec_5__para_b">
+            <num><?L 8-15?>(b)</num>
+            <content>
+             <p>confirm or revoke the decision within 28 days beginning with the day <?L 8-16?>on which the application is made.</p>
+            </content>
+           </level>
+          </subsection>
+          <subsection GUID="_536ca20b-67f5-493d-a727-78f1515e6527" class="prov2" eId="sec_5B__subsec_2__qstr__sec_147B__subsec_6">
+           <num><?L 8-17?>(6)</num>
+           <intro GUID="_c5e5867b-d79c-4fdc-bbbb-38496e78f1ec" eId="sec_5B__subsec_2__qstr__sec_147B__subsec_6__intro">
+            <p>If, under <ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147B__subsec_5" ukl:targetGuid="_4a7d06e6-c6ea-46a7-bb04-c44404e8da71">subsection (5)</ref><ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147B__subsec_5__para_b" ukl:targetGuid="_f304ee7e-d3b5-42f3-9b38-ed26376599d1">(b)</ref>, AiB—</p>
+           </intro>
+           <level GUID="_62c22403-d9b6-4a0c-b6a9-f96a851ab708" class="para1" eId="sec_5B__subsec_2__qstr__sec_147B__subsec_6__para_a">
+            <num><?L 8-18?>(a)</num>
+            <content>
+             <p>revoke a decision to grant an application, AiB must revoke the notice <?L 8-19?>given under <ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147A" ukl:targetGuid="_cd6fab74-face-4b53-8916-477a7bd486a6">section 147A</ref><ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147A__subsec_6" ukl:targetGuid="_c5e306bd-032f-4d01-9d54-dad9e107b8ba">(6)</ref><ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147A__subsec_6__para_b" ukl:targetGuid="_4b997214-73e4-47cd-94e6-a70a6267880a">(b)</ref> granting the application,</p>
+            </content>
+           </level>
+           <level GUID="_7d1f162b-3a80-4d34-a337-b6ef244729ae" class="para1" eId="sec_5B__subsec_2__qstr__sec_147B__subsec_6__para_b">
+            <num><?L 8-20?>(b)</num>
+            <content>
+             <p>revoke a decision to refuse an application, AiB must issue a notice under <ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147A" ukl:targetGuid="_cd6fab74-face-4b53-8916-477a7bd486a6"><?L 8-21?>section 147A</ref><ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147A__subsec_6" ukl:targetGuid="_c5e306bd-032f-4d01-9d54-dad9e107b8ba">(6)</ref><ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147A__subsec_6__para_b" ukl:targetGuid="_4b997214-73e4-47cd-94e6-a70a6267880a">(b)</ref> granting the application, or</p>
+            </content>
+           </level>
+           <level GUID="_c26361a7-b831-4ae9-adb7-12d9fd537a97" class="para1" eId="sec_5B__subsec_2__qstr__sec_147B__subsec_6__para_c">
+            <num><?L 8-22?>(c)</num>
+            <content>
+             <p>confirm a decision to grant an application, <ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147A" ukl:targetGuid="_cd6fab74-face-4b53-8916-477a7bd486a6">section 147A</ref><ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147A__subsec_9" ukl:targetGuid="_82626106-b920-47c4-8e77-8b45672335f7">(9)</ref> applies as <?L 8-23?>if for the words “14 days after the notice is given” there were substituted <?L 8-24?>“14 days after the AiB decision under <ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147B" ukl:targetGuid="_549609fd-4545-46b5-9817-639ac1395cf7">section 147B</ref><ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147B__subsec_5" ukl:targetGuid="_4a7d06e6-c6ea-46a7-bb04-c44404e8da71">(5)</ref><ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147B__subsec_5__para_b" ukl:targetGuid="_f304ee7e-d3b5-42f3-9b38-ed26376599d1">(b)</ref>”.</p>
+            </content>
+           </level>
+          </subsection>
+          <subsection GUID="_190ec6b8-3857-4427-b1b6-3c82b1239912" class="prov2" eId="sec_5B__subsec_2__qstr__sec_147B__subsec_7">
+           <num><?L 8-25?>(7)</num>
+           <content>
+            <p>The debtor, the trustee or any creditor may appeal to the sheriff against any <?L 8-26?>decision of AiB under <ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147B__subsec_5" ukl:targetGuid="_4a7d06e6-c6ea-46a7-bb04-c44404e8da71">subsection (5)</ref><ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147B__subsec_5__para_b" ukl:targetGuid="_f304ee7e-d3b5-42f3-9b38-ed26376599d1">(b)</ref> within 14 days beginning with the <?L 8-27?>day of the decision.</p>
+           </content>
+          </subsection>
+          <subsection GUID="_f1e98372-94be-44f5-bb7e-f4cbb58489ca" class="prov2" eId="sec_5B__subsec_2__qstr__sec_147B__subsec_8">
+           <num><?L 8-28?>(8)</num>
+           <content>
+            <p>If an appeal relating to a decision mentioned in <ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147B__subsec_6" ukl:targetGuid="_536ca20b-67f5-493d-a727-78f1515e6527" ukl:targetJref="">subsection (6)</ref><ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147B__subsec_6__para_b" ukl:targetGuid="_7d1f162b-3a80-4d34-a337-b6ef244729ae" ukl:targetJref="">(b)</ref> or <ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147B__subsec_6__para_c" ukl:targetGuid="_c26361a7-b831-4ae9-adb7-12d9fd537a97" ukl:targetJref="">(c)</ref> is <?L 8-29?>made, the grant of the application is suspended until the determination of that <?L 8-30?>appeal.</p>
+           </content>
+          </subsection>
+          <subsection GUID="_43d8ac3e-9cc8-4b9a-a2ef-9d522e8f9ab1" class="prov2" eId="sec_5B__subsec_2__qstr__sec_147B__subsec_9">
+           <num><?L 8-31?>(9)</num>
+           <intro GUID="_6b14c483-6fc6-4182-9c16-37f493ec6811" eId="sec_5B__subsec_2__qstr__sec_147B__subsec_9__intro">
+            <p>If, on an appeal under <ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147B__subsec_7" ukl:targetGuid="_190ec6b8-3857-4427-b1b6-3c82b1239912" ukl:targetJref="">subsection (7)</ref>, the sheriff determines that an application <?L 8-32?>which has been refused should be granted—</p>
+           </intro>
+           <level GUID="_7cd85000-328f-45d1-845f-ce10e39eaa16" class="para1" eId="sec_5B__subsec_2__qstr__sec_147B__subsec_9__para_a">
+            <num><?L 8-33?>(a)</num>
+            <content>
+             <p>the sheriff must order AiB to issue a notice under <ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147A" ukl:targetGuid="_cd6fab74-face-4b53-8916-477a7bd486a6">section 147A</ref><ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147A__subsec_6" ukl:targetGuid="_c5e306bd-032f-4d01-9d54-dad9e107b8ba">(6)</ref><ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147A__subsec_6__para_b" ukl:targetGuid="_4b997214-73e4-47cd-94e6-a70a6267880a">(b)</ref><?L 8-34?> granting the application, and</p>
+            </content>
+           </level>
+           <level GUID="_4a5192f4-639c-4fad-be39-bfd7d478a8df" class="para1" eId="sec_5B__subsec_2__qstr__sec_147B__subsec_9__para_b">
+            <num><?L 8-35?>(b)</num>
+            <content>
+             <p><ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147A" ukl:targetGuid="_cd6fab74-face-4b53-8916-477a7bd486a6">section 147A</ref><ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147A__subsec_9" ukl:targetGuid="_82626106-b920-47c4-8e77-8b45672335f7">(9)</ref> applies as if the words “14 days after the notice is <?L 8-36?>given” were omitted.</p>
+            </content>
+           </level>
+          </subsection>
+          <subsection GUID="_c9105cf8-871a-48ce-ad3e-0fe0b9c8160d" class="prov2" eId="sec_5B__subsec_2__qstr__sec_147B__subsec_10">
+           <num><?L 8-37?>(10)</num>
+           <content>
+            <p>If, on an appeal under <ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147B__subsec_7" ukl:targetGuid="_190ec6b8-3857-4427-b1b6-3c82b1239912" ukl:targetJref="">subsection (7)</ref>, the sheriff determines that an application <?L 8-38?>which has been granted should be refused, the sheriff must order AiB to revoke <?L 8-39?>the notice given under <ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147A" ukl:targetGuid="_cd6fab74-face-4b53-8916-477a7bd486a6">section 147A</ref><ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147A__subsec_6" ukl:targetGuid="_c5e306bd-032f-4d01-9d54-dad9e107b8ba">(6)</ref><ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147A__subsec_6__para_b" ukl:targetGuid="_4b997214-73e4-47cd-94e6-a70a6267880a">(b)</ref> granting the application.</p>
+           </content>
+          </subsection>
+          <subsection GUID="_9ee7571c-47f8-411a-897f-68a39f86a84a" class="prov2" eId="sec_5B__subsec_2__qstr__sec_147B__subsec_11">
+           <num><?L 8-40?>(11)</num>
+           <content>
+            <p>The sheriff clerk must send AiB a copy of the sheriff's decree.</p>
+           </content>
+          </subsection>
+          <subsection GUID="_c2c2c16d-ce55-46f4-91ec-4459a7996b36" class="prov2" eId="sec_5B__subsec_2__qstr__sec_147B__subsec_12">
+           <num><?L 8-41?>(12)</num>
+           <content>
+            <p>The decision of the sheriff on an appeal under <ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147B__subsec_7" ukl:targetGuid="_190ec6b8-3857-4427-b1b6-3c82b1239912" ukl:targetJref="">subsection (7)</ref> is final.</p>
+           </content>
+          </subsection>
+         </section>
+         <section GUID="_5e224772-e93f-43d2-8477-3373bd06decb" class="prov1" eId="sec_5B__subsec_2__qstr__sec_147C">
+          <num><?L 9-1?>147C</num>
+          <heading GUID="_d6b540aa-d8b2-4cb9-8af0-0f456d41158d" eId="sec_5B__subsec_2__qstr__sec_147C__hdg">Debtor fails to co-operate with AiB as trustee</heading>
+          <subsection GUID="_969c8c31-a300-4237-beb8-f856989fd920" class="prov2" eId="sec_5B__subsec_2__qstr__sec_147C__subsec_1">
+           <num><?L 9-2?>(1)</num>
+           <intro GUID="_5f160641-b57e-4aec-8611-d68e78829cd2" eId="sec_5B__subsec_2__qstr__sec_147C__subsec_1__intro">
+            <p>This section applies where—</p>
+           </intro>
+           <level GUID="_a526bd76-d5da-4a6f-8f9a-2d4702b7d09b" class="para1" eId="sec_5B__subsec_2__qstr__sec_147C__subsec_1__para_a">
+            <num><?L 9-3?>(a)</num>
+            <content>
+             <p>AiB is the trustee but was not appointed as trustee under <ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147A" ukl:targetGuid="_cd6fab74-face-4b53-8916-477a7bd486a6">section 147A</ref>,</p>
+            </content>
+           </level>
+           <level GUID="_79004677-8d4e-409a-93d0-4d34559294b7" class="para1" eId="sec_5B__subsec_2__qstr__sec_147C__subsec_1__para_b">
+            <num><?L 9-4?>(b)</num>
+            <content>
+             <p>the period of 5 years beginning with the date of sequestration a debtor’s <?L 9-5?>estate has expired, and</p>
+            </content>
+           </level>
+           <level GUID="_2aa6b357-efe2-415f-8c2e-515e9fa1d86b" class="para1" eId="sec_5B__subsec_2__qstr__sec_147C__subsec_1__para_c">
+            <num><?L 9-6?>(c)</num>
+            <content>
+             <p>the debtor has not been discharged from that sequestration.</p>
+            </content>
+           </level>
+          </subsection>
+          <subsection GUID="_bb631a2a-9660-4888-9846-3c0c745daf50" class="prov2" eId="sec_5B__subsec_2__qstr__sec_147C__subsec_2">
+           <num><?L 9-7?>(2)</num>
+           <content>
+            <p>AiB, if satisfied of the matters mentioned in <ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147C__subsec_3" ukl:targetGuid="_7b644401-fd03-4e1a-ab22-cbacd7435dba">subsection (3)</ref>, may make a <?L 9-8?>determination that the debtor has failed to co-operate.</p>
+           </content>
+          </subsection>
+          <subsection GUID="_7b644401-fd03-4e1a-ab22-cbacd7435dba" class="prov2" eId="sec_5B__subsec_2__qstr__sec_147C__subsec_3">
+           <num><?L 9-9?>(3)</num>
+           <intro GUID="_86ad413b-89df-4490-ae39-f9b50c841c90" eId="sec_5B__subsec_2__qstr__sec_147C__subsec_3__intro">
+            <p>The matters are—</p>
+           </intro>
+           <level GUID="_72d2767c-e9a0-4007-b6f4-b60647c97620" class="para1" eId="sec_5B__subsec_2__qstr__sec_147C__subsec_3__para_a">
+            <num><?L 9-10?>(a)</num>
+            <content>
+             <p>that the debtor has failed to co-operate with AiB as trustee to such an <?L 9-11?>extent that AiB is prevented from carrying out the AiB's functions as <?L 9-12?>trustee under this Act,</p>
+            </content>
+           </level>
+           <level GUID="_f5e5349e-218e-4d94-aec6-6bc2ba5ee3e4" class="para1" eId="sec_5B__subsec_2__qstr__sec_147C__subsec_3__para_b">
+            <num><?L 9-13?>(b)</num>
+            <content>
+             <p>that the failure is likely to continue, and</p>
+            </content>
+           </level>
+           <level GUID="_395d2421-73fd-4aae-bf01-0e156902db9a" class="para1" eId="sec_5B__subsec_2__qstr__sec_147C__subsec_3__para_c">
+            <num><?L 9-14?>(c)</num>
+            <content>
+             <p>that AiB has taken all reasonable steps to secure the debtor’s <?L 9-15?>co-operation.</p>
+            </content>
+           </level>
+          </subsection>
+          <subsection GUID="_f984cd92-0fc1-4589-85ff-3f219178756d" class="prov2" eId="sec_5B__subsec_2__qstr__sec_147C__subsec_4">
+           <num><?L 9-16?>(4)</num>
+           <intro GUID="_45ddc488-a59e-483b-bd46-514b456e1fc6" eId="sec_5B__subsec_2__qstr__sec_147C__subsec_4__intro">
+            <p>If AiB makes a determination under <ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147C__subsec_2" ukl:targetGuid="_bb631a2a-9660-4888-9846-3c0c745daf50">subsection (2)</ref>—</p>
+           </intro>
+           <level GUID="_7562567c-714a-4b1f-bdbd-69e5fa42b6f4" class="para1" eId="sec_5B__subsec_2__qstr__sec_147C__subsec_4__para_a">
+            <num><?L 9-17?>(a)</num>
+            <content>
+             <p>AiB must notify the debtor and every creditor known to AiB that AiB <?L 9-18?>has made a determination under <ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147C__subsec_2" ukl:targetGuid="_bb631a2a-9660-4888-9846-3c0c745daf50">subsection (2)</ref>, and</p>
+            </content>
+           </level>
+           <level GUID="_a9527044-baaa-4882-8761-83c066265d24" class="para1" eId="sec_5B__subsec_2__qstr__sec_147C__subsec_4__para_b">
+            <num><?L 9-19?>(b)</num>
+            <content>
+             <p><mod>section 116 applies as if there were substituted for subsection (2)—<quotedStructure GUID="_6210859c-a288-44d3-806a-d995472a59af" eId="sec_5B__subsec_2__qstr__sec_147C__subsec_4__para_b__qstr" endQuote="”" startQuote="“" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+              <subsection GUID="_f3f09558-9266-41ec-bb12-98b19995d3b1" class="prov2" eId="sec_5B__subsec_2__qstr__sec_147C__subsec_4__para_b__qstr__subsec_2">
+               <num ukl:autonumber="no"><?L 9-20?>(2)</num>
+               <content>
+                <p>AiB may at any time before the discharge of the debtor require the <?L 9-21?>debtor to give an account in writing, in such form as may be <?L 9-22?>prescribed, of the debtor's current state of affairs.</p>
+               </content>
+              </subsection>
+              </quotedStructure><inline name="AppendText">, and</inline></mod></p>
+            </content>
+           </level>
+           <level GUID="_6d100e05-08c6-43a2-ab30-d76782a92170" class="para1" eId="sec_5B__subsec_2__qstr__sec_147C__subsec_4__para_c">
+            <num><?L 9-23?>(c)</num>
+            <content>
+             <p>section 138(6) applies as if for the words “must, as soon as practicable <?L 9-24?>after the date which is 12 months after the date of the refusal” there <?L 9-25?>were substituted “may, at any time after a refusal, if the debtor <?L 9-26?>co-operates with AiB to such an extent that AiB is able to carry out the <?L 9-27?>trustee's functions under this Act.</p>
+            </content>
+           </level>
+          </subsection>
+         </section>
+        </hcontainer>
+        </quotedStructure><inline name="AppendText">.</inline></mod></p>
+      </content>
+     </subsection>
+     <subsection GUID="_e3b3b277-59b4-4b61-ba77-cf2dad0de127" class="prov2" eId="sec_5B__subsec_3">
+      <num><?L 9-28?>(3)</num>
+      <content>
+       <p><mod>In section 214 of the <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/contents">Bankruptcy (Scotland) Act 2016</ref>, after paragraph(2)(q) insert—<quotedStructure GUID="_bf5c8ef7-d629-4f9a-bbce-51b5158e3952" eId="sec_5B__subsec_3__qstr" endQuote="”" startQuote="“" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+        <level GUID="_03e21f29-e6f9-4570-a174-cb085718a6cf" class="para1" eId="sec_5B__subsec_3__qstr__para_qa">
+         <num ukl:autonumber="no"><?L 9-29?>(qa)</num>
+         <content>
+          <p>section 147B(5),</p>
+         </content>
+        </level>
+        </quotedStructure><inline name="AppendText">.</inline></mod></p>
+      </content>
+     </subsection>
+     <subsection GUID="_a50a2744-e440-4a86-a25f-0c862c50b30a" class="prov2" eId="sec_5B__subsec_4">
+      <num><?L 9-30?>(4)</num>
+      <content>
+       <p>In calculating a period of 5 years for the purposes of <mref><ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147A" ukl:targetGuid="_cd6fab74-face-4b53-8916-477a7bd486a6" ukl:targetJref="">section 147A</ref><ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147A__subsec_1" ukl:targetGuid="_560a7de7-6b9a-44da-8d76-404963f9eee4" ukl:targetJref="">(1)</ref><ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147A__subsec_1__para_b" ukl:targetGuid="_05883340-0ac8-4793-ac29-eceec6773c58" ukl:targetJref="">(b)</ref> or <ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147C" ukl:targetGuid="_5e224772-e93f-43d2-8477-3373bd06decb" ukl:targetJref="">section <?L 9-31?>147C</ref><ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147C__subsec_1" ukl:targetGuid="_969c8c31-a300-4237-beb8-f856989fd920" ukl:targetJref="">(1)</ref><ref class="valid" href="#sec_5B__subsec_2__qstr__sec_147C__subsec_1__para_b" ukl:targetGuid="_79004677-8d4e-409a-93d0-4d34559294b7" ukl:targetJref="">(b)</ref> of the <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/contents">Bankruptcy (Scotland) Act 2016</ref></mref>, any part of that period which is <?L 9-32?>before the commencement of <ref class="valid" href="#sec_5B__subsec_1" ukl:targetGuid="_46fd64bb-5673-47f9-b1d3-8fc4fd247666">subsection (1)</ref> may be included.</p>
+      </content>
+     </subsection>
+    </section>
+    <section GUID="_d4ae3054-2500-4f2a-a160-3aabd155a009" class="prov1" eId="sec_5C">
+     
+     <num ukl:autonumber="yes"><?L 9-33?>5C</num>
+     <heading GUID="_22564373-5696-467d-933b-46b85dfb5073" eId="sec_5C__hdg">Commissioners: disqualification from office where AiB is trustee</heading>
+     <subsection GUID="_62c7bdac-a039-448f-a0cf-6e9c624f6c71" class="prov2" eId="sec_5C__subsec_1">
+      <num><?L 9-34?>(1)</num>
+      <content>
+       <p><mref><ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#pt_4" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/part/4">Part 4</ref> of the <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/contents">Bankruptcy (Scotland) Act 2016</ref></mref> is modified as follows.</p>
+      </content>
+     </subsection>
+     <subsection GUID="_d38cded5-f980-4405-82f6-5c635ad8b1fa" class="prov2" eId="sec_5C__subsec_2">
+      <num><?L 9-35?>(2)</num>
+      <content>
+       <p>In <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_76" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/76">section 76</ref> (commissioners), in the opening words, after “sequestration” insert “where <?L 9-36?>AiB is not the trustee”.</p>
+      </content>
+     </subsection>
+     <subsection GUID="_236d970c-81dc-4fdc-b551-ce23c0dd660f" class="prov2" eId="sec_5C__subsec_3">
+      <num><?L 9-37?>(3)</num>
+      <content>
+       <p><mod>In <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_77" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/77">section 77</ref> (election, resignation and removal of commissioners), after <ref class="valid" href="https://www.legislation.gov.uk/asp/2016/21#sec_77__subsec_6" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2016/21/section/77">subsection (6)</ref>, <?L 9-38?>insert—<quotedStructure GUID="_2e1eb810-bfee-48c0-93c4-7f26110f7535" eId="sec_5C__subsec_3__qstr" endQuote="”" startQuote="“" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+        <subsection GUID="_ae0a1e15-6b3d-42a3-81bd-cac0158a7c7d" class="prov2" eId="sec_5C__subsec_3__qstr__subsec_6A">
+         <num ukl:autonumber="yes"><?L 9-39?>(6A)</num>
+         <content>
+          <p>A commissioner ceases to hold office if AiB is, or becomes, the trustee.</p>
+         </content>
+        </subsection>
+        </quotedStructure><inline name="AppendText">.</inline></mod></p>
+      </content>
+     </subsection>
+    </section>
+   </hcontainer>
+   <hcontainer GUID="_612c0e9b-0e83-454f-b10f-410ff07bf6a4" class="group7" eId="xhdg_3" name="crossheading">
+    
+    <heading GUID="_af1450a4-88c6-438a-9a9f-727c1f2c0c12" eId="xhdg_3__hdg"><?L 10-1?>Arrestee’s duty of disclosure</heading>
+    <section GUID="_025f7f7b-48ee-4257-80da-1cafc1fedf85" class="prov1" eId="sec_6">
+     
+     <num><?L 10-2?>6</num>
+     <heading GUID="_85b605c7-5b64-439c-932e-74feba95a4ef" eId="sec_6__hdg">Arrestment and action of furthcoming</heading>
+     <subsection GUID="_82d4a99c-0b8a-48b2-bf98-a51e5d3d1acd" class="prov2" eId="sec_6__subsec_1">
+      <num><?L 10-3?>(1)</num>
+      <content>
+       <p><mref><ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#pt_3A" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/part/3A">Part 3A</ref> of the <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/contents">Debtors (Scotland) Act 1987</ref></mref> is modified as follows.</p>
+      </content>
+     </subsection>
+     <subsection GUID="_b9e7090e-2c67-43e0-93a6-83d725fb1981" class="prov2" eId="sec_6__subsec_1A">
+      <num ukl:autonumber="yes"><?L 10-4?>(1A)</num>
+      <content>
+       <p><mod>After <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_73C" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/73C">section 73C</ref>, insert—<quotedStructure GUID="_b95e071f-31de-4096-b0f3-ba3b1166b5ff" eId="sec_6__subsec_1A__qstr" endQuote="”" startQuote="“" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+        <section GUID="_06be6434-2350-4436-b024-02d7576b5a19" class="prov1" eId="sec_6__subsec_1A__qstr__sec_73CA">
+         <num ukl:autonumber="no"><?L 10-5?>73CA</num>
+         <heading GUID="_62f6832d-753d-46bc-ae34-7cb6b6f5e077" eId="sec_6__subsec_1A__qstr__sec_73CA__hdg">Service of documents for purposes of sections 73B and 73C</heading>
+         <subsection GUID="_179d9e71-789b-4fd6-9743-9f8fd25105eb" class="prov2" eId="sec_6__subsec_1A__qstr__sec_73CA__subsec_1">
+          <num><?L 10-6?>(1)</num>
+          <intro GUID="_db990cfa-fccf-41c9-98e6-9811ec4c4161" eId="sec_6__subsec_1A__qstr__sec_73CA__subsec_1__intro">
+           <p>In relation to the service of documents for the purposes of sections 73B and <?L 10-7?>73C, the documents may be served on the arrestee—</p>
+          </intro>
+          <level GUID="_ef2b1f8a-aed6-4147-b772-7d89a47fe645" class="para1" eId="sec_6__subsec_1A__qstr__sec_73CA__subsec_1__para_a">
+           <num><?L 10-8?>(a)</num>
+           <content>
+            <p>by being delivered personally to the arrestee,</p>
+           </content>
+          </level>
+          <level GUID="_08c53511-591b-4d6f-85b3-7d30141aa493" class="para1" eId="sec_6__subsec_1A__qstr__sec_73CA__subsec_1__para_b">
+           <num><?L 10-9?>(b)</num>
+           <intro GUID="_532cf777-54e3-4874-aad0-71c10c43a3a1" eId="sec_6__subsec_1A__qstr__sec_73CA__subsec_1__para_b__intro">
+            <p>by being sent to the proper address of the arrestee—</p>
+           </intro>
+           <level GUID="_55f5778f-5cab-4c3b-aef2-c38ecca127c7" class="para2" eId="sec_6__subsec_1A__qstr__sec_73CA__subsec_1__para_b__subpara_i">
+            <num><?L 10-10?>(i)</num>
+            <content>
+             <p>by a registered post service (as defined in <mref><ref class="valid" href="https://www.legislation.gov.uk/ukpga/2000/26#sec_125" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/2000/26/section/125">section 125</ref><ref class="valid" href="https://www.legislation.gov.uk/ukpga/2000/26#sec_125__subsec_1" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/2000/26/section/125">(1)</ref> of the <?L 10-11?><ref class="valid" href="https://www.legislation.gov.uk/ukpga/2000/26" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/2000/26/contents">Postal Services Act 2000</ref></mref>), or</p>
+            </content>
+           </level>
+           <level GUID="_72af9010-95d8-4e7f-b766-efee62cef360" class="para2" eId="sec_6__subsec_1A__qstr__sec_73CA__subsec_1__para_b__subpara_ii">
+            <num><?L 10-12?>(ii)</num>
+            <content>
+             <p>by a postal service which provides for the delivery of the document <?L 10-13?>to be recorded, or</p>
+            </content>
+           </level>
+          </level>
+          <level GUID="_fcdf6455-487e-477e-8816-ec9c98bd4813" class="para1" eId="sec_6__subsec_1A__qstr__sec_73CA__subsec_1__para_c">
+           <num><?L 10-14?>(c)</num>
+           <content>
+            <p>by being transmitted to the arrestee electronically.</p>
+           </content>
+          </level>
+         </subsection>
+         <subsection GUID="_85717444-9ebb-40ff-8ed4-e5f3a15736d7" class="prov2" eId="sec_6__subsec_1A__qstr__sec_73CA__subsec_2">
+          <num><?L 10-15?>(2)</num>
+          <intro GUID="_35f9542d-fa6c-4b5c-9a28-263c8d8b5487" eId="sec_6__subsec_1A__qstr__sec_73CA__subsec_2__intro">
+           <p>For the purpose of subsection (1)(b), the proper address of the arrestee is—</p>
+          </intro>
+          <level GUID="_ff9ea054-b9c1-43ef-a674-9a24db901809" class="para1" eId="sec_6__subsec_1A__qstr__sec_73CA__subsec_2__para_a">
+           <num><?L 10-16?>(a)</num>
+           <content>
+            <p>in the case of a body corporate, the address of the registered or principal <?L 10-17?>office of the body,</p>
+           </content>
+          </level>
+          <level GUID="_76bb2d96-4661-4719-9412-280e00f348f8" class="para1" eId="sec_6__subsec_1A__qstr__sec_73CA__subsec_2__para_b">
+           <num><?L 10-18?>(b)</num>
+           <content>
+            <p>in the case of a partnership, the address of the principal office of the <?L 10-19?>partnership,</p>
+           </content>
+          </level>
+          <level GUID="_1a9b5acb-e3ae-4247-98ee-f3c0ce29547c" class="para1" eId="sec_6__subsec_1A__qstr__sec_73CA__subsec_2__para_c">
+           <num><?L 10-20?>(c)</num>
+           <content>
+            <p>in any other case, the last known address of the arrestee.</p>
+           </content>
+          </level>
+         </subsection>
+         <subsection GUID="_c08970a2-97e7-46e0-8ac1-592d38880454" class="prov2" eId="sec_6__subsec_1A__qstr__sec_73CA__subsec_3">
+          <num><?L 10-21?>(3)</num>
+          <content>
+           <p>Where a document is served as mentioned in subsection (1)(b) on an address <?L 10-22?>in the United Kingdom it is to be taken to have been received 48 hours after <?L 10-23?>it is sent unless the contrary is shown.</p>
+          </content>
+         </subsection>
+         <subsection GUID="_106d32ef-343b-4270-9bdd-462a23d00e22" class="prov2" eId="sec_6__subsec_1A__qstr__sec_73CA__subsec_4">
+          <num><?L 10-24?>(4)</num>
+          <intro GUID="_ebf82c76-4bc5-4efa-9afa-48fd67b150a0" eId="sec_6__subsec_1A__qstr__sec_73CA__subsec_4__intro">
+           <p>For the purpose of subsection (1)(c)—</p>
+          </intro>
+          <level GUID="_68af2afc-654e-4589-8ed4-6fdaac65c657" class="para1" eId="sec_6__subsec_1A__qstr__sec_73CA__subsec_4__para_a">
+           <num><?L 10-25?>(a)</num>
+           <content>
+            <p>electronic transmission of a document must be effected in a way that <?L 10-26?>the arrestee has indicated to the creditor or officer of court that the <?L 10-27?>arrestee is willing to receive the document,</p>
+           </content>
+          </level>
+          <level GUID="_74df6b4a-5836-4fa9-8867-fddd9c7b6033" class="para1" eId="sec_6__subsec_1A__qstr__sec_73CA__subsec_4__para_b">
+           <num><?L 10-28?>(b)</num>
+           <intro GUID="_fe51f4ca-5535-4b19-89a2-394000c22b38" eId="sec_6__subsec_1A__qstr__sec_73CA__subsec_4__para_b__intro">
+            <p>the arrestee’s indication of willingness to receive a document in a <?L 10-29?>particular way may be—</p>
+           </intro>
+           <level GUID="_ca85480b-708e-4684-8748-9011c07cb92a" class="para2" eId="sec_6__subsec_1A__qstr__sec_73CA__subsec_4__para_b__subpara_i">
+            <num><?L 10-30?>(i)</num>
+            <content>
+             <p>specific to the document in question or generally applicable to <?L 10-31?>documents of that kind,</p>
+            </content>
+           </level>
+           <level GUID="_6c27e97b-76b7-4690-ba58-90205ec99ce7" class="para2" eId="sec_6__subsec_1A__qstr__sec_73CA__subsec_4__para_b__subpara_ii">
+            <num><?L 10-32?>(ii)</num>
+            <content>
+             <p>expressed specifically to the creditor or officer of court or generally <?L 10-33?>(for example on a website),</p>
+            </content>
+           </level>
+           <level GUID="_8e912bb7-d2dd-497c-8f8e-2526bbd11396" class="para2" eId="sec_6__subsec_1A__qstr__sec_73CA__subsec_4__para_b__subpara_iii">
+            <num><?L 10-34?>(iii)</num>
+            <content>
+             <p>inferred from the arrestee having previously been willing to receive <?L 10-35?>documents from the creditor or officer of court in that way and <?L 10-36?>not having indicated unwillingness to do so again,</p>
+            </content>
+           </level>
+          </level>
+          <level GUID="_41e8ab40-0dfa-4864-b4c7-47acfc4f76bb" class="para1" eId="sec_6__subsec_1A__qstr__sec_73CA__subsec_4__para_c">
+           <num><?L 10-37?>(c)</num>
+           <content>
+            <p>the creditor or officer of court’s uploading of a document to an electronic <?L 10-38?>storage system from which the arrestee is able to download the document <?L 10-39?>may constitute electronic transmission of the document, where the arrestee <?L 10-40?>is sent a notification that the document has been uploaded in that way,</p>
+           </content>
+          </level>
+          <level GUID="_e5975b75-c8c6-4d5c-9152-35539d6d9d71" class="para1" eId="sec_6__subsec_1A__qstr__sec_73CA__subsec_4__para_d">
+           <num><?L 10-41?>(d)</num>
+           <content>
+            <p>a notice transmitted electronically is taken to have been received on the <?L 10-42?>day of transmission unless the contrary is shown.</p>
+           </content>
+          </level>
+         </subsection>
+        </section>
+        </quotedStructure><inline name="AppendText">.</inline></mod></p>
+      </content>
+     </subsection>
+     <subsection GUID="_35a21859-af90-4d75-ba71-b8a165d57d96" class="prov2" eId="sec_6__subsec_2">
+      <num><?L 11-1?>(2)</num>
+      <intro GUID="_c03d7033-c3dc-4c4a-9ac4-afdedb5c2036" eId="sec_6__subsec_2__intro">
+       <p>In <mref><ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_73G" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/73G">section 73G</ref><ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_73G__subsec_4" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/73G">(4)</ref></mref> (arrestee’s duty of disclosure)—</p>
+      </intro>
+      <level GUID="_f9c909fb-36c6-4505-a78a-eb2862e35b5d" class="para1" eId="sec_6__subsec_2__para_a">
+       <num><?L 11-2?>(a)</num>
+       <content GUID="_a4e4083a-5b42-4a9d-b284-79bec8e4a651">
+        <p>in <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_73G__subsec_4__para_a" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/73G">paragraph (a)</ref>, the word “and” after <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_73G__subsec_4__para_a__subpara_ii" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/73G">sub-paragraph (ii)</ref> is repealed,</p>
+       </content>
+      </level>
+      <level GUID="_a1ffac86-d487-416d-8917-34045e94725b" class="para1" eId="sec_6__subsec_2__para_b">
+       <num><?L 11-3?>(b)</num>
+       <content>
+        <p><mod>after <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_73G__subsec_4__para_b" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/73G">paragraph (b)</ref>, insert—<quotedStructure GUID="_698151c6-b70c-4ad0-b0b6-2d22a26560fa" eId="sec_6__subsec_2__para_b__qstr" endQuote="”" startQuote="“" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+         <level GUID="_0dea0c5c-828e-4179-9ba2-c63a5345ac52" class="para1" eId="sec_6__subsec_2__para_b__qstr__para_c">
+          <num ukl:autonumber="no"><?L 11-4?>(c)</num>
+          <content>
+           <p>where no property is attached, the reason why (for example, the arrestee <?L 11-5?>does not hold funds standing to the credit of the debtor, or does hold <?L 11-6?>such funds but the sum held is less than sum mentioned in section <?L 11-7?>73F(3)(a)).</p>
+          </content>
+         </level>
+         </quotedStructure><inline name="AppendText">.</inline></mod> </p>
+       </content>
+      </level>
+     </subsection>
+     <subsection GUID="_cea73833-53bc-4007-9940-9ec4ebc3869b" class="prov2" eId="sec_6__subsec_3">
+      <num><?L 11-8?>(3)</num>
+      <intro GUID="_ee8ec55b-2f5f-4c8c-8df6-18ccaf8b446c" eId="sec_6__subsec_3__intro">
+       <p>In <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_73H" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/73H">section 73H</ref> (failure to disclose information)—</p>
+      </intro>
+      <level GUID="_274c6683-78c5-4fb2-a9e9-7e06a312e538" class="para1" eId="sec_6__subsec_3__para_a">
+       <num><?L 11-9?>(a)</num>
+       <content>
+        <p>in <mref><ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_73H__subsec_1" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/73H">subsection (1)</ref><ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_73H__subsec_1__para_b" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/73H">(b)</ref></mref>, for “mentioned in section 73F(4) of this Act” substitute “of <?L 11-10?>£500”,</p>
+       </content>
+      </level>
+      <level GUID="_84d8dc40-d777-40ed-a6b1-523152c38349" class="para1" eId="sec_6__subsec_3__para_b">
+       <num><?L 11-11?>(b)</num>
+       <content>
+        <p><mod>after <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_73H__subsec_4" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/73H">subsection (4)</ref>, insert—<quotedStructure GUID="_11eef647-6af8-4c68-9506-cd438775efae" eId="sec_6__subsec_3__para_b__qstr" endQuote="”" startQuote="“" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+         <subsection GUID="_480c687f-e17d-4d9d-85aa-63cfd1b303b6" class="prov2" eId="sec_6__subsec_3__para_b__qstr__subsec_5">
+          <num ukl:autonumber="no"><?L 11-12?>(5)</num>
+          <content>
+           <p>The Scottish Ministers may by regulations modify subsection (1)(b) so as to <?L 11-13?>vary the sum mentioned there.</p>
+          </content>
+         </subsection>
+         </quotedStructure><inline name="AppendText">.</inline></mod> </p>
+       </content>
+      </level>
+     </subsection>
+    </section>
+    <section GUID="_b7e0927b-2e85-47c0-977e-c1bed1e932b4" class="prov1" eId="sec_7">
+     
+     <num><?L 11-14?>7</num>
+     <heading GUID="_d40b5e8d-91ec-42b4-852b-6560217def72" eId="sec_7__hdg">Diligence against earnings</heading>
+     <subsection GUID="_c51d8a25-2326-4d72-94c2-ce79b3385f47" class="prov2" eId="sec_7__subsec_1">
+      <num><?L 11-15?>(1)</num>
+      <content>
+       <p><mref><ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#pt_3" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/part/3">Part 3</ref> of the <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/contents">Debtors (Scotland) Act 1987</ref></mref> is modified as follows.</p>
+      </content>
+     </subsection>
+     <subsection GUID="_954e5eab-9402-4f8c-869a-621cc1d372fc" class="prov2" eId="sec_7__subsec_1A">
+      <num ukl:autonumber="yes"><?L 11-16?>(1A)</num>
+      <intro GUID="_0d311cfd-c2db-4ede-ac56-0de509b1608d" eId="sec_7__subsec_1A__intro">
+       <p>In <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_70" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/70">section 70</ref> (execution and intimation of copies)—</p>
+      </intro>
+      <level GUID="_41e4e9ff-2a6d-4b50-99da-040e9f1b8ff7" class="para1" eId="sec_7__subsec_1A__para_a">
+       <num><?L 11-17?>(a)</num>
+       <content>
+        <p><mod>for <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_70__subsec_3" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/70">subsection (3)</ref>, substitute—<quotedStructure GUID="_7d0b5895-ee8a-4265-a076-49813ab7f709" eId="sec_7__subsec_1A__para_a__qstr" endQuote="”" startQuote="“" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+         <subsection GUID="_b98cf7e3-1c2b-418d-a5d0-761e754f7060" class="prov2" eId="sec_7__subsec_1A__para_a__qstr__subsec_3">
+          <num ukl:autonumber="no"><?L 11-18?>(3)</num>
+          <intro GUID="_53fab74b-6504-41b8-b864-8b6368a4be37" eId="sec_7__subsec_1A__para_a__qstr__subsec_3__intro">
+           <p>An earnings arrestment schedule or a current maintenance arrestment schedule <?L 11-19?>may be served on an employer—</p>
+          </intro>
+          <level GUID="_51031211-08e4-4335-ab38-496e99036789" class="para1" eId="sec_7__subsec_1A__para_a__qstr__subsec_3__para_a">
+           <num><?L 11-20?>(a)</num>
+           <content>
+            <p>by being delivered personally to the employer,</p>
+           </content>
+          </level>
+          <level GUID="_9bd3f33d-84e7-4976-914f-bd47431407a1" class="para1" eId="sec_7__subsec_1A__para_a__qstr__subsec_3__para_b">
+           <num><?L 11-21?>(b)</num>
+           <intro GUID="_ec329dfa-097c-4db2-b7b6-3a0158ea08d0" eId="sec_7__subsec_1A__para_a__qstr__subsec_3__para_b__intro">
+            <p>by being sent to the proper address of the employer—</p>
+           </intro>
+           <level GUID="_1e311671-e016-4677-852c-327a89001931" class="para2" eId="sec_7__subsec_1A__para_a__qstr__subsec_3__para_b__subpara_i">
+            <num><?L 11-22?>(i)</num>
+            <content>
+             <p>by a registered post service (as defined in <mref><ref class="valid" href="https://www.legislation.gov.uk/ukpga/2000/26#sec_125" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/2000/26/section/125">section 125</ref><ref class="valid" href="https://www.legislation.gov.uk/ukpga/2000/26#sec_125__subsec_1" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/2000/26/section/125">(1)</ref> of the <?L 11-23?><ref class="valid" href="https://www.legislation.gov.uk/ukpga/2000/26" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/2000/26/contents">Postal Services Act 2000</ref></mref>), or</p>
+            </content>
+           </level>
+           <level GUID="_6171f519-905f-45a5-8f74-b05825bbdd48" class="para2" eId="sec_7__subsec_1A__para_a__qstr__subsec_3__para_b__subpara_ii">
+            <num><?L 11-24?>(ii)</num>
+            <content>
+             <p>by a postal service which provides for the delivery of the document <?L 11-25?>to be recorded, or</p>
+            </content>
+           </level>
+          </level>
+          <level GUID="_000f6039-490d-4803-a31d-568295f6a316" class="para1" eId="sec_7__subsec_1A__para_a__qstr__subsec_3__para_c">
+           <num><?L 11-26?>(c)</num>
+           <content>
+            <p>by being transmitted to the employer electronically.</p>
+           </content>
+          </level>
+         </subsection>
+         <subsection GUID="_53db9a61-968b-408a-bda9-6cf452f789c1" class="prov2" eId="sec_7__subsec_1A__para_a__qstr__subsec_3A">
+          <num><?L 11-27?>(3A)</num>
+          <intro GUID="_01bbcd15-8849-49dc-862e-bef14afd9eb0" eId="sec_7__subsec_1A__para_a__qstr__subsec_3A__intro">
+           <p>For the purpose of subsection (3)(b), the proper address of the employer is—</p>
+          </intro>
+          <level GUID="_5450e08d-7647-4c2d-b347-838b88473820" class="para1" eId="sec_7__subsec_1A__para_a__qstr__subsec_3A__para_a">
+           <num><?L 11-28?>(a)</num>
+           <content>
+            <p>in the case of a body corporate, the address of the registered or principal <?L 11-29?>office of the body,</p>
+           </content>
+          </level>
+          <level GUID="_bbc2860c-f2d5-46f4-a513-0ad30b8d03f4" class="para1" eId="sec_7__subsec_1A__para_a__qstr__subsec_3A__para_b">
+           <num><?L 11-30?>(b)</num>
+           <content>
+            <p>in the case of a partnership, the address of the principal office of the <?L 11-31?>partnership,</p>
+           </content>
+          </level>
+          <level GUID="_a7c226f1-a9a7-4f7e-9623-5a510de575e0" class="para1" eId="sec_7__subsec_1A__para_a__qstr__subsec_3A__para_c">
+           <num><?L 11-32?>(c)</num>
+           <content>
+            <p>in any other case, the last known address of the employer.</p>
+           </content>
+          </level>
+         </subsection>
+         <subsection GUID="_c62e40cf-48a1-48c5-b1c6-4fd11ad7ea6e" class="prov2" eId="sec_7__subsec_1A__para_a__qstr__subsec_3B">
+          <num><?L 11-33?>(3B)</num>
+          <content>
+           <p>Where a document is served as mentioned in subsection (3)(b) on an address <?L 11-34?>in the United Kingdom it is to be taken to have been received 48 hours after <?L 11-35?>it is sent unless the contrary is shown.</p>
+          </content>
+         </subsection>
+         <subsection GUID="_eb8c7c0c-1ccf-49d5-a47a-014d9fee4535" class="prov2" eId="sec_7__subsec_1A__para_a__qstr__subsec_3C">
+          <num><?L 11-36?>(3C)</num>
+          <intro GUID="_f1c03e37-c580-4987-8e15-f3362e16e5cd" eId="sec_7__subsec_1A__para_a__qstr__subsec_3C__intro">
+           <p>For the purpose of subsection (3)(c)—</p>
+          </intro>
+          <level GUID="_e57122b5-39a7-4753-bb95-f8ea3d069763" class="para1" eId="sec_7__subsec_1A__para_a__qstr__subsec_3C__para_a">
+           <num><?L 11-37?>(a)</num>
+           <content>
+            <p>electronic transmission of a document must be effected in a way that <?L 11-38?>the employer has indicated to the officer of court that the employer is <?L 11-39?>willing to receive the document,</p>
+           </content>
+          </level>
+          <level GUID="_fcc4eefa-0bdb-47bf-88d5-f071df6e1d8f" class="para1" eId="sec_7__subsec_1A__para_a__qstr__subsec_3C__para_b">
+           <num><?L 12-1?>(b)</num>
+           <intro GUID="_df9840dd-3604-4108-836b-c51cc0142c90" eId="sec_7__subsec_1A__para_a__qstr__subsec_3C__para_b__intro">
+            <p>the employer’s indication of willingness to receive a document in a <?L 12-2?>particular way may be—</p>
+           </intro>
+           <level GUID="_b20d3447-f790-4467-b92e-b5ad42947fa9" class="para2" eId="sec_7__subsec_1A__para_a__qstr__subsec_3C__para_b__subpara_i">
+            <num><?L 12-3?>(i)</num>
+            <content>
+             <p>specific to the document in question or generally applicable to <?L 12-4?>documents of that kind,</p>
+            </content>
+           </level>
+           <level GUID="_f3b4909a-7e42-4c9c-a4c4-be9629851b50" class="para2" eId="sec_7__subsec_1A__para_a__qstr__subsec_3C__para_b__subpara_ii">
+            <num><?L 12-5?>(ii)</num>
+            <content>
+             <p>expressed specifically to the officer of court or generally (for <?L 12-6?>example on a website),</p>
+            </content>
+           </level>
+           <level GUID="_6c8bf177-d9ee-4d80-a708-ccf3391f8570" class="para2" eId="sec_7__subsec_1A__para_a__qstr__subsec_3C__para_b__subpara_iii">
+            <num><?L 12-7?>(iii)</num>
+            <content>
+             <p>inferred from the employer having previously been willing to <?L 12-8?>receive documents from the officer of court in that way and not <?L 12-9?>having indicated unwillingness to do so again,</p>
+            </content>
+           </level>
+          </level>
+          <level GUID="_8a10782e-4c5c-49c8-aac2-8dc319c94acf" class="para1" eId="sec_7__subsec_1A__para_a__qstr__subsec_3C__para_c">
+           <num><?L 12-10?>(c)</num>
+           <content>
+            <p>the officer of court’s uploading of a document to an electronic storage <?L 12-11?>system from which the employer is able to download the document may <?L 12-12?>constitute electronic transmission of the document, where the employer <?L 12-13?>is sent a notification that the document has been uploaded in that way,</p>
+           </content>
+          </level>
+          <level GUID="_3d0bad8e-713a-44ce-af39-27fb4b2fe6ad" class="para1" eId="sec_7__subsec_1A__para_a__qstr__subsec_3C__para_d">
+           <num><?L 12-14?>(d)</num>
+           <content>
+            <p>a notice transmitted electronically is taken to have been received on the <?L 12-15?>day of transmission unless the contrary is shown.</p>
+           </content>
+          </level>
+         </subsection>
+         </quotedStructure><inline name="AppendText">, and</inline></mod></p>
+       </content>
+      </level>
+      <level GUID="_82888f71-7f54-4dbb-b68b-84e5d24a16f4" class="para1" eId="sec_7__subsec_1A__para_b">
+       <num><?L 12-16?>(b)</num>
+       <content>
+        <p><mod>for <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_70__subsec_5" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/70">subsection (5)</ref>, substitute—<quotedStructure GUID="_6b2fdec9-70d9-4c14-94da-8dfc580bdafa" eId="sec_7__subsec_1A__para_b__qstr" endQuote="”" startQuote="“" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+         <subsection GUID="_407db5ad-2957-403a-a5db-2187f9ead1f5" class="prov2" eId="sec_7__subsec_1A__para_b__qstr__subsec_5">
+          <num ukl:autonumber="no"><?L 12-17?>(5)</num>
+          <content>
+           <p><mref><ref class="valid" href="https://www.legislation.gov.uk/asp/2002/17#sec_12" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2002/17/section/12">Section 12</ref><ref class="valid" href="https://www.legislation.gov.uk/asp/2002/17#sec_12__subsec_1" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2002/17/section/12">(1)</ref> of the <ref class="valid" href="https://www.legislation.gov.uk/asp/2002/17" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2002/17/contents">Debt Arrangement and Attachment (Scotland) Act 2002</ref></mref>
+            <?L 12-18?>applies to the service of an earnings arrestment schedule, a current maintenance <?L 12-19?>arrestment schedule or a conjoined arrestment order as it applies to the <?L 12-20?>execution of an attachment except where such service is by post or transmitted <?L 12-21?>electronically.</p>
+          </content>
+         </subsection>
+         </quotedStructure><inline name="AppendText">.</inline></mod></p>
+       </content>
+      </level>
+     </subsection>
+     <subsection GUID="_8592cfc9-976a-45bc-af36-6ff1bac41e83" class="prov2" eId="sec_7__subsec_2">
+      <num><?L 12-22?>(2)</num>
+      <intro GUID="_2babe3fe-9316-47c0-ac43-d6c00f399cde" eId="sec_7__subsec_2__intro">
+       <p>In <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_70A" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/70A">section 70A</ref> (employer’s duty to provide information)—</p>
+      </intro>
+      <level GUID="_402b020a-2609-444e-8799-c44c0a8a7864" class="para1" eId="sec_7__subsec_2__para_a">
+       <num><?L 12-23?>(a)</num>
+       <intro GUID="_f94aed17-b7e5-4068-b50d-e21d6c71e876" eId="sec_7__subsec_2__para_a__intro">
+        <p>in <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_70A__subsec_1" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/70A">subsection (1)</ref>—</p>
+       </intro>
+       <level GUID="_94220028-2453-49d8-a027-d2f01e618ce9" class="para2" eId="sec_7__subsec_2__para_a__subpara_i">
+        <num><?L 12-24?>(i)</num>
+        <content>
+         <p>for “Where an employer” substitute “This section applies where a person”,</p>
+        </content>
+       </level>
+       <level GUID="_1c7ed6a0-8c31-47a7-9b49-f25a61bf1110" class="para2" eId="sec_7__subsec_2__para_a__subpara_ii">
+        <num><?L 12-25?>(ii)</num>
+        <content>
+         <p>the words from “the employer shall” to the end of the subsection are <?L 12-26?>repealed,</p>
+        </content>
+       </level>
+      </level>
+      <level GUID="_b242385b-f1e0-4329-b764-6fa2b8ef353e" class="para1" eId="sec_7__subsec_2__para_b">
+       <num><?L 12-27?>(b)</num>
+       <content>
+        <p><mod>for <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_70A__subsec_2" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/70A">subsection (2)</ref> substitute—<quotedStructure GUID="_fcc8977c-b208-4d9d-aab5-d2f16b4389cf" eId="sec_7__subsec_2__para_b__qstr" endQuote="”" startQuote="“" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+         <subsection GUID="_78fd3231-d776-4b0b-a3ec-b12031d34921" class="prov2" eId="sec_7__subsec_2__para_b__qstr__subsec_1A">
+          <num ukl:autonumber="no"><?L 12-28?>(1A)</num>
+          <intro GUID="_3744c219-6051-4f06-98e4-a4283232b8cd" eId="sec_7__subsec_2__para_b__qstr__subsec_1A__intro">
+           <p>If—</p>
+          </intro>
+          <level GUID="_3d65e429-226a-487d-91d1-843a05fb655b" class="para1" eId="sec_7__subsec_2__para_b__qstr__subsec_1A__para_a">
+           <num><?L 12-29?>(a)</num>
+           <content>
+            <p>the debtor is not employed by the person who received the schedule or <?L 12-30?>order, or</p>
+           </content>
+          </level>
+          <level GUID="_f77e75f7-def0-4fbe-9fb4-bf5cd5f0c75c" class="para1" eId="sec_7__subsec_2__para_b__qstr__subsec_1A__para_b">
+           <num><?L 12-31?>(b)</num>
+           <content>
+            <p>the debtor is employed by that person but, because of the net earnings <?L 12-32?>of the debtor, the sum to be deducted on any pay-day under this Part of <?L 12-33?>this Act is, or is expected to be, nil,</p>
+           </content>
+          </level>
+          <wrapUp GUID="_c3d48dc0-b83b-4e25-802b-ee9a1b1743ef" eId="sec_7__subsec_2__para_b__qstr__subsec_1A__wrapup">
+           <p><?L 12-34?>the person must, within 21 days of the order or schedule being served, send <?L 12-35?>to the relevant person the information mentioned in paragraph (a) or (b) (as <?L 12-36?>appropriate) in (or as nearly as may be in) such form as may be prescribed.</p>
+          </wrapUp>
+         </subsection>
+         <subsection GUID="_dd4525ca-a6c6-45a0-b737-e75775f61f4e" class="prov2" eId="sec_7__subsec_2__para_b__qstr__subsec_2">
+          <num><?L 12-37?>(2)</num>
+          <intro GUID="_dfcddcd5-786f-4d36-bf05-8ff3d0679226" eId="sec_7__subsec_2__para_b__qstr__subsec_2__intro">
+           <p>Otherwise, the employer must send to the relevant person the information <?L 12-38?>mentioned in subsection (3) at each of the following times—</p>
+          </intro>
+          <level GUID="_d4246f06-c1ed-4740-be07-2ffe68bea682" class="para1" eId="sec_7__subsec_2__para_b__qstr__subsec_2__para_a">
+           <num><?L 12-39?>(a)</num>
+           <content>
+            <p>as soon as is reasonably practicable following the order or schedule <?L 12-40?>being served, and</p>
+           </content>
+          </level>
+          <level GUID="_c4a22e37-a7cb-4d99-9b57-2f2422768144" class="para1" eId="sec_7__subsec_2__para_b__qstr__subsec_2__para_b">
+           <num><?L 12-41?>(b)</num>
+           <content>
+            <p>subsequently, provided the debt has not been extinguished, on or as soon <?L 12-42?>as is reasonably practicable after the dates mentioned in subsection (4),</p>
+           </content>
+          </level>
+          <wrapUp GUID="_e240d58e-45b8-42e3-a338-3e33682e40a5" eId="sec_7__subsec_2__para_b__qstr__subsec_2__wrapup">
+           <p><?L 12-43?>in (or as nearly as may be in) such form as may be prescribed.</p>
+          </wrapUp>
+         </subsection>
+         </quotedStructure><inline name="AppendText">,</inline></mod> </p>
+       </content>
+      </level>
+      <level GUID="_8c1cafed-39f2-4dde-833a-0fb13cdbe601" class="para1" eId="sec_7__subsec_2__para_c">
+       <num><?L 13-1?>(c)</num>
+       <intro GUID="_0845e50b-421f-4f6f-a8cd-86f36ab34582" eId="sec_7__subsec_2__para_c__intro">
+        <p>in <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_70A__subsec_3" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/70A">subsection (3)</ref>—</p>
+       </intro>
+       <level GUID="_d84791b1-8ebf-4510-9c89-e0fc1cdb71ff" class="para2" eId="sec_7__subsec_2__para_c__subpara_i">
+        <num><?L 13-2?>(i)</num>
+        <content>
+         <p>in the opening words, for “(1)” substitute “(2)”,</p>
+        </content>
+       </level>
+       <level GUID="_1f86b0fd-02f1-403f-bbf0-05e7d300209f" class="para2" eId="sec_7__subsec_2__para_c__subpara_ii">
+        <num><?L 13-3?>(ii)</num>
+        <content>
+         <p>in <mref><ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_70A__subsec_3__para_b" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/70A">paragraph (b)</ref><ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_70A__subsec_3__para_b__subpara_i" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/70A">(i)</ref></mref>, for “(1)” substitute “(2)(a)”,</p>
+        </content>
+       </level>
+       <level GUID="_822bd889-2f9f-4904-808e-2b29dba6df9e" class="para2" eId="sec_7__subsec_2__para_c__subpara_iii">
+        <num><?L 13-4?>(iii)</num>
+        <content>
+         <p>in <mref><ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_70A__subsec_3__para_b" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/70A">paragraph (b)</ref><ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_70A__subsec_3__para_b__subpara_ii" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/70A">(ii)</ref></mref>, for “(2)” substitute “(2)(b)”,</p>
+        </content>
+       </level>
+      </level>
+      <level GUID="_83bbeb48-7477-4139-9a8f-13d6791d9b7a" class="para1" eId="sec_7__subsec_2__para_d">
+       <num><?L 13-5?>(d)</num>
+       <content>
+        <p>in <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_70A__subsec_4" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/70A">subsection (4)</ref>, for “(2)” substitute “(2)(b)”,</p>
+       </content>
+      </level>
+      <level GUID="_d4764644-fd19-4e00-96f8-b70ef5807761" class="para1" eId="sec_7__subsec_2__para_e">
+       <num><?L 13-6?>(e)</num>
+       <intro GUID="_30e345e3-7c4d-4f01-89a4-f851ccaa818e" eId="sec_7__subsec_2__para_e__intro">
+        <p>in <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_70A__subsec_5" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/70A">subsection (5)</ref>—</p>
+       </intro>
+       <level GUID="_1cc1160f-2e15-45b2-b4a1-21891de8b689" class="para2" eId="sec_7__subsec_2__para_e__subpara_i">
+        <num><?L 13-7?>(i)</num>
+        <content>
+         <p>in the opening words, for “subsections (1) and (2)” substitute “subsection <?L 13-8?>(2)”,</p>
+        </content>
+       </level>
+       <level GUID="_b5eae6c2-411b-4cbd-b8bc-678878b44c47" class="para2" eId="sec_7__subsec_2__para_e__subpara_ii">
+        <num><?L 13-9?>(ii)</num>
+        <content>
+         <p>in the opening words, for the words from “give notice” to “the sheriff clerk” <?L 13-10?>substitute “send to the relevant person notice—”,</p>
+        </content>
+       </level>
+       <level GUID="_d7268e95-ed9d-4419-8bab-6205599f84e9" class="para2" eId="sec_7__subsec_2__para_e__subpara_iii">
+        <num><?L 13-11?>(iii)</num>
+        <content>
+         <p><mod>after <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_70A__subsec_5__para_b" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/70A">paragraph (b)</ref>, insert—<quotedStructure GUID="_3db6df39-a79b-4c36-b2e0-142dd245c382" eId="sec_7__subsec_2__para_e__subpara_iii__qstr" endQuote="”" startQuote="“" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+          <wrapUp GUID="_8aba14bf-3de2-4f85-8fc1-e92a0d06bcce" eId="sec_7__subsec_2__para_e__subpara_iii__qstr__wrapup">
+           <p><?L 13-12?>in (or as nearly as may be in) such form as may be prescribed.</p>
+          </wrapUp>
+          </quotedStructure><inline name="AppendText">,</inline></mod> </p>
+        </content>
+       </level>
+      </level>
+      <level GUID="_b1f13116-4daa-423a-a7a1-9275e33991df" class="para1" eId="sec_7__subsec_2__para_f">
+       <num><?L 13-13?>(f)</num>
+       <content>
+        <p><mod>after <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_70A__subsec_5" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/70A">subsection (5)</ref>, insert—<quotedStructure GUID="_61abc1b6-8af0-4699-8bbb-09e508bb569e" eId="sec_7__subsec_2__para_f__qstr" endQuote="”" startQuote="“" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+         <subsection GUID="_6c433445-3a24-4b3b-8cf7-00ccfdc0a5b6" class="prov2" eId="sec_7__subsec_2__para_f__qstr__subsec_5A">
+          <num ukl:autonumber="no"><?L 13-14?>(5A)</num>
+          <content>
+           <p>But subsection (5) does not apply where a notice has been given to the relevant <?L 13-15?>person under subsection (1A)(b).</p>
+          </content>
+         </subsection>
+         </quotedStructure><inline name="AppendText">,</inline></mod> </p>
+       </content>
+      </level>
+      <level GUID="_daa4e395-0b04-4e5e-ad95-61c5d7f3c90c" class="para1" eId="sec_7__subsec_2__para_g">
+       <num><?L 13-16?>(g)</num>
+       <content>
+        <p>in <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_70A__subsec_6" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/70A">subsection (6)</ref>, for “subsection (1) or (2)” substitute “subsection (2)”,</p>
+       </content>
+      </level>
+      <level GUID="_02e365a0-06ee-4a60-999b-a309efb0d6ff" class="para1" eId="sec_7__subsec_2__para_h">
+       <num><?L 13-17?>(h)</num>
+       <content>
+        <p><mod>after <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_70A__subsec_6" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/70A">subsection (6)</ref>, insert—<quotedStructure GUID="_6a8465c4-345d-44b7-b87f-11c85147fcd6" eId="sec_7__subsec_2__para_h__qstr" endQuote="”" startQuote="“" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+         <subsection GUID="_d8f74470-d0dd-411e-9709-1ba7063b6753" class="prov2" eId="sec_7__subsec_2__para_h__qstr__subsec_7">
+          <num ukl:autonumber="no"><?L 13-18?>(7)</num>
+          <intro GUID="_98c0cb0f-3613-4c0f-9f36-54462ee089ff" eId="sec_7__subsec_2__para_h__qstr__subsec_7__intro">
+           <p>In this section—</p>
+          </intro>
+          <level GUID="_28068b6a-6c21-4419-914a-0d167399b662" class="para1" eId="sec_7__subsec_2__para_h__qstr__subsec_7__para_a">
+           <num><?L 13-19?>(a)</num>
+           <intro GUID="_5373f0f2-1248-47a1-9d32-f91e154d1409" eId="sec_7__subsec_2__para_h__qstr__subsec_7__para_a__intro">
+            <p>“relevant person” means—</p>
+           </intro>
+           <level GUID="_382d7e99-803f-4c47-b92b-f03f900fae98" class="para2" eId="sec_7__subsec_2__para_h__qstr__subsec_7__para_a__subpara_i">
+            <num><?L 13-20?>(i)</num>
+            <content>
+             <p>the creditor, or</p>
+            </content>
+           </level>
+           <level GUID="_f7e7ec0b-d424-4b0c-93ce-133ef6ba5c73" class="para2" eId="sec_7__subsec_2__para_h__qstr__subsec_7__para_a__subpara_ii">
+            <num><?L 13-21?>(ii)</num>
+            <content>
+             <p>in the case of a conjoined arrestment order, the sheriff clerk,</p>
+            </content>
+           </level>
+          </level>
+          <level GUID="_69669c74-fd08-4efa-b624-c74cdcddf3fb" class="para1" eId="sec_7__subsec_2__para_h__qstr__subsec_7__para_b">
+           <num><?L 13-22?>(b)</num>
+           <content>
+            <p>“prescribed” means prescribed by regulations made by the Scottish <?L 13-23?>Ministers.</p>
+           </content>
+          </level>
+         </subsection>
+         </quotedStructure><inline name="AppendText">.</inline></mod> </p>
+       </content>
+      </level>
+      <level GUID="_9ecf88ac-8afc-4308-adfe-0f6cce746b5e" class="para1" eId="sec_7__subsec_2__para_i">
+       <num><?L 13-24?>(i)</num>
+       <content>
+        <p>the heading of the section becomes “<b>Employers etc.: duty to provide <?L 13-25?>information</b>”.</p>
+       </content>
+      </level>
+     </subsection>
+     <subsection GUID="_cc2b5efb-7daa-4b7b-bbaa-5f008e97c536" class="prov2" eId="sec_7__subsec_3">
+      <num><?L 13-26?>(3)</num>
+      <intro GUID="_0c82e63a-02f7-4fff-8bd3-fc96841018a9" eId="sec_7__subsec_3__intro">
+       <p>In <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_70B" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/70B">section 70B</ref> (failure to give notice under section 70A(5))—</p>
+      </intro>
+      <level GUID="_4b6b151b-abbf-4f2b-887e-43d04a8b3743" class="para1" eId="sec_7__subsec_3__para_a">
+       <num><?L 13-27?>(a)</num>
+       <content>
+        <p><mod>before <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_70B__subsec_1" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/70B">subsection (1)</ref>, insert—<quotedStructure GUID="_2591e272-3a1d-46af-94f1-268f24f1df5a" eId="sec_7__subsec_3__para_a__qstr" endQuote="”" startQuote="“" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+         <subsection GUID="_431037cb-7b4b-42df-b440-50d274fe843b" class="prov2" eId="sec_7__subsec_3__para_a__qstr__subsec_A1">
+          <num ukl:autonumber="no"><?L 13-28?>(A1)</num>
+          <intro GUID="_9c757d66-af81-462c-b09c-94c54e333e7a" eId="sec_7__subsec_3__para_a__qstr__subsec_A1__intro">
+           <p>Where a person fails without reasonable excuse to send the information required <?L 13-29?>under section 70A(1A) or (2) of this Act, the sheriff may, on the application <?L 13-30?>of any creditor, make an order requiring the person who received the schedule <?L 13-31?>or order—</p>
+          </intro>
+          <level GUID="_2defa568-daa0-4466-9d36-59b033649ca6" class="para1" eId="sec_7__subsec_3__para_a__qstr__subsec_A1__para_a">
+           <num><?L 13-32?>(a)</num>
+           <content>
+            <p>to send the information to the creditor, and</p>
+           </content>
+          </level>
+          <level GUID="_2144ea97-295e-4373-b657-6e29908ac037" class="para1" eId="sec_7__subsec_3__para_a__qstr__subsec_A1__para_b">
+           <num><?L 13-33?>(b)</num>
+           <intro GUID="_ab6e0f4b-1cda-433d-8f5a-05c7f52eb4a0" eId="sec_7__subsec_3__para_a__qstr__subsec_A1__para_b__intro">
+            <p>to pay to the creditor—</p>
+           </intro>
+           <level GUID="_b37e1766-58e7-4c5d-b753-d8829737789e" class="para2" eId="sec_7__subsec_3__para_a__qstr__subsec_A1__para_b__subpara_i">
+            <num><?L 13-34?>(i)</num>
+            <content>
+             <p>the sum due to the creditor by the debtor, or</p>
+            </content>
+           </level>
+           <level GUID="_af4e0427-bdc5-4080-b1ae-fd508cf66a3e" class="para2" eId="sec_7__subsec_3__para_a__qstr__subsec_A1__para_b__subpara_ii">
+            <num><?L 13-35?>(ii)</num>
+            <content>
+             <p>the sum of £500,</p>
+            </content>
+           </level>
+           <wrapUp GUID="_e201b24b-a7ae-4387-b804-7e02adfb5635" eId="sec_7__subsec_3__para_a__qstr__subsec_A1__para_b__wrapup">
+            <p><?L 13-36?>whichever is the lesser.</p>
+           </wrapUp>
+          </level>
+         </subsection>
+         </quotedStructure><inline name="AppendText">,</inline></mod> </p>
+       </content>
+      </level>
+      <level GUID="_4f805a0b-4c9f-449f-9147-01fe1d29c80c" class="para1" eId="sec_7__subsec_3__para_b">
+       <num><?L 13-37?>(b)</num>
+       <content>
+        <p><mod>in <mref><ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_70B__subsec_1" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/70B">subsection (1)</ref><ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_70B__subsec_1__para_b" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/70B">(b)</ref></mref>, for the words from “an amount” to the end of <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_70B__subsec_1__para_b" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/70B">that paragraph</ref>
+         <?L 13-38?>substitute “—<quotedStructure GUID="_7472f29d-7fda-4902-af3a-b2b32c73b526" eId="sec_7__subsec_3__para_b__qstr" endQuote="”" startQuote="" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+         <level GUID="_74e9bada-e1a7-4d70-9cbf-bb1abdb4f0a8" class="para2" eId="sec_7__subsec_3__para_b__qstr__subpara_i">
+          <num ukl:autonumber="no"><?L 13-39?>(i)</num>
+          <content>
+           <p>the sum due to the creditor by the debtor, or</p>
+          </content>
+         </level>
+         <level GUID="_18dc5bc8-eaac-4164-b08c-faf8628c8489" class="para2" eId="sec_7__subsec_3__para_b__qstr__subpara_ii">
+          <num><?L 14-1?>(ii)</num>
+          <content>
+           <p>the sum of £500,</p>
+          </content>
+         </level>
+         <wrapUp GUID="_7262d807-028a-437a-9b1f-0c356309687a" eId="sec_7__subsec_3__para_b__qstr__wrapup">
+          <p><?L 14-2?>whichever is the lesser.</p>
+         </wrapUp>
+         </quotedStructure><inline name="AppendText">,</inline></mod> </p>
+       </content>
+      </level>
+      <level GUID="_c31e8ed9-8e47-4aac-a9c3-273ead86f410" class="para1" eId="sec_7__subsec_3__para_c">
+       <num><?L 14-3?>(c)</num>
+       <content>
+        <p>in <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_70B__subsec_2" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/70B">subsection (2)</ref>, in the opening words, for “subsection (1)(b)” substitute <?L 14-4?>“subsection (A1)(b) or (1)(b)”,</p>
+       </content>
+      </level>
+      <level GUID="_caff491a-bf07-4494-91ff-980085729cd2" class="para1" eId="sec_7__subsec_3__para_d">
+       <num><?L 14-5?>(d)</num>
+       <intro GUID="_1a9c6668-c76e-4f97-b68d-b629a512ebb4" eId="sec_7__subsec_3__para_d__intro">
+        <p>in <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_70B__subsec_3" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/70B">subsection (3)</ref>—</p>
+       </intro>
+       <level GUID="_61ec1c77-9c55-45c8-90e2-b628e0da316a" class="para2" eId="sec_7__subsec_3__para_d__subpara_i">
+        <num><?L 14-6?>(i)</num>
+        <content>
+         <p>for “An employer” substitute “A person”,</p>
+        </content>
+       </level>
+       <level GUID="_1b01ccf2-6b84-4128-ab03-108f2792f765" class="para2" eId="sec_7__subsec_3__para_d__subpara_ii">
+        <num><?L 14-7?>(ii)</num>
+        <content>
+         <p>for “subsection (1)” substitute “subsection (A1)(b) or (1)(b)”,</p>
+        </content>
+       </level>
+      </level>
+      <level GUID="_64309fdc-52c3-4013-8457-6bb62e6bbb65" class="para1" eId="sec_7__subsec_3__para_e">
+       <num><?L 14-8?>(e)</num>
+       <content>
+        <p><mod>after <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_70B__subsec_3" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/70B">subsection (3)</ref>, insert—<quotedStructure GUID="_533b33e1-e58e-4937-a87e-63681be34e9e" eId="sec_7__subsec_3__para_e__qstr" endQuote="”" startQuote="“" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+         <subsection GUID="_4d0d2194-c8c4-41b5-a856-108529d7ed3b" class="prov2" eId="sec_7__subsec_3__para_e__qstr__subsec_4">
+          <num ukl:autonumber="no"><?L 14-9?>(4)</num>
+          <content>
+           <p>The Scottish Ministers may by regulations modify subsection (A1)(b)(ii) or <?L 14-10?>(1)(b)(ii) so as to vary the sums mentioned there.</p>
+          </content>
+         </subsection>
+         </quotedStructure><inline name="AppendText">,</inline></mod> </p>
+       </content>
+      </level>
+      <level GUID="_1f4c22db-b943-40a4-80c2-667f584c4d27" class="para1" eId="sec_7__subsec_3__para_f">
+       <num><?L 14-11?>(f)</num>
+       <content>
+        <p>the heading of the section becomes “<b>Failure to give notice under section 70A</b>”.</p>
+       </content>
+      </level>
+     </subsection>
+    </section>
+   </hcontainer>
+   <hcontainer GUID="_08e0439b-0a50-4e39-bbea-3310697e159c" class="group7" eId="xhdg_5" name="crossheading">
+    
+    <heading GUID="_6ec3b33a-090d-48fa-b45b-58ee7c8a3895" eId="xhdg_5__hdg"><?L 14-12?>Diligence on the dependence</heading>
+    <section GUID="_6d43ad7f-b3b7-4cc4-b64d-29a26fd70585" class="prov1" eId="sec_8">
+     
+     <num><?L 14-13?>8</num>
+     <heading GUID="_24717735-0b6f-4305-99aa-6dbc5363afde" eId="sec_8__hdg">Provision of debt advice and information package</heading>
+     <subsection GUID="_5e81a7cd-f6a3-4671-beb2-e9419c79a871" class="prov2" eId="sec_8__subsec_1">
+      <num><?L 14-14?>(1)</num>
+      <content>
+       <p><mref><ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#pt_1A" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/part/1A">Part 1A</ref> of the <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/contents">Debtors (Scotland) Act 1987</ref></mref> is modified as follows.</p>
+      </content>
+     </subsection>
+     <subsection GUID="_eae8b3c6-77f7-4009-a9d0-5f78fde322d7" class="prov2" eId="sec_8__subsec_2">
+      <num><?L 14-15?>(2)</num>
+      <intro GUID="_753057b7-498d-4ae9-bae4-68649cb4e35d" eId="sec_8__subsec_2__intro">
+       <p>In <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_15F" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/15F">section 15F</ref> (hearing on application)—</p>
+      </intro>
+      <level GUID="_5dd8645f-969f-4531-a8ad-ec49027c6f3d" class="para1" eId="sec_8__subsec_2__para_a">
+       <num><?L 14-16?>(a)</num>
+       <intro GUID="_430d259d-5b63-4db4-9f3a-fee55e11d5c3" eId="sec_8__subsec_2__para_a__intro">
+        <p>in <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_15F__subsec_3" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/15F">subsection (3)</ref>—</p>
+       </intro>
+       <level GUID="_2f6d984a-9b47-49d1-8cfb-d6955ebed213" class="para2" eId="sec_8__subsec_2__para_a__subpara_i">
+        <num><?L 14-17?>(i)</num>
+        <content>
+         <p>the word “and” immediately following <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_15F__subsec_3__para_b" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/15F">paragraph (b)</ref> is repealed,</p>
+        </content>
+       </level>
+       <level GUID="_733f7846-7460-4119-b5c9-78fc9cf6a5d6" class="para2" eId="sec_8__subsec_2__para_a__subpara_ii">
+        <num><?L 14-18?>(ii)</num>
+        <content>
+         <p><mod>after <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_15F__subsec_3__para_c" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/15F">paragraph (c)</ref>, insert “; and<quotedStructure GUID="_1b822d4b-9c9e-4ddd-9325-d03ed15ca8eb" eId="sec_8__subsec_2__para_a__subpara_ii__qstr" endQuote="”" startQuote="" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+          <level GUID="_17105bf9-6526-4662-82fe-3e9fc8bc03fc" class="para1" eId="sec_8__subsec_2__para_a__subpara_ii__qstr__para_d">
+           <num ukl:autonumber="no"><?L 14-19?>(d)</num>
+           <content>
+            <p>where the debtor is an individual, that the creditor has provided the <?L 14-20?>debtor with a debt advice and information package.</p>
+           </content>
+          </level>
+          </quotedStructure><inline name="AppendText">,</inline></mod> </p>
+        </content>
+       </level>
+      </level>
+      <level GUID="_4402282c-c063-4b01-a867-9df0ac888803" class="para1" eId="sec_8__subsec_2__para_b">
+       <num><?L 14-21?>(b)</num>
+       <content>
+        <p><mod>after <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_15F__subsec_7" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/15F">subsection (7)</ref>, insert—<quotedStructure GUID="_30e4835f-a3a6-4605-8122-1ee481bd82b6" eId="sec_8__subsec_2__para_b__qstr" endQuote="”" startQuote="“" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+         <subsection GUID="_e0faa4a6-9d4a-4395-99c0-274932e55356" class="prov2" eId="sec_8__subsec_2__para_b__qstr__subsec_8">
+          <num ukl:autonumber="no"><?L 14-22?>(8)</num>
+          <content>
+           <p>In this section and in section 15K, “debt advice and information package” <?L 14-23?>means the debt advice and information package referred to in <mref><ref class="valid" href="https://www.legislation.gov.uk/asp/2002/17#sec_10" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2002/17/section/10">section 10</ref><ref class="valid" href="https://www.legislation.gov.uk/asp/2002/17#sec_10__subsec_5" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2002/17/section/10">(5)</ref>
+            <?L 14-24?>of the <ref class="valid" href="https://www.legislation.gov.uk/asp/2002/17" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2002/17/contents">Debt Arrangement and Attachment (Scotland) Act 2002</ref></mref>.</p>
+          </content>
+         </subsection>
+         </quotedStructure><inline name="AppendText">.</inline></mod> </p>
+       </content>
+      </level>
+     </subsection>
+     <subsection GUID="_fca83739-592d-44fb-9cfd-8297b6256e48" class="prov2" eId="sec_8__subsec_3">
+      <num><?L 14-25?>(3)</num>
+      <intro GUID="_8de7f96e-9127-45e3-b09a-5770da4d377b" eId="sec_8__subsec_3__intro">
+       <p>In <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_15K" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/15K">section 15K</ref> (recall or restriction of diligence on dependence)—</p>
+      </intro>
+      <level GUID="_730ddfd1-28a1-4d54-88b6-1abff8e0d1f0" class="para1" eId="sec_8__subsec_3__para_a">
+       <num><?L 14-26?>(a)</num>
+       <content>
+        <p><mod>after <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_15K__subsec_5" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/15K">subsection (5)</ref>, insert—<quotedStructure GUID="_5eea0e41-9b48-460a-acf5-67f5a58a0fd0" eId="sec_8__subsec_3__para_a__qstr" endQuote="”" startQuote="“" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+         <subsection GUID="_12176c80-e34f-4331-8304-6ae3be5ade05" class="prov2" eId="sec_8__subsec_3__para_a__qstr__subsec_5A">
+          <num ukl:autonumber="no"><?L 14-27?>(5A)</num>
+          <intro GUID="_4948dccc-1738-40b2-be23-5eba1fc38f39" eId="sec_8__subsec_3__para_a__qstr__subsec_5A__intro">
+           <p>Where subsection (5B) applies and the court is satisfied that the creditor has <?L 14-28?>not provided the debtor with a debt advice and information package it—</p>
+          </intro>
+          <level GUID="_ce6bd29b-dc7a-4fbe-b845-596e2bd27e7e" class="para1" eId="sec_8__subsec_3__para_a__qstr__subsec_5A__para_a">
+           <num><?L 14-29?>(a)</num>
+           <intro GUID="_a41d9824-f47e-4914-9bbb-ebb053519aa0" eId="sec_8__subsec_3__para_a__qstr__subsec_5A__para_a__intro">
+            <p>must make an order—</p>
+           </intro>
+           <level GUID="_31798b9a-6d32-4da5-9249-dd01e0894872" class="para2" eId="sec_8__subsec_3__para_a__qstr__subsec_5A__para_a__subpara_i">
+            <num><?L 14-30?>(i)</num>
+            <content>
+             <p>recalling the warrant, and</p>
+            </content>
+           </level>
+           <level GUID="_822220fc-ebbb-490e-830d-0b9379eb94cc" class="para2" eId="sec_8__subsec_3__para_a__qstr__subsec_5A__para_a__subpara_ii">
+            <num><?L 14-31?>(ii)</num>
+            <content>
+             <p>if an arrestment or inhibition has been executed in pursuance of <?L 14-32?>the warrant, recalling that arrestment or inhibition, and</p>
+            </content>
+           </level>
+          </level>
+          <level GUID="_a98dc85d-44b2-4c33-9df9-0d89b24b4df1" class="para1" eId="sec_8__subsec_3__para_a__qstr__subsec_5A__para_b">
+           <num><?L 14-33?>(b)</num>
+           <content>
+            <p>may make an order ancillary to any order mentioned in paragraph (a).</p>
+           </content>
+          </level>
+         </subsection>
+         <subsection GUID="_5ac0bce1-dfa2-4900-85dc-bfb451b080e6" class="prov2" eId="sec_8__subsec_3__para_a__qstr__subsec_5B">
+          <num><?L 14-34?>(5B)</num>
+          <intro GUID="_8510d189-3440-48d4-8dce-c62f6c3af383" eId="sec_8__subsec_3__para_a__qstr__subsec_5B__intro">
+           <p>This subsection applies where—</p>
+          </intro>
+          <level GUID="_a8edb87e-1db5-46d2-a721-4de297b4a0a3" class="para1" eId="sec_8__subsec_3__para_a__qstr__subsec_5B__para_a">
+           <num><?L 14-35?>(a)</num>
+           <content>
+            <p>the debtor is an individual, and</p>
+           </content>
+          </level>
+          <level GUID="_0b4df4ce-667d-4d66-9ea9-3992a3e6dfc4" class="para1" eId="sec_8__subsec_3__para_a__qstr__subsec_5B__para_b">
+           <num><?L 14-36?>(b)</num>
+           <content>
+            <p>the hearing is a hearing fixed under section 15E(4)(a).</p>
+           </content>
+          </level>
+         </subsection>
+         </quotedStructure><inline name="AppendText">,</inline></mod> </p>
+       </content>
+      </level>
+      <level GUID="_9e12d355-aaa9-4ba6-b149-fc436a0b6386" class="para1" eId="sec_8__subsec_3__para_b">
+       <num><?L 14-37?>(b)</num>
+       <content>
+        <p>in <ref class="valid" href="https://www.legislation.gov.uk/ukpga/1987/18#sec_15K__subsec_10" ukl:alternativeReference="https://www.legislation.gov.uk/ukpga/1987/18/section/15K">subsection (10)</ref>, after “(5),” insert “(5A),”.</p>
+       </content>
+      </level>
+     </subsection>
+    </section>
+   </hcontainer>
+   <hcontainer GUID="_a21bd4be-0447-44e3-9a32-df425a9812d5" class="group7" eId="xhdg_6" name="crossheading">
+    
+    <heading GUID="_186e3ec5-3a51-4e6e-a99e-6b050199255b" eId="xhdg_6__hdg"><?L 15-1?>Exceptional attachment</heading>
+    <section GUID="_78075fd0-8f00-4438-b274-64e9575e18cb" class="prov1" eId="sec_9">
+     
+     <num><?L 15-2?>9</num>
+     <heading GUID="_117f6387-a7f7-47b6-a5bb-ae1a73f6909e" eId="sec_9__hdg">Notice and redemption periods</heading>
+     <subsection GUID="_0cacd020-1ef5-4dfa-af1f-0209622cf4aa" class="prov2" eId="sec_9__subsec_1">
+      <num><?L 15-3?>(1)</num>
+      <content>
+       <p><mref><ref class="valid" href="https://www.legislation.gov.uk/asp/2002/17#pt_3" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2002/17/part/3">Part 3</ref> of the <ref class="valid" href="https://www.legislation.gov.uk/asp/2002/17" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2002/17/contents">Debt Arrangement and Attachment (Scotland) Act 2002</ref></mref> is modified as <?L 15-4?>follows.</p>
+      </content>
+     </subsection>
+     <subsection GUID="_a9b3c90c-024d-4199-bb4c-715256f3678f" class="prov2" eId="sec_9__subsec_2">
+      <num><?L 15-5?>(2)</num>
+      <content>
+       <p>In <ref class="valid" href="https://www.legislation.gov.uk/asp/2002/17#sec_53" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2002/17/section/53">section 53</ref> (removal of articles attached in dwellinghouse), in <ref class="valid" href="https://www.legislation.gov.uk/asp/2002/17#sec_53__subsec_2" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2002/17/section/53">subsection (2)</ref>, at the <?L 15-6?>end insert “(which is to be not less than 7 days from the date on which the notice is <?L 15-7?>given)”.</p>
+      </content>
+     </subsection>
+     <subsection GUID="_0890daea-0a11-4fa4-93d7-ff0fc8eb67f4" class="prov2" eId="sec_9__subsec_3">
+      <num><?L 15-8?>(3)</num>
+      <content>
+       <p><mod>In <ref class="valid" href="https://www.legislation.gov.uk/asp/2002/17#sec_56" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2002/17/section/56">section 56</ref> (redemption), in <ref class="valid" href="https://www.legislation.gov.uk/asp/2002/17#sec_56__subsec_1" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2002/17/section/56">subsection (1)</ref>, for the words from “, within 7 days” to <?L 15-9?>the end of <ref class="valid" href="https://www.legislation.gov.uk/asp/2002/17#sec_56__subsec_1" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2002/17/section/56">that subsection</ref> substitute “—<quotedStructure GUID="_10327292-acc1-473e-88f4-21a2f613006b" eId="sec_9__subsec_3__qstr" endQuote="”" startQuote="" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+        <level GUID="_9a074a09-2fe9-41bc-a5ce-184057d0bef1" class="para1" eId="sec_9__subsec_3__qstr__para_a">
+         <num ukl:autonumber="no"><?L 15-10?>(a)</num>
+         <content>
+          <p>where an article was removed immediately by the officer from the <?L 15-11?>dwellinghouse in which it was attached, to redeem that article within 7 <?L 15-12?>days of the date on which it was attached,</p>
+         </content>
+        </level>
+        <level GUID="_a35fbcfa-fbf7-43c9-991e-875f470aa10c" class="para1" eId="sec_9__subsec_3__qstr__para_b">
+         <num><?L 15-13?>(b)</num>
+         <content>
+          <p>where an article was not removed immediately by the officer from the <?L 15-14?>dwellinghouse in which it was attached, to redeem that article within <?L 15-15?>14 days of the date on which it was attached.</p>
+         </content>
+        </level>
+        </quotedStructure><inline name="AppendText">.</inline></mod> </p>
+      </content>
+     </subsection>
+    </section>
+   </hcontainer>
+   <hcontainer GUID="_77256cec-bfa5-4ae1-a627-b0b411746e9a" class="group7" eId="xhdg_7" name="crossheading">
+    
+    <heading GUID="_7ea17e73-1f45-4d37-a0f8-b55eb56043cd" eId="xhdg_7__hdg"><?L 15-16?>Money attachment</heading>
+    <section GUID="_e859e327-510d-491a-ab34-bb718111a6dc" class="prov1" eId="sec_10">
+     
+     <num><?L 15-17?>10</num>
+     <heading GUID="_6ebb487c-eb12-4017-9bf2-419eeba50ba6" eId="sec_10__hdg">Money attachment when premises are open</heading>
+     <subsection GUID="_75f56868-1a82-4aa4-b099-c19f68adedb3" class="prov2" eId="sec_10__subsec_1">
+      <num><?L 15-18?>(1)</num>
+      <content>
+       <p><mref><ref class="valid" href="https://www.legislation.gov.uk/asp/2007/3#sec_176" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2007/3/section/176">Section 176</ref> (when money attachment not competent) of the <ref class="valid" href="https://www.legislation.gov.uk/asp/2007/3" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2007/3/contents">Bankruptcy and Diligence <?L 15-19?>etc. (Scotland) Act 2007</ref></mref> is modified as follows.</p>
+      </content>
+     </subsection>
+     <subsection GUID="_76ba17e4-8116-4db3-a892-ff5f326f9763" class="prov2" eId="sec_10__subsec_2">
+      <num><?L 15-20?>(2)</num>
+      <content>
+       <p><mod>After <ref class="valid" href="https://www.legislation.gov.uk/asp/2007/3#sec_176__subsec_2" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2007/3/section/176">subsection (2)</ref>, insert—<quotedStructure GUID="_fa9e232c-1dc9-4dad-a97b-a7486a39bc7d" eId="sec_10__subsec_2__qstr" endQuote="”" startQuote="“" ukl:context="body" ukl:docName="asp" ukl:indent="indent0">
+        <subsection GUID="_877dbe78-d5f6-4f02-a5b5-ebe8fba3dfd2" class="prov2" eId="sec_10__subsec_2__qstr__subsec_2A">
+         <num ukl:autonumber="no"><?L 15-21?>(2A)</num>
+         <intro GUID="_68086c87-e28f-4acd-9ec0-386cf6b4c361" eId="sec_10__subsec_2__qstr__subsec_2A__intro">
+          <p>But—</p>
+         </intro>
+         <level GUID="_fa448796-7be6-4e6d-ad33-5bd33b35298d" class="para1" eId="sec_10__subsec_2__qstr__subsec_2A__para_a">
+          <num><?L 15-22?>(a)</num>
+          <content>
+           <p>despite subsection (1), it is competent to execute a money attachment <?L 15-23?>in any premises in which a trade or business is carried on on any day <?L 15-24?>the premises are open (whether to the public generally or not) for the <?L 15-25?>purposes of the trade or business, and</p>
+          </content>
+         </level>
+         <level GUID="_7290cd68-650a-4899-a136-b189f3c71638" class="para1" eId="sec_10__subsec_2__qstr__subsec_2A__para_b">
+          <num><?L 15-26?>(b)</num>
+          <content>
+           <p>despite subsection (2), the execution of a money attachment may be <?L 15-27?>commenced or continued in such premises at any time the premises are <?L 15-28?>open (whether to the public generally or not) for the purposes of the <?L 15-29?>trade or business, without the officer of court obtaining prior authority <?L 15-30?>of the sheriff.</p>
+          </content>
+         </level>
+        </subsection>
+        </quotedStructure><inline name="AppendText">.</inline></mod> </p>
+      </content>
+     </subsection>
+    </section>
+   </hcontainer>
+   <hcontainer GUID="_9d49b1d4-4e47-4e79-b89f-030e05a9611d" class="group7" eId="xhdg_10A" name="crossheading">
+    
+    <heading GUID="_56eede26-d234-44fa-b8df-45077f491e98" eId="xhdg_10A__hdg"><?L 15-31?>Arrestment of ships</heading>
+    <section GUID="_208e02fc-58e6-4fb0-b3ee-8d3616140f7b" class="prov1" eId="sec_10A">
+     
+     <num><?L 15-32?>10A</num>
+     <heading GUID="_db9f2b11-a573-4e4b-9ddb-098434fe3616" eId="sec_10A__hdg">Arrestment of ships on a Sunday</heading>
+     <subsection GUID="_cff6a11d-ed31-4eb3-81ff-0ef10b0bda59" class="prov2" eId="sec_10A__subsec">
+      <num/>
+      <content>
+       <p><?L 15-33?>Any rule of law that prevents the execution of an arrestment on a Sunday ceases to <?L 15-34?>have effect insofar as it relates to the arrestment of ships.</p>
+      </content>
+     </subsection>
+    </section>
+   </hcontainer>
+   <hcontainer GUID="_c8e2a793-25ac-47e4-af24-76ce626abe05" class="group7" eId="xhdg_11" name="crossheading">
+    
+    <heading GUID="_1976dd44-866d-4c03-8f58-00afedefded5" eId="xhdg_11__hdg"><?L 15-35?>Final provisions</heading>
+    <section GUID="_64296532-b092-47ab-ab56-6f065c5932b5" class="prov1" eId="sec_11">
+     
+     <num><?L 15-36?>11</num>
+     <heading GUID="_6fd923f4-e015-4c66-aeae-ebff86f91ca7" eId="sec_11__hdg">Ancillary provision</heading>
+     <subsection GUID="_6ea5fc2e-b5d3-4f24-b2f4-21c14a09061a" class="prov2" eId="sec_11__subsec_1">
+      <num><?L 15-37?>(1)</num>
+      <content>
+       <p>The Scottish Ministers may by regulations make any incidental, supplementary, <?L 15-38?>consequential, transitional, transitory or saving provision they consider appropriate for <?L 15-39?>the purposes of, in connection with or for giving full effect to this Act.</p>
+      </content>
+     </subsection>
+     <subsection GUID="_e9bd3082-8eec-4733-bf06-c1b9d196b04f" class="prov2" eId="sec_11__subsec_2">
+      <num><?L 16-1?>(2)</num>
+      <intro GUID="_10a85abf-ebe2-4e11-8c61-e3c175e82355" eId="sec_11__subsec_2__intro">
+       <p>Regulations under <ref class="valid" href="#sec_11" ukl:targetGuid="_64296532-b092-47ab-ab56-6f065c5932b5">this section</ref> may—</p>
+      </intro>
+      <level GUID="_00a95691-a7f6-4f6e-9401-7a15235fa9de" class="para1" eId="sec_11__subsec_2__para_a">
+       <num><?L 16-2?>(a)</num>
+       <content>
+        <p>make different provision for different purposes,</p>
+       </content>
+      </level>
+      <level GUID="_3d7d71fd-a9db-41c4-90b2-e581588e666a" class="para1" eId="sec_11__subsec_2__para_b">
+       <num><?L 16-3?>(b)</num>
+       <content>
+        <p>modify any enactment (including this Act).</p>
+       </content>
+      </level>
+     </subsection>
+     <subsection GUID="_153e0684-79fb-40df-8cfa-c7d7adf9cb65" class="prov2" eId="sec_11__subsec_3">
+      <num><?L 16-4?>(3)</num>
+      <intro GUID="_cb8fbc54-e163-4989-bb8f-5fea5b530f34" eId="sec_11__subsec_3__intro">
+       <p>The regulations—</p>
+      </intro>
+      <level GUID="_c479af4a-21b2-444e-b137-e42576208fb5" class="para1" eId="sec_11__subsec_3__para_a">
+       <num><?L 16-5?>(a)</num>
+       <content>
+        <p>are subject to the affirmative procedure if they add to, replace or omit any part <?L 16-6?>of the text of an Act,</p>
+       </content>
+      </level>
+      <level GUID="_e16d39c1-06d0-4d8d-9022-1be63dd5d488" class="para1" eId="sec_11__subsec_3__para_b">
+       <num><?L 16-7?>(b)</num>
+       <content>
+        <p>are subject to the negative procedure if they do not.</p>
+       </content>
+      </level>
+     </subsection>
+    </section>
+    <section GUID="_a07ead34-2cfe-415e-a64f-36bfe2fc160a" class="prov1" eId="sec_12">
+     
+     <num><?L 16-8?>12</num>
+     <heading GUID="_5b173113-8cd6-419e-9903-e5b2071da9d2" eId="sec_12__hdg">Commencement</heading>
+     <subsection GUID="_4ec84c24-a743-431d-9a98-45962a96edff" class="prov2" eId="sec_12__subsec_1">
+      <num><?L 16-9?>(1)</num>
+      <content>
+       <p><ref class="valid" href="#sec_12" ukl:targetGuid="_a07ead34-2cfe-415e-a64f-36bfe2fc160a">This section</ref> and <mref><ref class="valid" href="#sec_11" ukl:targetGuid="_64296532-b092-47ab-ab56-6f065c5932b5">sections 11</ref> and <ref class="valid" href="#sec_13" ukl:targetGuid="_fa82a1ec-b8b2-47ac-aedc-2d5484dc4019">13</ref></mref> come into force on the day after Royal Assent.</p>
+      </content>
+     </subsection>
+     <subsection GUID="_c78bd67c-6290-4a79-af62-26203847de09" class="prov2" eId="sec_12__subsec_2">
+      <num><?L 16-10?>(2)</num>
+      <content>
+       <p>The other provisions of this Act come into force on such day as the Scottish Ministers <?L 16-11?>may by regulations appoint.</p>
+      </content>
+     </subsection>
+     <subsection GUID="_da990f62-ed43-4344-820c-dc02e2b99e28" class="prov2" eId="sec_12__subsec_3">
+      <num><?L 16-12?>(3)</num>
+      <intro GUID="_00bab86b-7351-4b67-a197-71d44559d1af" eId="sec_12__subsec_3__intro">
+       <p>Regulations under <ref class="valid" href="#sec_12__subsec_2" ukl:targetGuid="_c78bd67c-6290-4a79-af62-26203847de09">subsection (2)</ref> may—</p>
+      </intro>
+      <level GUID="_214081ff-0de9-4c12-8f87-82b7bd12747f" class="para1" eId="sec_12__subsec_3__para_a">
+       <num><?L 16-13?>(a)</num>
+       <content>
+        <p>include transitional, transitory or saving provision,</p>
+       </content>
+      </level>
+      <level GUID="_4c331a66-5027-47e0-b3b5-1379872ee8fc" class="para1" eId="sec_12__subsec_3__para_b">
+       <num><?L 16-14?>(b)</num>
+       <content>
+        <p>make different provision for different purposes.</p>
+       </content>
+      </level>
+     </subsection>
+    </section>
+    <section GUID="_fa82a1ec-b8b2-47ac-aedc-2d5484dc4019" class="prov1" eId="sec_13">
+     
+     <num><?L 16-15?>13</num>
+     <heading GUID="_1b16f039-8f6a-41b4-93b1-70231ec393a4" eId="sec_13__hdg">Short title</heading>
+     <content>
+      <p><?L 16-16?>The short title of this Act is the <ref class="valid" href="https://www.legislation.gov.uk/asp/2024/9" ukl:alternativeReference="https://www.legislation.gov.uk/asp/2024/9/contents">Bankruptcy and Diligence (Scotland) Act 2024</ref>.</p>
+     </content>
+    </section>
+   </hcontainer>
+  </body>
+  <conclusions GUID="_60806898-b211-42fe-ab50-576f0c6b3e01" eId="backCover">
+   
+   <block GUID="_944ecd4a-fb6d-4759-94a2-844b94a90f00" eId="backCover__st" name="title"><docTitle GUID="_89fec4a7-dce2-40c2-a5d0-bf67366df569" eId="backCover__st__dtitle"><ref class="placeholder" href="#varBillTitle"/></docTitle></block>
+   <block GUID="_03a91c0f-a503-44e8-9dc7-3bb2c85a067b" eId="backCover__stage" name="stageVersion">[<docStage><ref class="placeholder" href="#varStageVersion"/></docStage>]</block>
+   <longTitle GUID="_b0ad7b4a-9103-4e3f-a443-38eaaea518ff" eId="backCover__longtitle">
+    <p><ref class="placeholder" href="#preface__longtitle"/></p>
+   </longTitle>
+   <block GUID="_6b0252dc-81a3-4d12-989b-b53b1fe6c4d7" eId="backCover__mbr" name="introducingMember"><inline name="prompt">Introduced by:</inline><docIntroducer GUID="_3342cc41-b5f6-4311-a92b-83b582822e66" eId="backCover__mbr__docIntroducer"><ref class="placeholder" href="#person-1870"/></docIntroducer></block>
+   <block GUID="_2bacfedf-5032-483b-9ddf-a6c35c06f118" eId="backCover__mbrs" name="supportingMembers"><inline name="prompt">Supported by:</inline><docProponent GUID="_d1354312-2aff-40be-baff-43652e6cf51f" eId="backCover__mbrs__docProponent__person-5868"><ref class="placeholder" href="#person-5868"/></docProponent></block>
+   <block GUID="_2d13a435-4d1b-4cf0-9833-d2c580bb315c" eId="backCover__introDate" name="introductionDate"><inline name="prompt">On:</inline><docDate GUID="_b200ccf0-817e-4320-9c81-4160c0f8cbb8" date="9999-01-01" eId="backCover__introDate__ddate"><ref class="placeholder" href="#varIntroDate"/></docDate></block>
+   <block name="subtype"><inline name="prompt">Bill type:</inline><docType GUID="_cc42edac-2bc4-402c-a7d0-4c0a996c6007" eId="backCover__dtype"><ref class="placeholder" href="#varDocSubType"/></docType></block>
+   <tblock GUID="_550e74b7-690b-4bb1-b574-234a1429f065" class="copyrightStatement" eId="backCover__cpyStmnt">
+    <p>© Parliamentary copyright. Scottish Parliamentary Corporate Body</p>
+    <p>Information on the Scottish Parliament's copyright policy can be found on the website -</p>
+    <p><a href="https://www.parliament.scot/">www.parliament.scot</a></p>
+   </tblock>
+   <tblock GUID="_63984a0f-b645-452b-997b-fb012ec46a8f" class="publishingStatement" eId="backCover__pubStmnt">
+    <p>Produced and published in Scotland by the Scottish Parliamentary Corporate Body.</p>
+    <p>All documents are available on the Scottish Parliament website at:</p>
+    <p><a href="https://www.parliament.scot/documents">www.parliament.scot/documents</a></p>
+   </tblock>
+  </conclusions>
+ </bill>
+</akomaNtoso>

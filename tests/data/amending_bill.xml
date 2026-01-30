@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0" 
+            xmlns:ukl="https://www.legislation.gov.uk/namespaces/UK-AKN">
+    <bill name="ukpubb">
+        <body>
+            <section eId="sec_2" class="prov1">
+                <num>2</num>
+                <heading>Amendment to Test Act 2020</heading>
+                <subsection eId="sec_2__subsec_1">
+                    <num>(1)</num>
+                    <content>
+                        <p>The Test Act 2020 is amended as follows.</p>
+                    </content>
+                </subsection>
+                <subsection eId="sec_2__subsec_2">
+                    <num>(2)</num>
+                    <content>
+                        <p>
+                            <mod>After section 23 insert—
+                                <quotedStructure>
+                                    <section eId="sec_23A">
+                                        <num>23A</num>
+                                        <heading>New Section</heading>
+                                        <content>
+                                            <p>This is a new section being inserted.</p>
+                                        </content>
+                                    </section>
+                                </quotedStructure>
+                            </mod>
+                        </p>
+                    </content>
+                </subsection>
+            </section>
+        </body>
+    </bill>
+</akomaNtoso>

@@ -1,0 +1,107 @@
+source,source_eid,type_of_amendment,affected_provision,location,whole_provision
+s. 1(2),sec_1__subsec_2,insertion,pt_2A__hdg,After,false
+s. 1(3),sec_1__subsec_3,insertion,sec_27A,Before,true
+s. 1(4),sec_1__subsec_4,insertion,sec_27B,After,true
+s. 2,sec_2,insertion,sec_27BH,After,true
+s. 3,sec_3,insertion,sec_27BN,After,true
+s. 4(1),sec_4__subsec_1,insertion,sec_27BT,After,true
+s. 6(2),sec_6__subsec_2,substitution,sec_27B__subsec_1,Replace,false
+s. 6(3),sec_6__subsec_3,deletion,sec_27B__subsec_2__para_b,Replace,false
+s. 6(4)(a)(i),sec_6__subsec_4__para_a__subpara_i,deletion,sec_27B__subsec_4__para_a,Replace,false
+s. 6(4)(a)(ii),sec_6__subsec_4__para_a__subpara_ii,insertion,sec_27B__subsec_4__para_a,After,false
+s. 6(4)(b),sec_6__subsec_4__para_b,deletion,sec_27B__subsec_4__para_b,Replace,false
+s. 6(5),sec_6__subsec_5,deletion,sec_27B__subsec_5__para_a__subpara_ii,Replace,false
+s. 6(6)(a),sec_6__subsec_6__para_a,insertion,sec_27B__subsec_6,After,false
+s. 6(6)(b),sec_6__subsec_6__para_b,insertion,sec_27B__subsec_6,After,false
+s. 6(6)(c),sec_6__subsec_6__para_c,insertion,sec_27B__subsec_6,After,false
+s. 7(3),sec_7__subsec_3,substitution,sec_80G__subsec_1__para_b,Replace,false
+s. 7(4),sec_7__subsec_4,insertion,sec_80G__subsec_1ZA,After,false
+s. 7(5),sec_7__subsec_5,insertion,sec_80G__subsec_1D,After,false
+s. 7(6),sec_7__subsec_6,substitution,sec_80H__subsec_1__para_a,Replace,false
+s. 10(2),sec_10__subsec_2,insertion,sec_27I__subsec_2,After,false
+s. 10(3),sec_10__subsec_3,insertion,sec_27I__subsec_3,After,false
+s. 10(4),sec_10__subsec_4,insertion,sec_27I__subsec_6,After,false
+s. 11,sec_11,deletion,sec_76__subsec_1__para_a,Replace,false
+s. 12(1)(a),sec_12__subsec_1__para_a,deletion,sec_80A__subsec_1__para_a,Replace,false
+s. 12(1)(b),sec_12__subsec_1__para_b,deletion,sec_80A__subsec_6A__para_a,Replace,false
+s. 12(2)(a),sec_12__subsec_2__para_a,deletion,sec_80B__subsec_1__para_a,Replace,false
+s. 12(2)(b),sec_12__subsec_2__para_b,deletion,sec_80B__subsec_6C__para_a,Replace,false
+s. 13(1)(a),sec_13__subsec_1__para_a,deletion,sec_80A__subsec_4A,Replace,false
+s. 13(1)(b),sec_13__subsec_1__para_b,deletion,sec_80A__subsec_6A__para_c,Replace,false
+s. 13(2)(a),sec_13__subsec_2__para_a,deletion,sec_80B__subsec_4A,Replace,false
+s. 13(2)(b),sec_13__subsec_2__para_b,deletion,sec_80B__subsec_6C__para_c,Replace,false
+s. 14(2),sec_14__subsec_2,substitution,pt_8__chp_4__hdg,Replace,false
+s. 14(3)(a),sec_14__subsec_3__para_a,substitution,sec_80EA__subsec_1,Replace,false
+s. 14(3)(b),sec_14__subsec_3__para_b,substitution,sec_80EA__subsec_2,Replace,false
+s. 14(3)(c),sec_14__subsec_3__para_c,substitution,sec_80EA__subsec_3,Replace,false
+s. 14(3)(d),sec_14__subsec_3__para_d,substitution,sec_80EA__subsec_4__para_a,Replace,false
+s. 14(3)(e),sec_14__subsec_3__para_e,insertion,sec_80EA__subsec_5,After,false
+s. 14(3)(f),sec_14__subsec_3__para_f,substitution,sec_80EA__subsec_6,Replace,false
+s. 14(3)(g),sec_14__subsec_3__para_g,substitution,sec_80EA__subsec_7,Replace,false
+s. 14(3)(h),sec_14__subsec_3__para_h,substitution,sec_80EA__hdg,Replace,false
+s. 14(4),sec_14__subsec_4,deletion,sec_47C__subsec_2__para_cb,Replace,false
+s. 14(5),sec_14__subsec_5,deletion,sec_75I__subsec_3__para_f,Replace,false
+s. 14(6),sec_14__subsec_6,deletion,"sec_80C__subsec_2__para_bb,sec_80C__subsec_4__para_bb",Replace,false
+s. 14(7),sec_14__subsec_7,deletion,sec_80EG__subsec_2__para_f,Replace,false
+s. 14(8)(a),sec_14__subsec_8__para_a,substitution,sec_88__subsec_1__para_c,Replace,false
+s. 14(8)(b),sec_14__subsec_8__para_b,substitution,sec_88__subsec_2,Replace,false
+s. 14(9)(a),sec_14__subsec_9__para_a,substitution,sec_89__subsec_3__para_b,Replace,false
+s. 14(9)(b),sec_14__subsec_9__para_b,substitution,sec_89__subsec_4,Replace,false
+s. 14(10),sec_14__subsec_10,deletion,sec_99__subsec_3__para_cb,Replace,false
+s. 14(11)(a),sec_14__subsec_11__para_a,insertion,sec_235__subsec_1__def_business,Before,false
+s. 14(11)(b),sec_14__subsec_11__para_b,deletion,sec_235__subsec_1__def_parentalbereavementleave,Replace,false
+s. 18(2),sec_18__subsec_2,insertion,sec_43B__subsec_1__para_d,After,false
+s. 18(3),sec_18__subsec_3,insertion,sec_43L__subsec_1,After,false
+s. 19(a),sec_19__para_a,deletion,sec_108,Replace,true
+s. 20(2),sec_20__subsec_2,insertion,sec_49D__hdg,After,false
+s. 20(3),sec_20__subsec_3,insertion,sec_49D__subsec_1,After,false
+s. 20(4),sec_20__subsec_4,insertion,sec_49D__subsec_3,After,false
+s. 20(5),sec_20__subsec_5,insertion,pt_5B__hdg,After,false
+s. 21(2),sec_21__subsec_2,insertion,sec_74__subsec_2,After,false
+s. 21(3),sec_21__subsec_3,insertion,sec_75C__subsec_1__para_b,After,false
+s. 21(4),sec_21__subsec_4,insertion,sec_75J__subsec_1__para_b,After,false
+s. 21(5)(a),sec_21__subsec_5__para_a,insertion,sec_80D__subsec_1A__para_b,After,false
+s. 21(5)(b),sec_21__subsec_5__para_b,substitution,sec_80D__subsec_3__para_b,Replace,false
+s. 21(6),sec_21__subsec_6,insertion,sec_80EH__subsec_1__para_b,After,false
+s. 22(3),sec_22__subsec_3,insertion,sec_105,Before,true
+s. 22(4),sec_22__subsec_4,insertion,sec_108__subsec_3__para_gm,After,false
+s. 22(5),sec_22__subsec_5,insertion,sec_236__subsec_3,After,false
+s. 51(12),sec_51__subsec_12,insertion,sec_104__subsec_4__para_c,After,false
+s. 59(5),sec_59__subsec_5,substitution,sec_104__subsec_4__para_c,Replace,false
+para. 3 of schedule 1,sched_1__para_3,deletion,"sec_27A__subsec_1,sec_27A__subsec_2",Replace,false
+para. 4(a) of schedule 1,sched_1__para_4__para_a,deletion,sec_27B__subsec_4,Replace,false
+para. 4(b) of schedule 1,sched_1__para_4__para_b,substitution,"sec_27B__subsec_6__para_a,sec_27B__subsec_6__para_b",Replace,false
+para. 4(c) of schedule 1,sched_1__para_4__para_c,deletion,"sec_27B__subsec_7,sec_27B__subsec_8",Replace,false
+para. 5 of schedule 1,sched_1__para_5,insertion,sec_47G,After,true
+para. 6(2) of schedule 1,sched_1__para_6__subpara_2,insertion,sec_48__subsec_1B,After,false
+para. 6(3) of schedule 1,sched_1__para_6__subpara_3,substitution,sec_48__subsec_2,Replace,false
+para. 7(2) of schedule 1,sched_1__para_7__subpara_2,substitution,sec_49__subsec_1,Replace,false
+para. 7(3) of schedule 1,sched_1__para_7__subpara_3,insertion,sec_49__subsec_7,After,false
+para. 8 of schedule 1,sched_1__para_8,insertion,sec_104B,After,true
+para. 9 of schedule 1,sched_1__para_9,insertion,sec_105__subsec_7B,After,false
+para. 10 of schedule 1,sched_1__para_10,insertion,sec_108__subsec_3__para_gh,After,false
+para. 11(2) of schedule 1,sched_1__para_11__subpara_2,insertion,sec_205__subsec_1,After,false
+para. 11(3) of schedule 1,sched_1__para_11__subpara_3,insertion,sec_205__subsec_1A,After,false
+para. 12 of schedule 1,sched_1__para_12,insertion,sec_225__subsec_1,Before,false
+para. 13 of schedule 1,sched_1__para_13,insertion,sec_227__subsec_1__para_zza,Before,false
+para. 14(a) of schedule 1,sched_1__para_14__para_a,insertion,sec_235__subsec_2A,After,false
+para. 14(b) of schedule 1,sched_1__para_14__para_b,insertion,sec_235__subsec_2B,After,false
+para. 15 of schedule 1,sched_1__para_15,insertion,sec_236__subsec_3,After,false
+para. 1 of schedule 2,sched_2__para_1,deletion,sec_108,Replace,false
+para. 2 of schedule 2,sched_2__para_2,insertion,sec_108,After,true
+para. 3(2) of schedule 2,sched_2__para_3__subpara_2,insertion,sec_98,After,true
+para. 3(3) of schedule 2,sched_2__para_3__subpara_3,insertion,sec_236__subsec_3,Before,false
+para. 5(2)(a) of schedule 2,sched_2__para_5__subpara_2__para_a,substitution,sec_92__subsec_3,Replace,false
+para. 5(2)(b) of schedule 2,sched_2__para_5__subpara_2__para_b,insertion,sec_92__subsec_3,After,false
+para. 5(2)(c) of schedule 2,sched_2__para_5__subpara_2__para_c,substitution,sec_92__subsec_4,Replace,false
+para. 5(2)(d) of schedule 2,sched_2__para_5__subpara_2__para_d,substitution,sec_92__subsec_4A,Replace,false
+para. 5(3) of schedule 2,sched_2__para_5__subpara_3,substitution,sec_94__subsec_2,Replace,false
+para. 5(4)(a) of schedule 2,sched_2__para_5__subpara_4__para_a,deletion,sec_97__subsec_2,Replace,false
+para. 5(4)(b) of schedule 2,sched_2__para_5__subpara_4__para_b,deletion,sec_97__subsec_4,Replace,false
+para. 5(5) of schedule 2,sched_2__para_5__subpara_5,substitution,sec_98__subsec_6__para_a,Replace,false
+para. 5(6)(a) of schedule 2,sched_2__para_5__subpara_6__para_a,deletion,sec_192__subsec_2__para_e,Replace,false
+para. 5(6)(b) of schedule 2,sched_2__para_5__subpara_6__para_b,insertion,sec_192__subsec_2__para_e,Before,false
+para. 5(7) of schedule 2,sched_2__para_5__subpara_7,substitution,sec_205A__subsec_10,Replace,false
+para. 5(8) of schedule 2,sched_2__para_5__subpara_8,deletion,sec_209__subsec_5,Replace,false
+para. 5(9) of schedule 2,sched_2__para_5__subpara_9,deletion,sec_213__subsec_1,Replace,false
+para. 5(10) of schedule 2,sched_2__para_5__subpara_10,deletion,sched_1__para_56__para_8,Replace,false

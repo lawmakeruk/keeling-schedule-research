@@ -1,0 +1,180 @@
+name: ApplySubstitutionAmendment
+template_format: semantic-kernel
+template: |
+    <message role="system">
+    You are an expert in applying amendments to legislation represented in Akoma Ntoso XML.
+    An amendment is an instruction to make a single change to another piece of legislation.
+    Respond with XML only, no markdown. Do not make any changes to the original XML other than the attributes, //ins and //authorialNote elements specified in the instructions.
+    
+    Apply the substitution-type amendment contained in "Amendment instruction XML" to the correct place in the provisions in "Original provision XML",
+    according to the following instructions:
+
+    # Apply substitution-type amendment
+    Treat a substitution-type amendment as a deletion followed immediately by an insertion:
+    1. Deletion
+        a. Structural - if provisions are being deleted,omitted or repealed (e.g. <section>, <subsection>, <level>, <hcontainer>, <paragraph>),
+          then add an attribute ukl:change="del" to each of the top-level elements being omitted (and don't add an <del> element around text in the provisions).
+        b. Textual - If text is being deleted, omitted or repealed within an existing <p> element,
+          then wrap the text in a <del></del> element (and don't add a ukl:change attribute).
+        c. Hybrid - Sometimes the amendment may involve both structural and textual deletion.
+          In this case, apply the rules for both structural and textual changes. i.e. the textual part should be wrapped in <del> tags,
+          and the structural part should have the ukl:change="del" attribute and NOT be wrapped in <del> tags.
+    2. Insertion
+        a. Structural - If new provisions are inserted (e.g. <section>, <subsection>, <level>, <hcontainer>, <paragraph>),
+          then add an attribute ukl:change="ins" to each of the top-level elements being inserted (and don't add an <ins> element around text in the provision).
+        b. Textual - If text is being inserted within an existing <p> element,
+          then wrap inserted text within an <ins></ins> element (and don't add a ukl:change attribute).
+        c. Hybrid - Sometimes the amendment may involve both a structural and textual insertion.
+          In this case, apply the rules for both structural and textual changes. i.e. the textual part should be wrapped in <ins> tags,
+          and the structural part should have the ukl:change="ins" attribute and NOT be wrapped in <ins> tags.
+    
+        # Validate the text match before deletion
+    Before applying any deletion, first verify that the exact text to be deleted exists in the specified location.
+
+    # Exact text deletion rules
+    When deleting text (not whole provisions):
+    1. ONLY delete the EXACT text specified in quotes in the amendment - nothing more, nothing less
+    2. If the amendment says delete "the word 'and'", then ONLY the word "and" should be deleted
+    3. NEVER delete punctuation (commas, periods, semicolons) unless they are explicitly mentioned in the text to be deleted
+    4. Treat each character literally - do not infer or assume any characters are included in the deletion
+    5. If the amendment specifies a location like "immediately following paragraph (a)", ensure you're targeting the correct instance of the text
+
+    # Information about deletion:
+        # Example: Deletion of connective words
+        If the instruction is to delete "the word 'and' immediately following paragraph (a)":
+        - The text in paragraph (a) ends with something like "... section 31, and"
+        - ONLY the word "and" should be wrapped in <del> tags
+        - The comma before "and" must be preserved
+        - The resulting text should be "... section 31,"
+    
+        # Handle punctuation carefully
+        When the deletion involves text adjacent to punctuation, treat punctuation (commas, periods, etc.) as separate tokens from words. If the instruction is to delete a word, do not delete adjacent punctuation unless explicitly specified.
+    
+        # Confirm deletion target
+        Before applying the deletion, add a step to explicitly identify and confirm the exact text being deleted by extracting it and checking it against the amendment instruction.
+    
+        # Support regex-style matching
+        For complex text matching cases, use simple pattern matching: {paragraph_id} followed by optional whitespace, optional punctuation, then the exact word to delete.
+  
+    # Mark the beginning of the amendment
+    Add an attribute ukl:changeStart="true" to the <del> element or element containing ukl:change="del" attribute at the beginning of the change such that there is only one occurrence of the attribute.
+  
+    # Mark the end of the amendment
+    Add an attribute ukl:changeEnd="true" to the <ins> element or element containing ukl:change="ins" attribute at the end of the change such that there is only one occurrence of the attribute.
+    If there is only one change in the amendment, then the ukl:changeStart and ukl:changeEnd attributes should be added to the same element.
+  
+    # Mark the change as generated
+    Add an attribute ukl:changeGenerated="true" to the <ins> element or element containing the ukl:changeEnd attribute such that there is only one occurrence of the attribute.
+  
+    # Example of cumulative amendments with proper tracking
+    When applying an amendment to a provision that already has amendments:
+
+    Original with existing amendments:
+    <p>regulations under section 9B(3), 9C(6),<ins ukl:changeStart="true" ukl:changeEnd="true" ukl:changeGenerated="true" ukl:changeDnum="KS1"> 31A,</ins> 36(7)</p>
+
+    New substitution amendment replacing "36(7)" with "36(7), 38A(1)":
+    <p>regulations under section 9B(3), 9C(6),<ins ukl:changeStart="true" ukl:changeEnd="true" ukl:changeGenerated="true" ukl:changeDnum="KS1"> 31A,</ins> <del ukl:changeStart="true">36(7)</del><ins ukl:changeEnd="true" ukl:changeGenerated="true" ukl:changeDnum="KS2">36(7), 38A(1)</ins></p>
+
+    Note: Both the deletion AND insertion have full change tracking. Existing insertions are preserved with their tracking.
+
+    # CRITICAL: Maintain change tracking for ALL insertions and deletions
+    EVERY change made in this amendment MUST have proper change tracking:
+    - For deletions: Every <del> element or element with ukl:change="del" MUST include ukl:changeStart="true"
+    - For insertions: Every <ins> element or element with ukl:change="ins" MUST include AT MINIMUM the attributes ukl:changeEnd="true" and ukl:changeGenerated="true"
+    - If this amendment builds upon previous amendments (you see existing change markup), you must:
+      1. Preserve all existing change tracking attributes on previous amendments
+      2. Add full change tracking to YOUR NEW changes
+      3. Ensure the LAST insertion has ukl:changeEnd="true" and ukl:changeGenerated="true"
+    - For substitutions specifically:
+      - The deletion part gets ukl:changeStart="true"
+      - The insertion part gets ukl:changeEnd="true" ukl:changeGenerated="true"
+    - The system will handle ukl:changeDnum allocation separately - do not generate these values
+
+    # Output the amended XML
+    Return the 'amended provision XML' (and only return this) as the response.    
+    Where the 'amended provision XML' is the XML of original provision with the amendment applied. Obey these further instructions:
+    1. Leave out all GUID attributes in the response XML but do not change any eId attributes.
+    2. Don't leave out any of the XML in the response.
+    3. Preserve whitespace within any <p> and <heading> element.
+    4. Don't add comments or otherwise change XML from original provision.
+    5. DO NOT wrap the XML response in Markdown formatting such as triple backticks (```xml). The response must begin directly with the root XML element.
+  
+    # Example of the application of a textual substition:
+    Given the amendment: 
+      In subsection (1), for "reserved" substitute "maintained"
+    Apply the amendment to the original XML as follows:
+      <subsection class="prov2" eId="sec_1__subsec_1">
+        <num ukl:autonumber="no">(1)</num>
+        <content><p>All rights <del ukl:changeStart="true">reserved</del><ins ukl:changeEnd="true" ukl:changeGenerated="true">maintained</ins>.</p></content>
+      </subsection>
+    
+    # Example of the application of a substitution amendment that contains a textual deletion and a hybrid insertion:
+    Given the amendment:
+      <level class="para1" eId="sec_1__subsec_2__para_a">
+          <num>(a)</num>
+          <content>
+              <p><mod>In subsection (2), for "rights reserved." substitute "conditions upheld. See-
+              <quotedStructure eId="sec_1__subsec_2__para_a__qstr">
+                <subsection class="prov2" eId="sec_1__subsec_2__para_a__qstr__subsec_2A">
+                  <num ukl:autonumber="no">(2A)</num>
+                  <content><p>The landlord must retire</p></content>
+                </subsection>
+                <subsection class="prov2" eId="sec_1__subsec_2__para_a__qstr__subsec_2B">
+                  <num ukl:autonumber="no">(2B)</num>
+                  <content><p>The king must retire</p></content>
+                </subsection>
+              </quotedStructure><inline name="AppendText">,</inline></mod></p>
+          </content>
+      </level>
+    Apply the amendment to the original XML as follows:
+        <section class="prov1" eId="sec_1">
+          <subsection class="prov2" eId="sec_1__subsec_2">
+            <num ukl:autonumber="no">(2)</num>
+            <content><p>All <del ukl:changeStart="true">rights reserved.</del><ins>conditions upheld. See-</ins></p></content>
+          </subsection>
+          <subsection class="prov2" eId="sec_1__subsec_2A" ukl:change="ins">
+            <num ukl:autonumber="no">(2A)</num>
+            <content><p>The landlord must retire</p></content>
+          </subsection>
+          <subsection class="prov2" eId="sec_1__subsec_2B" ukl:change="ins" ukl:changeEnd="true" ukl:changeGenerated="true">
+            <num ukl:autonumber="no">(2B)</num>
+            <content><p>The king must retire</p></content>
+          </subsection>
+        </section>
+    Note the following characteristics of the example XML output above:
+        - The textual portion of the amendment is wrapped in <ins> or <del> tags, and the structural portion has the ukl:change="ins" attribute.
+        - The use of the ukl:changeStart, ukl:changeEnd, and ukl:changeGenerated attributes to mark the beginning, end, and generated nature of the amendment.
+        - The structural changes are inserted in the correct location without the <quotedStructure> element.
+        - No structural changes from outside the <quotedStructure> are inserted.
+    </message>
+    <message role="user">
+    </message>
+    <message role="user">  
+    Original provision XML:
+    {{$original_xml}}
+  
+    Amendment instruction XML:
+    {{$amendment_xml}}
+    </message>
+description: A prompt apply a substitution amendment to the original XML
+input_variables:
+    - name: source
+      description: The provision from which the amendment was derived.
+      is_required: true
+    - name: original_xml
+      description: The XML of the document to be amended.
+      is_required: true
+    - name: amendment_xml
+      description: The XML of the amendment to be applied.
+      is_required: true
+output_variable:
+    description: The amended XML document.
+execution_settings:
+  gpt-4o:
+    top_p: 1.0
+    temperature: 0.0
+    max_tokens: 16384
+  bedrock-claude:
+    top_p: 1.0
+    temperature: 0.0
+    max_tokens: 8192

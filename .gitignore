@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.env
+.venv
+
+# IDE
+.vscode/
+*.swp
+.idea/
+
+# Docker
+*.env
+.docker/
+
+# Helm
+charts/*/charts
+*.tgz
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Coverage reports
+htmlcov/
+.coverage
+
+# Logs
+logs/
+
+# Benchmarking data
+benchmarking_data/

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<portion xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0" 
+         xmlns:ukl="https://www.legislation.gov.uk/namespaces/UK-AKN">
+    <akomaNtoso>
+        <act>
+            <body>
+                <section eId="sec_23">
+                    <num>23</num>
+                    <heading>Original Section</heading>
+                    <content>
+                        <p>This is the original section content.</p>
+                    </content>
+                </section>
+                <section eId="sec_23A" ukl:change="ins" ukl:changeStart="true" ukl:changeEnd="true">
+                    <num>23A</num>
+                    <heading>
+                        New Section
+                    </heading>
+                    <content>
+                        <p>This is a new section being inserted.</p>
+                    </content>
+                </section>
+                <section eId="sec_24">
+                    <num>24</num>
+                    <heading>Another Section</heading>
+                    <content>
+                        <p>This is another section that won't be modified.</p>
+                    </content>
+                </section>
+            </body>
+        </act>
+    </akomaNtoso>
+</portion>
