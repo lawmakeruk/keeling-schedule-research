@@ -374,27 +374,28 @@ class KeelingService:
         if self._element_mentions_act(element, act_name):
             return "text"
 
-        # Check ancestors
-        current = element.getparent()
-        while current is not None:
-            if self._is_provision(current) and self._element_mentions_act(current, act_name):
-                logger.debug(f"Found act mention in ancestor of {element.get('eId', '')}")
-                return "ancestor"
-            current = current.getparent()
+        # ABLATION: Ancestor and sibling checking disabled
+        # # Check ancestors
+        # current = element.getparent()
+        # while current is not None:
+        #     if self._is_provision(current) and self._element_mentions_act(current, act_name):
+        #         logger.debug(f"Found act mention in ancestor of {element.get('eId', '')}")
+        #         return "ancestor"
+        #     current = current.getparent()
 
-        # Check preceding siblings
-        parent = element.getparent()
-        if parent is not None:
-            for sibling in parent:
-                if sibling == element:
-                    break  # Stop at current element
-
-                if self._is_provision(sibling) and self._element_mentions_act(sibling, act_name):
-                    sibling_text = self.xml_handler.get_text_content(sibling, exclude_quoted=True)
-                    # For siblings, also check if they have context patterns
-                    if any(pattern in sibling_text.lower() for pattern in self.CONTEXT_PATTERNS):
-                        logger.debug(f"Found act mention in preceding sibling of {element.get('eId', '')}")
-                        return "sibling"
+        # # Check preceding siblings
+        # parent = element.getparent()
+        # if parent is not None:
+        #     for sibling in parent:
+        #         if sibling == element:
+        #             break  # Stop at current element
+        #
+        #         if self._is_provision(sibling) and self._element_mentions_act(sibling, act_name):
+        #             sibling_text = self.xml_handler.get_text_content(sibling, exclude_quoted=True)
+        #             # For siblings, also check if they have context patterns
+        #             if any(pattern in sibling_text.lower() for pattern in self.CONTEXT_PATTERNS):
+        #                 logger.debug(f"Found act mention in preceding sibling of {element.get('eId', '')}")
+        #                 return "sibling"
 
         return None
 
@@ -650,15 +651,16 @@ class KeelingService:
             logger.info("Preprocessing stage 1: Simplifying amending bill")
             self.xml_handler.simplify_amending_bill(bill_tree)
 
-            # Stage 2: Inject crossheading context
-            logger.info("Preprocessing stage 2: Injecting crossheading context")
-            crossheading_count = self._inject_crossheading_context(bill_tree)
-            logger.info(f"Injected crossheading context into {crossheading_count} provisions")
+            # ABLATION: Context injection disabled
+            # # Stage 2: Inject crossheading context
+            # logger.info("Preprocessing stage 2: Injecting crossheading context")
+            # crossheading_count = self._inject_crossheading_context(bill_tree)
+            # logger.info(f"Injected crossheading context into {crossheading_count} provisions")
 
-            # Stage 3: Context injection for regulation/section patterns
-            logger.info("Preprocessing stage 3: Context injection for regulation patterns")
-            injected_count = self._inject_document_context(bill_tree, act_name, schedule_id)
-            logger.info(f"Context injection complete: modified {injected_count} provisions")
+            # # Stage 3: Context injection for regulation/section patterns
+            # logger.info("Preprocessing stage 3: Context injection for regulation patterns")
+            # injected_count = self._inject_document_context(bill_tree, act_name, schedule_id)
+            # logger.info(f"Context injection complete: modified {injected_count} provisions")
 
     def _inject_crossheading_context(self, tree: etree.ElementTree) -> int:
         """
