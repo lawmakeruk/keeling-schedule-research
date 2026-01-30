@@ -647,8 +647,8 @@ class KeelingService:
         """
         with bind(schedule_id=schedule_id):
             # Stage 1: Simplify the XML
-            logger.info("Preprocessing stage 1: Simplifying amending bill")
-            self.xml_handler.simplify_amending_bill(bill_tree)
+            # logger.info("Preprocessing stage 1: Simplifying amending bill")  # ABLATION: Document simplification disabled
+            # self.xml_handler.simplify_amending_bill(bill_tree)  # ABLATION: Document simplification disabled
 
             # Stage 2: Inject crossheading context
             logger.info("Preprocessing stage 2: Injecting crossheading context")

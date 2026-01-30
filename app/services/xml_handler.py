@@ -1008,9 +1008,9 @@ class XMLHandler:
         while current is not None:
             # Check if this is a crossheading container
             if current.tag.endswith("hcontainer") and current.get("name") == "crossheading":
-                heading_elem = current.find(".//akn:heading", self.xml_handler.namespaces)
+                heading_elem = current.find(".//akn:heading", self.namespaces)
                 if heading_elem is not None:
-                    heading_text = self.xml_handler.get_text_content(heading_elem)
+                    heading_text = self.get_text_content(heading_elem)
                     contexts.append(heading_text)
 
             current = current.getparent()
