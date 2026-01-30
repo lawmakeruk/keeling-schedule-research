@@ -75,33 +75,10 @@ template: |
             "After" - Used for insertion amendments where the new content is inserted AFTER the affected provision (including phrases like "at the end of")
             "Before" - Used for insertion amendments where the new content is inserted BEFORE the affected provision (including vague phrases like "at the appropriate places" when referring to indexes or lists)
             "Replace" - Used for deletion or substitution amendments where "After" and "Before" are not applicable
-            "Each_Place" - Used when the amendment indicates the change should be applied to every occurrence within the affected provision, including phrases like:
-              - "in each place it occurs"
-              - "(in each place)"
-              - "in each place"
-              - "wherever those words occur"
-              - "wherever it occurs"
-              - "wherever they occur"
-              - Similar variations of the above examples
-              
-              IMPORTANT: Do NOT use "Each_Place" for position-specific amendments such as:
-              - "(in the first place)" - this targets only the first occurrence
-              - "(in the second place)" - this targets only the second occurrence  
-              - "(in the third place)" - this targets only the third occurrence
-              - Any other ordinal position like "(in the fourth place)", etc.
-              
-              Position-specific amendments should use the appropriate location based on the amendment action:
-              - "after [text] (in the first place)" -> use "After"
-              - "before [text] (in the second place)" -> use "Before"
-              - "for [text] (in the first place) substitute" -> use "Replace"
-              - "omit [text] (in the third place)" -> use "Replace"
-              
-              "Each_Place" is ONLY for amendments that explicitly state the change applies to ALL occurrences (using "each" or "wherever"), not specific positions.
             
             Note: For vague location descriptions, make your best interpretation:
             - "at the appropriate places" in an index -> default to "Before" for insertions
             - "at the end of" -> use "After" for insertions
-            - "in each place it occurs" -> use "Each_Place"
             - When truly uncertain -> default to "Before" for insertions)
         - `affected_document`: string (The name of the target legislation being modified by the amendment. e.g. "{$act_name}"
             Amending documents often use phrases like the following to announce the affected document:

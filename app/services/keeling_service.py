@@ -205,20 +205,30 @@ class KeelingService:
             # Sort all amendments by document order
             sorted_amendments = sort_amendments_by_affected_provision(amendments)
 
-            # Phase 1: Extract and validate patterns for "each place" amendments
-            validated_patterns, pattern_failures = self._extract_and_validate_patterns(sorted_amendments, schedule_id)
+            # ABLATION: Each place pattern extraction disabled
+            # # Phase 1: Extract and validate patterns for "each place" amendments
+            # validated_patterns, pattern_failures = self._extract_and_validate_patterns(sorted_amendments, schedule_id)
+            validated_patterns = {}
 
             # Separate amendments by processing order
             # Validated "Each place" amendments must be applied last to avoid being overwritten
             each_place_validated = []
             amendments_to_apply_first = []
 
-            for amendment in sorted_amendments:
-                aid = get_amendment_id(amendment)
-                if amendment.location == AmendmentLocation.EACH_PLACE and aid in validated_patterns:
-                    each_place_validated.append(amendment)
-                else:
-                    amendments_to_apply_first.append(amendment)
+            # ABLATION: Each place separation disabled
+            # # Separate amendments by processing order
+            # # Validated "Each place" amendments must be applied last to avoid being overwritten
+            # each_place_validated = []
+            # amendments_to_apply_first = []
+            #
+            # for amendment in sorted_amendments:
+            #     aid = get_amendment_id(amendment)
+            #     if amendment.location == AmendmentLocation.EACH_PLACE and aid in validated_patterns:
+            #         each_place_validated.append(amendment)
+            #     else:
+            #         amendments_to_apply_first.append(amendment)
+            each_place_validated = []
+            amendments_to_apply_first = sorted_amendments  # Process all normally - no each place
 
             logger.info(
                 f"Processing order: {len(amendments_to_apply_first)} regular amendments first, "
@@ -242,11 +252,12 @@ class KeelingService:
             for amendment in amendments_to_apply_first:
                 self._apply_single_amendment(amendment, output_act, schedule_id, llm_responses, validated_patterns)
 
-            # Phase 5: Apply validated "each place" amendments last
-            if each_place_validated:
-                logger.info(f"Applying {len(each_place_validated)} validated 'each place' amendments last")
-                for amendment in each_place_validated:
-                    self._apply_single_amendment(amendment, output_act, schedule_id, {}, validated_patterns)
+            # ABLATION: Each place final application disabled
+            # # Phase 5: Apply validated "each place" amendments last
+            # if each_place_validated:
+            #     logger.info(f"Applying {len(each_place_validated)} validated 'each place' amendments last")
+            #     for amendment in each_place_validated:
+            #         self._apply_single_amendment(amendment, output_act, schedule_id, {}, validated_patterns)
 
             # Insert error comments for any failed amendments
             self.amendment_processor.insert_all_error_comments(output_act, self.amendment_tracker)
@@ -1275,20 +1286,22 @@ class KeelingService:
                 success = False
                 error_msg = None
 
-                # Check if this is an "each place" amendment with validated pattern
-                if amendment.location == AmendmentLocation.EACH_PLACE and aid in validated_patterns:
-                    # Apply algorithmically with validated pattern
-                    success, error_msg = self.amendment_processor.apply_each_place_amendment(
-                        amendment, output_act, self._amending_bill, validated_patterns[aid], schedule_id
-                    )
-
-                    if not success:
-                        logger.error(
-                            f"Validated pattern failed to apply for amendment {aid}. "
-                            f"This should not happen - pattern was pre-validated. Error: {error_msg}"
-                        )
-
-                elif amendment.whole_provision:
+                # ABLATION: Each place algorithmic application disabled
+                # # Check if this is an "each place" amendment with validated pattern
+                # if amendment.location == AmendmentLocation.EACH_PLACE and aid in validated_patterns:
+                #     # Apply algorithmically with validated pattern
+                #     success, error_msg = self.amendment_processor.apply_each_place_amendment(
+                #         amendment, output_act, self._amending_bill, validated_patterns[aid], schedule_id
+                #     )
+                #
+                #     if not success:
+                #         logger.error(
+                #             f"Validated pattern failed to apply for amendment {aid}. "
+                #             f"This should not happen - pattern was pre-validated. Error: {error_msg}"
+                #         )
+                #
+                # elif amendment.whole_provision:
+                if amendment.whole_provision:  # Skip straight to this condition
                     # Apply structural amendment directly
                     success, error_msg = self.amendment_processor.apply_amendment(
                         amendment, output_act, self._amending_bill, schedule_id
